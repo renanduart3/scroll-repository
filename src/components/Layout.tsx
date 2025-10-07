@@ -33,6 +33,12 @@ const Layout = ({ children }: LayoutProps) => {
                 Palavra Viva
               </span>
             </Link>
+            <Link 
+              to="/configuracoes" 
+              className="md:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-smooth"
+            >
+              <Settings className="h-5 w-5" />
+            </Link>
           </div>
         </div>
       </header>
