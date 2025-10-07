@@ -10,12 +10,93 @@ export interface Content {
   progress: number;
 }
 
+export interface EstudoCategoria {
+  nome: string;
+  slug: string;
+  descricao: string;
+  icon: string;
+  quantidade: number;
+}
+
+export const estudosCategorias: EstudoCategoria[] = [
+  {
+    nome: "Heresias",
+    slug: "heresias",
+    descricao: "Estudos sobre falsos ensinos, doutrinas distorcidas e avisos bíblicos",
+    icon: "AlertTriangle",
+    quantidade: 0
+  },
+  {
+    nome: "Seitas",
+    slug: "seitas",
+    descricao: "Informações históricas e bíblicas sobre grupos religiosos desviantes",
+    icon: "Users",
+    quantidade: 0
+  },
+  {
+    nome: "Espiritualidade",
+    slug: "espiritualidade",
+    descricao: "Experiências espirituais, discernimento, dons e batalha espiritual",
+    icon: "Sparkles",
+    quantidade: 0
+  },
+  {
+    nome: "Liderança",
+    slug: "lideranca",
+    descricao: "Princípios bíblicos de liderança cristã e discipulado",
+    icon: "Heart",
+    quantidade: 1
+  },
+  {
+    nome: "Família",
+    slug: "familia",
+    descricao: "Relacionamentos, casamento, educação de filhos e princípios familiares",
+    icon: "Heart",
+    quantidade: 0
+  },
+  {
+    nome: "Pessoas da Bíblia",
+    slug: "pessoas-da-biblia",
+    descricao: "Biografias e análises de personagens bíblicos",
+    icon: "UserCircle",
+    quantidade: 0
+  },
+  {
+    nome: "Orações",
+    slug: "oracoes",
+    descricao: "Guias de oração, modelos e reflexão espiritual",
+    icon: "Landmark",
+    quantidade: 0
+  },
+  {
+    nome: "Ocultismo",
+    slug: "ocultismo",
+    descricao: "Advertências bíblicas sobre práticas e símbolos a evitar",
+    icon: "Eye",
+    quantidade: 0
+  },
+  {
+    nome: "Livros / Ebooks",
+    slug: "livros",
+    descricao: "Estudos baseados em livros e material de referência",
+    icon: "BookOpen",
+    quantidade: 0
+  },
+  {
+    nome: "Temas Gerais",
+    slug: "temas-gerais",
+    descricao: "Estudos sobre fé, salvação, profecias e outros temas",
+    icon: "Lightbulb",
+    quantidade: 2
+  }
+];
+
 export const mockEstudos: Content[] = [
   {
     id: "joao-3-16",
     title: "João 3:16 - O Amor de Deus",
     description: "Uma análise profunda sobre o versículo mais conhecido da Bíblia",
-    category: "estudos",
+    category: "temas-gerais",
     author: "Pastor João Silva",
     date: "2024-01-15",
     tags: ["amor", "salvação", "João"],
@@ -89,7 +170,7 @@ João 3:16 nos mostra que:
     id: "salmo-23",
     title: "Salmo 23 - O Senhor é Meu Pastor",
     description: "Conforto e provisão divina em todas as circunstâncias",
-    category: "estudos",
+    category: "temas-gerais",
     author: "Dra. Maria Santos",
     date: "2024-01-10",
     tags: ["salmos", "conforto", "provisão"],
@@ -186,7 +267,7 @@ Memorize o Salmo 23 completo. Ele será um conforto poderoso em momentos de difi
     id: "lideranca-servidora",
     title: "Liderança Servidora - O Exemplo de Jesus",
     description: "Como liderar segundo o modelo de Cristo",
-    category: "estudos",
+    category: "lideranca",
     author: "Rev. Pedro Almeida",
     date: "2024-01-05",
     tags: ["liderança", "serviço", "Jesus"],

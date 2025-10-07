@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Estudos from "./pages/Estudos";
+import EstudosCategoria from "./pages/EstudosCategoria";
 import EstudoDetalhes from "./pages/EstudoDetalhes";
 import Pregacoes from "./pages/Pregacoes";
 import PregacaoDetalhes from "./pages/PregacaoDetalhes";
@@ -26,10 +27,11 @@ const App = () => {
         <BrowserRouter>
           <Layout>
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/estudos" element={<Estudos />} />
-              <Route path="/estudos/:id" element={<EstudoDetalhes />} />
-              <Route path="/pregacoes" element={<Pregacoes />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/estudos" element={<Estudos />} />
+            <Route path="/estudos/categoria/:categoria" element={<EstudosCategoria />} />
+            <Route path="/estudos/:id" element={<EstudoDetalhes />} />
+            <Route path="/pregacoes" element={<Pregacoes />} />
               <Route path="/pregacoes/:id" element={<PregacaoDetalhes />} />
               <Route path="/devocional" element={<Devocional />} />
               <Route path="/devocional/:id" element={<DevocionalDetalhes />} />
