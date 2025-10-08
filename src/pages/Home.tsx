@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Book, Mic2, Calendar, Heart, Play, TrendingUp } from "lucide-react";
+import { Book, Mic2, Calendar, Heart, TrendingUp } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const Home = () => {
@@ -31,13 +31,6 @@ const Home = () => {
       icon: TrendingUp,
       href: "/atualidades",
       gradient: "gradient-accent",
-    },
-    {
-      title: "YouTube",
-      description: "Conteúdo em vídeo selecionado",
-      icon: Play,
-      href: "/youtube",
-      gradient: "gradient-primary",
     },
     {
       title: "Favoritos",

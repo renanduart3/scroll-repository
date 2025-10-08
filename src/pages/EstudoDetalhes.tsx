@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Heart, Share2, ChevronLeft, BookmarkPlus } from "lucide-react";
+import { Heart, Share2, ChevronLeft } from "lucide-react";
 import { mockEstudos } from "@/data/mockContent";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
@@ -99,11 +99,6 @@ const EstudoDetalhes = () => {
             <Button variant="outline" size="sm" onClick={handleShare}>
               <Share2 className="h-4 w-4 mr-2" />
               Compartilhar
-            </Button>
-
-            <Button variant="outline" size="sm">
-              <BookmarkPlus className="h-4 w-4 mr-2" />
-              Adicionar Nota
             </Button>
           </div>
         </div>

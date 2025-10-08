@@ -83,10 +83,17 @@ export const estudosCategorias: EstudoCategoria[] = [
     quantidade: 0
   },
   {
+    nome: "Curiosidades",
+    slug: "curiosidades",
+    descricao: "Fatos interessantes e descobertas bíblicas",
+    icon: "Lightbulb",
+    quantidade: 0
+  },
+  {
     nome: "Temas Gerais",
     slug: "temas-gerais",
     descricao: "Estudos sobre fé, salvação, profecias e outros temas",
-    icon: "Lightbulb",
+    icon: "Book",
     quantidade: 2
   }
 ];
