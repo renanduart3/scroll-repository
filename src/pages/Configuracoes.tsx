@@ -2,16 +2,21 @@ import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
-import { Moon, Sun, DollarSign } from "lucide-react";
+import { Moon, Sun, DollarSign, Share2, Star, Monitor } from "lucide-react";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
+import { Share } from '@capacitor/share';
 
 const Configuracoes = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const [highContrast, setHighContrast] = useState(false);
 
   useEffect(() => {
     const isDark = document.documentElement.classList.contains("dark");
     setDarkMode(isDark);
+    
+    const isHighContrast = document.documentElement.classList.contains("high-contrast");
+    setHighContrast(isHighContrast);
   }, []);
 
   const toggleDarkMode = () => {
@@ -28,13 +33,48 @@ const Configuracoes = () => {
     }
   };
 
+  const toggleHighContrast = () => {
+    if (highContrast) {
+      document.documentElement.classList.remove("high-contrast");
+      localStorage.setItem("highContrast", "false");
+      setHighContrast(false);
+      toast.success("Alto contraste desativado");
+    } else {
+      document.documentElement.classList.add("high-contrast");
+      localStorage.setItem("highContrast", "true");
+      setHighContrast(true);
+      toast.success("Alto contraste ativado");
+    }
+  };
+
   const handleCopyPix = () => {
-    // Simulated PIX key
     const pixKey = "suporte@palavraviva.com.br";
     navigator.clipboard.writeText(pixKey);
     toast.success("Chave PIX copiada! 🙏", {
       description: "Obrigado pelo seu apoio ao ministério!"
     });
+  };
+
+  const handleShareApp = async () => {
+    try {
+      await Share.share({
+        title: 'Palavra Viva',
+        text: 'Conheça o app Palavra Viva - Estudos bíblicos, pregações e devocionais!',
+        url: 'https://4839cb4c-fa33-4792-9027-343f87e48278.lovableproject.com',
+        dialogTitle: 'Compartilhar Palavra Viva'
+      });
+    } catch (error) {
+      toast.error("Não foi possível compartilhar");
+    }
+  };
+
+  const handleRateApp = () => {
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const storeUrl = isIOS 
+      ? 'https://apps.apple.com/app/id[SEU_APP_ID]'
+      : 'https://play.google.com/store/apps/details?id=app.lovable.4839cb4cfa3347929027343f87e48278';
+    
+    window.open(storeUrl, '_blank');
   };
 
   return (
@@ -78,20 +118,9 @@ const Configuracoes = () => {
           <Card className="p-6">
             <h3 className="text-lg font-serif font-bold mb-4">Preferências de Leitura</h3>
             
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <Label htmlFor="notifications" className="font-medium">
-                    Notificações Diárias
-                  </Label>
-                  <p className="text-sm text-muted-foreground">
-                    Receba lembretes para o devocional
-                  </p>
-                </div>
-                <Switch id="notifications" />
-              </div>
-
-              <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <Monitor className="h-5 w-5 text-accent" />
                 <div>
                   <Label htmlFor="high-contrast" className="font-medium">
                     Alto Contraste
@@ -100,8 +129,12 @@ const Configuracoes = () => {
                     Melhor legibilidade
                   </p>
                 </div>
-                <Switch id="high-contrast" />
               </div>
+              <Switch 
+                id="high-contrast" 
+                checked={highContrast}
+                onCheckedChange={toggleHighContrast}
+              />
             </div>
           </Card>
 
@@ -123,6 +156,31 @@ const Configuracoes = () => {
                   Copiar Chave PIX
                 </Button>
               </div>
+            </div>
+          </Card>
+
+          {/* Community */}
+          <Card className="p-6">
+            <h3 className="text-lg font-serif font-bold mb-4">Comunidade</h3>
+            
+            <div className="space-y-3">
+              <Button 
+                variant="outline" 
+                className="w-full justify-start" 
+                onClick={handleShareApp}
+              >
+                <Share2 className="h-4 w-4 mr-2" />
+                Compartilhar este App
+              </Button>
+
+              <Button 
+                variant="outline" 
+                className="w-full justify-start" 
+                onClick={handleRateApp}
+              >
+                <Star className="h-4 w-4 mr-2" />
+                Avaliar o App na Loja
+              </Button>
             </div>
           </Card>
 
