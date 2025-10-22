@@ -12,7 +12,7 @@ const path = require('path');
 
 // Configurações
 const CONTENT_DIR = path.join(__dirname, '..');
-const OUTPUT_DIR = path.join(__dirname, '..', '..', 'src', 'data', 'generated');
+const OUTPUT_DIR = path.join(__dirname, '..', 'generated');
 
 // Cores para output
 const colors = {

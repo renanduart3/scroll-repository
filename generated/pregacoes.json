@@ -1,0 +1,176 @@
+{
+  "pregacoes": [
+    {
+      "id": "fe-que-move-montanhas",
+      "title": "Fé que Move Montanhas",
+      "description": "Como desenvolver uma fé inabalável em Deus",
+      "category": "pregacoes",
+      "author": "Pastor Carlos Mendes",
+      "date": "2024-01-20",
+      "tags": [
+        "fé",
+        "milagres",
+        "confiança"
+      ],
+      "progress": 0,
+      "content_file": "fe-que-move-montanhas.md",
+      "featured": true,
+      "reading_time": 30,
+      "difficulty": "intermediario",
+      "bible_references": [
+        "Mateus 17:20",
+        "Hebreus 11:1",
+        "Marcos 9:24"
+      ],
+      "related_studies": [],
+      "version": "1.0.0",
+      "last_updated": "2024-01-20T10:00:00Z",
+      "status": "published",
+      "views": 0,
+      "favorites": 0,
+      "sermon_type": "expository",
+      "duration": "45min"
+    }
+  ],
+  "byAuthor": {
+    "Pastor Carlos Mendes": [
+      {
+        "id": "fe-que-move-montanhas",
+        "title": "Fé que Move Montanhas",
+        "description": "Como desenvolver uma fé inabalável em Deus",
+        "category": "pregacoes",
+        "author": "Pastor Carlos Mendes",
+        "date": "2024-01-20",
+        "tags": [
+          "fé",
+          "milagres",
+          "confiança"
+        ],
+        "progress": 0,
+        "content_file": "fe-que-move-montanhas.md",
+        "featured": true,
+        "reading_time": 30,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "Mateus 17:20",
+          "Hebreus 11:1",
+          "Marcos 9:24"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-01-20T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0,
+        "sermon_type": "expository",
+        "duration": "45min"
+      }
+    ]
+  },
+  "byTag": {
+    "fé": [
+      {
+        "id": "fe-que-move-montanhas",
+        "title": "Fé que Move Montanhas",
+        "description": "Como desenvolver uma fé inabalável em Deus",
+        "category": "pregacoes",
+        "author": "Pastor Carlos Mendes",
+        "date": "2024-01-20",
+        "tags": [
+          "fé",
+          "milagres",
+          "confiança"
+        ],
+        "progress": 0,
+        "content_file": "fe-que-move-montanhas.md",
+        "featured": true,
+        "reading_time": 30,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "Mateus 17:20",
+          "Hebreus 11:1",
+          "Marcos 9:24"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-01-20T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0,
+        "sermon_type": "expository",
+        "duration": "45min"
+      }
+    ],
+    "milagres": [
+      {
+        "id": "fe-que-move-montanhas",
+        "title": "Fé que Move Montanhas",
+        "description": "Como desenvolver uma fé inabalável em Deus",
+        "category": "pregacoes",
+        "author": "Pastor Carlos Mendes",
+        "date": "2024-01-20",
+        "tags": [
+          "fé",
+          "milagres",
+          "confiança"
+        ],
+        "progress": 0,
+        "content_file": "fe-que-move-montanhas.md",
+        "featured": true,
+        "reading_time": 30,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "Mateus 17:20",
+          "Hebreus 11:1",
+          "Marcos 9:24"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-01-20T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0,
+        "sermon_type": "expository",
+        "duration": "45min"
+      }
+    ],
+    "confiança": [
+      {
+        "id": "fe-que-move-montanhas",
+        "title": "Fé que Move Montanhas",
+        "description": "Como desenvolver uma fé inabalável em Deus",
+        "category": "pregacoes",
+        "author": "Pastor Carlos Mendes",
+        "date": "2024-01-20",
+        "tags": [
+          "fé",
+          "milagres",
+          "confiança"
+        ],
+        "progress": 0,
+        "content_file": "fe-que-move-montanhas.md",
+        "featured": true,
+        "reading_time": 30,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "Mateus 17:20",
+          "Hebreus 11:1",
+          "Marcos 9:24"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-01-20T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0,
+        "sermon_type": "expository",
+        "duration": "45min"
+      }
+    ]
+  },
+  "stats": {
+    "total": 1,
+    "byAuthor": 1,
+    "byTag": 3
+  }
+}
