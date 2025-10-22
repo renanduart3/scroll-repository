@@ -1,0 +1,44 @@
+{
+  "categories": {
+    "getAll": "/api/categories",
+    "getById": "/api/categories/:id",
+    "getBySlug": "/api/categories/slug/:slug"
+  },
+  "estudos": {
+    "getAll": "/api/estudos",
+    "getById": "/api/estudos/:id",
+    "getByCategory": "/api/estudos/category/:category",
+    "getByAuthor": "/api/estudos/author/:author",
+    "getByTag": "/api/estudos/tag/:tag",
+    "search": "/api/estudos/search"
+  },
+  "pregacoes": {
+    "getAll": "/api/pregacoes",
+    "getById": "/api/pregacoes/:id",
+    "getByAuthor": "/api/pregacoes/author/:author",
+    "getByTag": "/api/pregacoes/tag/:tag",
+    "search": "/api/pregacoes/search"
+  },
+  "devocionais": {
+    "getAll": "/api/devocionais",
+    "getById": "/api/devocionais/:id",
+    "getByDate": "/api/devocionais/date/:date",
+    "getByAuthor": "/api/devocionais/author/:author",
+    "getByTag": "/api/devocionais/tag/:tag",
+    "search": "/api/devocionais/search"
+  },
+  "authors": {
+    "getAll": "/api/authors",
+    "getById": "/api/authors/:id",
+    "getBySpecialty": "/api/authors/specialty/:specialty"
+  },
+  "tags": {
+    "getAll": "/api/tags",
+    "getById": "/api/tags/:id",
+    "getByCategory": "/api/tags/category/:category"
+  },
+  "search": {
+    "global": "/api/search",
+    "byType": "/api/search/:type"
+  }
+}

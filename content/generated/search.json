@@ -1,0 +1,72 @@
+{
+  "estudos": [
+    {
+      "id": "lideranca-servidora",
+      "title": "Liderança Servidora - O Exemplo de Jesus",
+      "description": "Como liderar segundo o modelo de Cristo",
+      "category": "lideranca",
+      "author": "rev-pedro-almeida",
+      "tags": [
+        "liderança",
+        "serviço",
+        "jesus"
+      ],
+      "searchText": "Liderança Servidora - O Exemplo de Jesus Como liderar segundo o modelo de Cristo liderança serviço jesus"
+    },
+    {
+      "id": "joao-3-16",
+      "title": "João 3:16 - O Amor de Deus",
+      "description": "Uma análise profunda sobre o versículo mais conhecido da Bíblia",
+      "category": "temas-gerais",
+      "author": "pastor-joao-silva",
+      "tags": [
+        "amor",
+        "salvação",
+        "joão"
+      ],
+      "searchText": "João 3:16 - O Amor de Deus Uma análise profunda sobre o versículo mais conhecido da Bíblia amor salvação joão"
+    },
+    {
+      "id": "salmo-23",
+      "title": "Salmo 23 - O Senhor é Meu Pastor",
+      "description": "Conforto e provisão divina em todas as circunstâncias",
+      "category": "temas-gerais",
+      "author": "dra-maria-santos",
+      "tags": [
+        "salmos",
+        "conforto",
+        "provisão"
+      ],
+      "searchText": "Salmo 23 - O Senhor é Meu Pastor Conforto e provisão divina em todas as circunstâncias salmos conforto provisão"
+    }
+  ],
+  "pregacoes": [
+    {
+      "id": "fe-que-move-montanhas",
+      "title": "Fé que Move Montanhas",
+      "description": "Como desenvolver uma fé inabalável em Deus",
+      "author": "Pastor Carlos Mendes",
+      "tags": [
+        "fé",
+        "milagres",
+        "confiança"
+      ],
+      "searchText": "Fé que Move Montanhas Como desenvolver uma fé inabalável em Deus fé milagres confiança"
+    }
+  ],
+  "devocionais": [
+    {
+      "id": "devocional-2024-01-21",
+      "title": "Confiança em Meio à Tempestade",
+      "description": "Devocional do dia 21 de Janeiro de 2024",
+      "author": "Equipe Palavra Viva",
+      "tags": [
+        "confiança",
+        "paz",
+        "tempestade"
+      ],
+      "date": "2024-01-21",
+      "searchText": "Confiança em Meio à Tempestade Devocional do dia 21 de Janeiro de 2024 confiança paz tempestade"
+    }
+  ]
+}

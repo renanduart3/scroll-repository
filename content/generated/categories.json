@@ -1,0 +1,135 @@
+{
+  "categories": [
+    {
+      "id": "heresias",
+      "nome": "Heresias",
+      "slug": "heresias",
+      "descricao": "Estudos sobre falsos ensinos, doutrinas distorcidas e avisos bíblicos",
+      "icon": "AlertTriangle",
+      "quantidade": 0,
+      "ordem": 1,
+      "ativo": true,
+      "cor": "#ef4444"
+    },
+    {
+      "id": "seitas",
+      "nome": "Seitas",
+      "slug": "seitas",
+      "descricao": "Informações históricas e bíblicas sobre grupos religiosos desviantes",
+      "icon": "Users",
+      "quantidade": 0,
+      "ordem": 2,
+      "ativo": true,
+      "cor": "#f97316"
+    },
+    {
+      "id": "espiritualidade",
+      "nome": "Espiritualidade",
+      "slug": "espiritualidade",
+      "descricao": "Experiências espirituais, discernimento, dons e batalha espiritual",
+      "icon": "Sparkles",
+      "quantidade": 0,
+      "ordem": 3,
+      "ativo": true,
+      "cor": "#8b5cf6"
+    },
+    {
+      "id": "lideranca",
+      "nome": "Liderança",
+      "slug": "lideranca",
+      "descricao": "Princípios bíblicos de liderança cristã e discipulado",
+      "icon": "Heart",
+      "quantidade": 1,
+      "ordem": 4,
+      "ativo": true,
+      "cor": "#06b6d4"
+    },
+    {
+      "id": "familia",
+      "nome": "Família",
+      "slug": "familia",
+      "descricao": "Relacionamentos, casamento, educação de filhos e princípios familiares",
+      "icon": "Heart",
+      "quantidade": 0,
+      "ordem": 5,
+      "ativo": true,
+      "cor": "#ec4899"
+    },
+    {
+      "id": "pessoas-da-biblia",
+      "nome": "Pessoas da Bíblia",
+      "slug": "pessoas-da-biblia",
+      "descricao": "Biografias e análises de personagens bíblicos",
+      "icon": "UserCircle",
+      "quantidade": 0,
+      "ordem": 6,
+      "ativo": true,
+      "cor": "#10b981"
+    },
+    {
+      "id": "oracoes",
+      "nome": "Orações",
+      "slug": "oracoes",
+      "descricao": "Guias de oração, modelos e reflexão espiritual",
+      "icon": "Landmark",
+      "quantidade": 0,
+      "ordem": 7,
+      "ativo": true,
+      "cor": "#84cc16"
+    },
+    {
+      "id": "ocultismo",
+      "nome": "Ocultismo",
+      "slug": "ocultismo",
+      "descricao": "Advertências bíblicas sobre práticas e símbolos a evitar",
+      "icon": "Eye",
+      "quantidade": 0,
+      "ordem": 8,
+      "ativo": true,
+      "cor": "#6b7280"
+    },
+    {
+      "id": "livros",
+      "nome": "Livros / Ebooks",
+      "slug": "livros",
+      "descricao": "Estudos baseados em livros e material de referência",
+      "icon": "BookOpen",
+      "quantidade": 0,
+      "ordem": 9,
+      "ativo": true,
+      "cor": "#f59e0b"
+    },
+    {
+      "id": "curiosidades",
+      "nome": "Curiosidades",
+      "slug": "curiosidades",
+      "descricao": "Fatos interessantes e descobertas bíblicas",
+      "icon": "Lightbulb",
+      "quantidade": 0,
+      "ordem": 10,
+      "ativo": true,
+      "cor": "#eab308"
+    },
+    {
+      "id": "temas-gerais",
+      "nome": "Temas Gerais",
+      "slug": "temas-gerais",
+      "descricao": "Estudos sobre fé, salvação, profecias e outros temas",
+      "icon": "Book",
+      "quantidade": 2,
+      "ordem": 11,
+      "ativo": true,
+      "cor": "#3b82f6"
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2024-01-22T15:00:00Z",
+    "total_categories": 11
+  },
+  "stats": {
+    "total": 11,
+    "active": 11,
+    "inactive": 0
+  }
+}
