@@ -1,0 +1,71 @@
+{
+  "authors": [
+    {
+      "id": "pastor-joao-silva",
+      "name": "Pastor João Silva",
+      "title": "Pastor",
+      "bio": "Pastor com mais de 20 anos de ministério, especialista em estudos bíblicos",
+      "email": "joao.silva@faithscroll.com",
+      "social": {
+        "twitter": "@pastorjoao",
+        "instagram": "@pastorjoao"
+      },
+      "specialties": ["estudos bíblicos", "teologia sistemática"],
+      "active": true
+    },
+    {
+      "id": "dra-maria-santos",
+      "name": "Dra. Maria Santos",
+      "title": "Doutora em Teologia",
+      "bio": "Teóloga e escritora cristã, autora de vários livros sobre espiritualidade",
+      "email": "maria.santos@faithscroll.com",
+      "social": {
+        "twitter": "@dramaria",
+        "instagram": "@dramaria"
+      },
+      "specialties": ["espiritualidade", "salmos", "oração"],
+      "active": true
+    },
+    {
+      "id": "rev-pedro-almeida",
+      "name": "Rev. Pedro Almeida",
+      "title": "Reverendo",
+      "bio": "Líder cristão e mentor, especialista em desenvolvimento de liderança",
+      "email": "pedro.almeida@faithscroll.com",
+      "social": {
+        "twitter": "@revpedro",
+        "instagram": "@revpedro"
+      },
+      "specialties": ["liderança", "discipulado", "mentoria"],
+      "active": true
+    },
+    {
+      "id": "pastor-carlos-mendes",
+      "name": "Pastor Carlos Mendes",
+      "title": "Pastor",
+      "bio": "Pastor e conferencista, conhecido por suas pregações sobre fé e milagres",
+      "email": "carlos.mendes@faithscroll.com",
+      "social": {
+        "twitter": "@pastorcarlos",
+        "instagram": "@pastorcarlos"
+      },
+      "specialties": ["pregação", "fé", "milagres"],
+      "active": true
+    },
+    {
+      "id": "equipe-palavra-viva",
+      "name": "Equipe Palavra Viva",
+      "title": "Equipe Editorial",
+      "bio": "Equipe responsável pelos devocionais diários e conteúdo editorial",
+      "email": "editorial@faithscroll.com",
+      "social": {},
+      "specialties": ["devocionais", "conteúdo editorial"],
+      "active": true
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2024-01-22T15:00:00Z",
+    "total_authors": 5
+  }
+}

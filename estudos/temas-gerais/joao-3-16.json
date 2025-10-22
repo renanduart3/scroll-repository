@@ -1,0 +1,21 @@
+{
+  "id": "joao-3-16",
+  "title": "João 3:16 - O Amor de Deus",
+  "description": "Uma análise profunda sobre o versículo mais conhecido da Bíblia",
+  "category": "temas-gerais",
+  "author": "pastor-joao-silva",
+  "date": "2024-01-15",
+  "tags": ["amor", "salvação", "joão"],
+  "progress": 0,
+  "content_file": "joao-3-16.md",
+  "featured": true,
+  "reading_time": 15,
+  "difficulty": "iniciante",
+  "bible_references": ["João 3:16", "Romanos 5:8", "1 João 4:9-10"],
+  "related_studies": ["salmo-23"],
+  "version": "1.0.0",
+  "last_updated": "2024-01-15T10:00:00Z",
+  "status": "published",
+  "views": 0,
+  "favorites": 0
+}

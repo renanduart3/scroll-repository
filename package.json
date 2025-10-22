@@ -1,0 +1,36 @@
+{
+  "name": "faith-scroll-content",
+  "version": "1.0.0",
+  "description": "Sistema de conteúdo para o aplicativo Faith Scroll",
+  "main": "index.js",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "validate": "node scripts/validate.js",
+    "deploy": "node scripts/deploy.js",
+    "test": "npm run validate",
+    "dev": "npm run build && npm run validate",
+    "prod": "npm run build && npm run validate && npm run deploy"
+  },
+  "keywords": [
+    "faith",
+    "scroll",
+    "content",
+    "bible",
+    "studies",
+    "devotionals",
+    "sermons"
+  ],
+  "author": "Faith Scroll Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/faith-scroll/content.git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
