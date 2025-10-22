@@ -1,0 +1,21 @@
+{
+  "id": "lideranca-servidora",
+  "title": "Liderança Servidora - O Exemplo de Jesus",
+  "description": "Como liderar segundo o modelo de Cristo",
+  "category": "lideranca",
+  "author": "rev-pedro-almeida",
+  "date": "2024-01-05",
+  "tags": ["liderança", "serviço", "jesus"],
+  "progress": 50,
+  "content_file": "lideranca-servidora.md",
+  "featured": false,
+  "reading_time": 25,
+  "difficulty": "intermediario",
+  "bible_references": ["João 13:1-17", "Marcos 10:45", "Filipenses 2:3-4"],
+  "related_studies": [],
+  "version": "1.0.0",
+  "last_updated": "2024-01-05T10:00:00Z",
+  "status": "published",
+  "views": 0,
+  "favorites": 0
+}

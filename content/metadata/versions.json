@@ -1,0 +1,30 @@
+{
+  "versions": [
+    {
+      "version": "1.0.0",
+      "release_date": "2024-01-22T15:00:00Z",
+      "description": "Versão inicial do sistema de conteúdo",
+      "changes": [
+        "Estrutura inicial de categorias",
+        "Migração de estudos existentes",
+        "Sistema de pregações",
+        "Devocionais diários",
+        "Metadados de autores e tags"
+      ],
+      "content_count": {
+        "estudos": 3,
+        "pregacoes": 1,
+        "devocionais": 1,
+        "categorias": 11,
+        "authors": 5,
+        "tags": 14
+      },
+      "status": "stable"
+    }
+  ],
+  "current_version": "1.0.0",
+  "metadata": {
+    "last_updated": "2024-01-22T15:00:00Z",
+    "schema_version": "1.0.0"
+  }
+}

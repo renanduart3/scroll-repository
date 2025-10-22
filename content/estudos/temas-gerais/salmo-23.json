@@ -1,0 +1,21 @@
+{
+  "id": "salmo-23",
+  "title": "Salmo 23 - O Senhor é Meu Pastor",
+  "description": "Conforto e provisão divina em todas as circunstâncias",
+  "category": "temas-gerais",
+  "author": "dra-maria-santos",
+  "date": "2024-01-10",
+  "tags": ["salmos", "conforto", "provisão"],
+  "progress": 100,
+  "content_file": "salmo-23.md",
+  "featured": true,
+  "reading_time": 20,
+  "difficulty": "iniciante",
+  "bible_references": ["Salmo 23", "João 10:11", "Hebreus 13:20"],
+  "related_studies": ["joao-3-16"],
+  "version": "1.0.0",
+  "last_updated": "2024-01-10T10:00:00Z",
+  "status": "published",
+  "views": 0,
+  "favorites": 0
+}
