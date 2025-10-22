@@ -79,7 +79,7 @@ function getAllFiles(dir, extension) {
   return files;
 }
 
-function buildCategories() {
+function buildCategories(estudosData = null) {
   log('📁 Processando categorias...', 'blue');
   
   const categoriesFile = path.join(CONTENT_DIR, 'categories', 'index.json');
@@ -88,6 +88,16 @@ function buildCategories() {
   if (!categories) {
     log('❌ Erro ao processar categorias', 'red');
     return null;
+  }
+  
+  // Atualizar quantidades se dados de estudos foram fornecidos
+  if (estudosData && estudosData.byCategory) {
+    log('📊 Atualizando quantidades das categorias...', 'yellow');
+    categories.categories.forEach(category => {
+      const quantidade = estudosData.byCategory[category.id] ? estudosData.byCategory[category.id].length : 0;
+      category.quantidade = quantidade;
+      log(`  📈 ${category.nome}: ${quantidade} estudos`, 'cyan');
+    });
   }
   
   // Adicionar estatísticas
@@ -114,14 +124,22 @@ function buildEstudos() {
   const estudosDir = path.join(CONTENT_DIR, 'estudos');
   const estudoFiles = getAllFiles(estudosDir, '.json');
   
+  log(`🔍 Arquivos encontrados: ${estudoFiles.length}`, 'yellow');
+  estudoFiles.forEach(file => log(`  📄 ${file}`, 'cyan'));
+  
   const estudos = [];
   const byCategory = {};
   const byAuthor = {};
   const byTag = {};
   
   for (const file of estudoFiles) {
+    log(`📖 Processando: ${file}`, 'cyan');
     const estudo = readJsonFile(file);
-    if (!estudo) continue;
+    if (!estudo) {
+      log(`❌ Erro ao ler: ${file}`, 'red');
+      continue;
+    }
+    log(`✅ Estudo carregado: ${estudo.title} (categoria: ${estudo.category})`, 'green');
     
     estudos.push(estudo);
     
@@ -368,8 +386,8 @@ function main() {
   ensureDir(OUTPUT_DIR);
   
   // Processar cada tipo de conteúdo
-  const categories = buildCategories();
   const estudos = buildEstudos();
+  const categories = buildCategories(estudos);
   const pregacoes = buildPregacoes();
   const devocionais = buildDevocionais();
   const metadata = buildMetadata();

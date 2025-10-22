@@ -6,7 +6,7 @@
       "slug": "heresias",
       "descricao": "Estudos sobre falsos ensinos, doutrinas distorcidas e avisos bíblicos",
       "icon": "AlertTriangle",
-      "quantidade": 0,
+      "quantidade": 1,
       "ordem": 1,
       "ativo": true,
       "cor": "#ef4444"
