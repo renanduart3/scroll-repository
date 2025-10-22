@@ -30,6 +30,43 @@
       "favorites": 0,
       "sermon_type": "expository",
       "duration": "45min"
+    },
+    {
+      "id": "espinhos-carne-vaidade-soberba",
+      "title": "O Espinho na Carne: O Cuidado de Deus com Nossa Vaidade",
+      "description": "Uma pregação profunda sobre o espinho na carne de Paulo, como Deus nos protege da soberba e quatro coisas essenciais que devemos evitar para não cairmos em vaidade.",
+      "category": "pregacoes",
+      "author": "pastor-carlos-mendes",
+      "date": "2024-10-22",
+      "tags": [
+        "humildade",
+        "graça",
+        "soberba",
+        "dependência",
+        "fé"
+      ],
+      "progress": 0,
+      "content_file": "espinhos-carne-vaidade-soberba.md",
+      "featured": true,
+      "reading_time": 42,
+      "difficulty": "intermediario",
+      "bible_references": [
+        "2 Coríntios 12:7-10",
+        "Provérbios 16:18",
+        "1 Pedro 5:5-6",
+        "1 João 2:15-17",
+        "Filipenses 2:3-4",
+        "Provérbios 15:33",
+        "1 Timóteo 6:3-5",
+        "Gálatas 5:25-26",
+        "2 Coríntios 12:1-6"
+      ],
+      "related_studies": [],
+      "version": "1.0.0",
+      "last_updated": "2024-10-22T16:45:00Z",
+      "status": "published",
+      "views": 0,
+      "favorites": 0
     }
   ],
   "byAuthor": {
@@ -65,6 +102,45 @@
         "sermon_type": "expository",
         "duration": "45min"
       }
+    ],
+    "pastor-carlos-mendes": [
+      {
+        "id": "espinhos-carne-vaidade-soberba",
+        "title": "O Espinho na Carne: O Cuidado de Deus com Nossa Vaidade",
+        "description": "Uma pregação profunda sobre o espinho na carne de Paulo, como Deus nos protege da soberba e quatro coisas essenciais que devemos evitar para não cairmos em vaidade.",
+        "category": "pregacoes",
+        "author": "pastor-carlos-mendes",
+        "date": "2024-10-22",
+        "tags": [
+          "humildade",
+          "graça",
+          "soberba",
+          "dependência",
+          "fé"
+        ],
+        "progress": 0,
+        "content_file": "espinhos-carne-vaidade-soberba.md",
+        "featured": true,
+        "reading_time": 42,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "2 Coríntios 12:7-10",
+          "Provérbios 16:18",
+          "1 Pedro 5:5-6",
+          "1 João 2:15-17",
+          "Filipenses 2:3-4",
+          "Provérbios 15:33",
+          "1 Timóteo 6:3-5",
+          "Gálatas 5:25-26",
+          "2 Coríntios 12:1-6"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-10-22T16:45:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
     ]
   },
   "byTag": {
@@ -99,6 +175,43 @@
         "favorites": 0,
         "sermon_type": "expository",
         "duration": "45min"
+      },
+      {
+        "id": "espinhos-carne-vaidade-soberba",
+        "title": "O Espinho na Carne: O Cuidado de Deus com Nossa Vaidade",
+        "description": "Uma pregação profunda sobre o espinho na carne de Paulo, como Deus nos protege da soberba e quatro coisas essenciais que devemos evitar para não cairmos em vaidade.",
+        "category": "pregacoes",
+        "author": "pastor-carlos-mendes",
+        "date": "2024-10-22",
+        "tags": [
+          "humildade",
+          "graça",
+          "soberba",
+          "dependência",
+          "fé"
+        ],
+        "progress": 0,
+        "content_file": "espinhos-carne-vaidade-soberba.md",
+        "featured": true,
+        "reading_time": 42,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "2 Coríntios 12:7-10",
+          "Provérbios 16:18",
+          "1 Pedro 5:5-6",
+          "1 João 2:15-17",
+          "Filipenses 2:3-4",
+          "Provérbios 15:33",
+          "1 Timóteo 6:3-5",
+          "Gálatas 5:25-26",
+          "2 Coríntios 12:1-6"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-10-22T16:45:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
       }
     ],
     "milagres": [
@@ -166,11 +279,167 @@
         "sermon_type": "expository",
         "duration": "45min"
       }
+    ],
+    "humildade": [
+      {
+        "id": "espinhos-carne-vaidade-soberba",
+        "title": "O Espinho na Carne: O Cuidado de Deus com Nossa Vaidade",
+        "description": "Uma pregação profunda sobre o espinho na carne de Paulo, como Deus nos protege da soberba e quatro coisas essenciais que devemos evitar para não cairmos em vaidade.",
+        "category": "pregacoes",
+        "author": "pastor-carlos-mendes",
+        "date": "2024-10-22",
+        "tags": [
+          "humildade",
+          "graça",
+          "soberba",
+          "dependência",
+          "fé"
+        ],
+        "progress": 0,
+        "content_file": "espinhos-carne-vaidade-soberba.md",
+        "featured": true,
+        "reading_time": 42,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "2 Coríntios 12:7-10",
+          "Provérbios 16:18",
+          "1 Pedro 5:5-6",
+          "1 João 2:15-17",
+          "Filipenses 2:3-4",
+          "Provérbios 15:33",
+          "1 Timóteo 6:3-5",
+          "Gálatas 5:25-26",
+          "2 Coríntios 12:1-6"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-10-22T16:45:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "graça": [
+      {
+        "id": "espinhos-carne-vaidade-soberba",
+        "title": "O Espinho na Carne: O Cuidado de Deus com Nossa Vaidade",
+        "description": "Uma pregação profunda sobre o espinho na carne de Paulo, como Deus nos protege da soberba e quatro coisas essenciais que devemos evitar para não cairmos em vaidade.",
+        "category": "pregacoes",
+        "author": "pastor-carlos-mendes",
+        "date": "2024-10-22",
+        "tags": [
+          "humildade",
+          "graça",
+          "soberba",
+          "dependência",
+          "fé"
+        ],
+        "progress": 0,
+        "content_file": "espinhos-carne-vaidade-soberba.md",
+        "featured": true,
+        "reading_time": 42,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "2 Coríntios 12:7-10",
+          "Provérbios 16:18",
+          "1 Pedro 5:5-6",
+          "1 João 2:15-17",
+          "Filipenses 2:3-4",
+          "Provérbios 15:33",
+          "1 Timóteo 6:3-5",
+          "Gálatas 5:25-26",
+          "2 Coríntios 12:1-6"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-10-22T16:45:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "soberba": [
+      {
+        "id": "espinhos-carne-vaidade-soberba",
+        "title": "O Espinho na Carne: O Cuidado de Deus com Nossa Vaidade",
+        "description": "Uma pregação profunda sobre o espinho na carne de Paulo, como Deus nos protege da soberba e quatro coisas essenciais que devemos evitar para não cairmos em vaidade.",
+        "category": "pregacoes",
+        "author": "pastor-carlos-mendes",
+        "date": "2024-10-22",
+        "tags": [
+          "humildade",
+          "graça",
+          "soberba",
+          "dependência",
+          "fé"
+        ],
+        "progress": 0,
+        "content_file": "espinhos-carne-vaidade-soberba.md",
+        "featured": true,
+        "reading_time": 42,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "2 Coríntios 12:7-10",
+          "Provérbios 16:18",
+          "1 Pedro 5:5-6",
+          "1 João 2:15-17",
+          "Filipenses 2:3-4",
+          "Provérbios 15:33",
+          "1 Timóteo 6:3-5",
+          "Gálatas 5:25-26",
+          "2 Coríntios 12:1-6"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-10-22T16:45:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "dependência": [
+      {
+        "id": "espinhos-carne-vaidade-soberba",
+        "title": "O Espinho na Carne: O Cuidado de Deus com Nossa Vaidade",
+        "description": "Uma pregação profunda sobre o espinho na carne de Paulo, como Deus nos protege da soberba e quatro coisas essenciais que devemos evitar para não cairmos em vaidade.",
+        "category": "pregacoes",
+        "author": "pastor-carlos-mendes",
+        "date": "2024-10-22",
+        "tags": [
+          "humildade",
+          "graça",
+          "soberba",
+          "dependência",
+          "fé"
+        ],
+        "progress": 0,
+        "content_file": "espinhos-carne-vaidade-soberba.md",
+        "featured": true,
+        "reading_time": 42,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "2 Coríntios 12:7-10",
+          "Provérbios 16:18",
+          "1 Pedro 5:5-6",
+          "1 João 2:15-17",
+          "Filipenses 2:3-4",
+          "Provérbios 15:33",
+          "1 Timóteo 6:3-5",
+          "Gálatas 5:25-26",
+          "2 Coríntios 12:1-6"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-10-22T16:45:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
     ]
   },
   "stats": {
-    "total": 1,
-    "byAuthor": 1,
-    "byTag": 3
+    "total": 2,
+    "byAuthor": 2,
+    "byTag": 7
   }
 }
