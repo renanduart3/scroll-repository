@@ -296,8 +296,21 @@ function buildMetadata() {
 function buildIndex() {
   log('📋 Gerando índice principal...', 'blue');
   
+  // Tentar ler versão anterior para incrementar
+  let version = '1.0.0';
+  try {
+    const existingIndex = readJsonFile(path.join(OUTPUT_DIR, 'index.json'));
+    if (existingIndex && existingIndex.version) {
+      const [major, minor, patch] = existingIndex.version.split('.').map(Number);
+      version = `${major}.${minor}.${patch + 1}`;
+      log(`📈 Incrementando versão: ${existingIndex.version} → ${version}`, 'yellow');
+    }
+  } catch (error) {
+    log('📋 Primeira build, usando versão inicial 1.0.0', 'blue');
+  }
+  
   const index = {
-    version: '1.0.0',
+    version: version,
     buildDate: new Date().toISOString(),
     content: {
       categories: 0,
