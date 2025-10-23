@@ -139,6 +139,29 @@ function buildEstudos() {
       log(`❌ Erro ao ler: ${file}`, 'red');
       continue;
     }
+    
+    // Corrigir content_file baseado no arquivo real
+    const fileName = path.basename(file, '.json');
+    let markdownFile;
+    
+    if (fileName.startsWith('json_')) {
+      // Se começa com json_, substitui por md_
+      markdownFile = fileName.replace('json_', 'md_') + '.md';
+    } else {
+      // Se não, usa o nome original
+      markdownFile = fileName + '.md';
+    }
+    
+    estudo.content_file = markdownFile;
+    
+    // Verificar se o arquivo Markdown existe
+    const markdownPath = path.join(path.dirname(file), markdownFile);
+    if (!fs.existsSync(markdownPath)) {
+      log(`⚠️ Arquivo Markdown não encontrado: ${markdownFile}`, 'yellow');
+    } else {
+      log(`✅ Arquivo Markdown encontrado: ${markdownFile}`, 'green');
+    }
+    
     log(`✅ Estudo carregado: ${estudo.title} (categoria: ${estudo.category})`, 'green');
     
     estudos.push(estudo);
@@ -197,6 +220,53 @@ function buildPregacoes() {
     const pregação = readJsonFile(file);
     if (!pregação) continue;
     
+    // Corrigir content_file baseado no arquivo real
+    const fileName = path.basename(file, '.json');
+    let markdownFile;
+    
+    if (fileName.startsWith('json_')) {
+      // Se começa com json_, substitui por md_
+      markdownFile = fileName.replace('json_', 'md_') + '.md';
+    } else {
+      // Se não, usa o nome original
+      markdownFile = fileName + '.md';
+    }
+    
+    // Verificar se o arquivo Markdown existe e usar o nome real
+    const markdownPath = path.join(pregacoesDir, markdownFile);
+    if (fs.existsSync(markdownPath)) {
+      pregação.content_file = markdownFile;
+    } else {
+      // Se não encontrar, tentar outras variações
+      const possibleFiles = [
+        `md_${pregação.id}.md`,
+        `${pregação.id}.md`,
+        pregação.content_file
+      ];
+      
+      let found = false;
+      for (const possibleFile of possibleFiles) {
+        const possiblePath = path.join(pregacoesDir, possibleFile);
+        if (fs.existsSync(possiblePath)) {
+          pregação.content_file = possibleFile;
+          markdownFile = possibleFile;
+          found = true;
+          break;
+        }
+      }
+      
+      if (!found) {
+        log(`⚠️ Nenhum arquivo Markdown encontrado para ${pregação.id}`, 'yellow');
+      }
+    }
+    
+    // Log do resultado
+    if (fs.existsSync(path.join(pregacoesDir, pregação.content_file))) {
+      log(`✅ Arquivo Markdown encontrado: ${pregação.content_file}`, 'green');
+    } else {
+      log(`⚠️ Arquivo Markdown não encontrado: ${pregação.content_file}`, 'yellow');
+    }
+    
     pregacoes.push(pregação);
     
     // Agrupar por autor
@@ -245,6 +315,28 @@ function buildDevocionais() {
   for (const file of devocionalFiles) {
     const devocional = readJsonFile(file);
     if (!devocional) continue;
+    
+    // Corrigir content_file baseado no arquivo real
+    const fileName = path.basename(file, '.json');
+    let markdownFile;
+    
+    if (fileName.startsWith('json_')) {
+      // Se começa com json_, substitui por md_
+      markdownFile = fileName.replace('json_', 'md_') + '.md';
+    } else {
+      // Se não, usa o nome original
+      markdownFile = fileName + '.md';
+    }
+    
+    devocional.content_file = markdownFile;
+    
+    // Verificar se o arquivo Markdown existe
+    const markdownPath = path.join(devocionaisDir, markdownFile);
+    if (!fs.existsSync(markdownPath)) {
+      log(`⚠️ Arquivo Markdown não encontrado: ${markdownFile}`, 'yellow');
+    } else {
+      log(`✅ Arquivo Markdown encontrado: ${markdownFile}`, 'green');
+    }
     
     devocionais.push(devocional);
     
