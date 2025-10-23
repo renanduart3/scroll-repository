@@ -2,15 +2,40 @@ import { Link, useParams } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Clock, User, Calendar, ChevronRight, ArrowLeft } from "lucide-react";
-import { mockEstudos, estudosCategorias } from "@/data/mockContent";
+import { useContent } from "@/hooks/useContent";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 
 const EstudosCategoria = () => {
   const { categoria } = useParams();
+  const { content, loading, error } = useContent();
   
-  const categoriaInfo = estudosCategorias.find(c => c.slug === categoria);
-  const estudosCategoria = mockEstudos.filter(e => e.category === categoria);
+  if (loading) {
+    return (
+      <div className="container mx-auto px-4 py-8 md:ml-64 pb-24 md:pb-8">
+        <div className="flex items-center justify-center h-64">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+            <p className="text-muted-foreground">Carregando estudos...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error || !content) {
+    return (
+      <div className="container mx-auto px-4 py-8 md:ml-64 pb-24 md:pb-8">
+        <div className="text-center">
+          <p className="text-muted-foreground mb-4">Erro ao carregar conteúdo</p>
+          <p className="text-sm text-muted-foreground">{error}</p>
+        </div>
+      </div>
+    );
+  }
+
+  const categoriaInfo = content.categorias.find(c => c.slug === categoria);
+  const estudosCategoria = content.estudos.filter(e => e.category === categoria);
 
   if (!categoriaInfo) {
     return (
@@ -65,7 +90,7 @@ const EstudosCategoria = () => {
                     </div>
                     <div className="flex items-center gap-1">
                       <Clock className="h-4 w-4" />
-                      <span>~15 min</span>
+                      <span>~{estudo.reading_time} min</span>
                     </div>
                   </div>
 

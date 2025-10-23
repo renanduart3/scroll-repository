@@ -1,0 +1,28 @@
+{
+  "name": "Faith Scroll Content",
+  "version": "1.0.0",
+  "description": "Sistema de conteúdo para o aplicativo Faith Scroll",
+  "buildDate": "2025-10-22T19:34:18.954Z",
+  "content": {
+    "categories": 11,
+    "estudos": 3,
+    "pregacoes": 1,
+    "devocionais": 1,
+    "authors": 5,
+    "tags": 14
+  },
+  "features": [
+    "Sistema de categorias",
+    "Estudos bíblicos",
+    "Pregações",
+    "Devocionais diários",
+    "Sistema de busca",
+    "Metadados completos",
+    "API RESTful"
+  ],
+  "endpoints": {
+    "base": "/api",
+    "version": "v1",
+    "documentation": "/api/docs"
+  }
+}

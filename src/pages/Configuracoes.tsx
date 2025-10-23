@@ -6,6 +6,7 @@ import { Moon, Sun, DollarSign, Share2, Star, Monitor } from "lucide-react";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { Share } from '@capacitor/share';
+import { ContentUpdateButton } from "@/components/ContentUpdateButton";
 
 const Configuracoes = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -136,6 +137,12 @@ const Configuracoes = () => {
                 onCheckedChange={toggleHighContrast}
               />
             </div>
+          </Card>
+
+          {/* Content Update */}
+          <Card className="p-6">
+            <h3 className="text-lg font-serif font-bold mb-4">Conteúdo</h3>
+            <ContentUpdateButton />
           </Card>
 
           {/* Support */}

@@ -1,9 +1,35 @@
 import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
-import { mockDevocionais } from "@/data/mockContent";
+import { useContent } from "@/hooks/useContent";
 import { Calendar, ChevronRight } from "lucide-react";
 
 const Devocional = () => {
+  const { content, loading, error } = useContent();
+
+  if (loading) {
+    return (
+      <div className="container mx-auto px-4 py-8 md:ml-64 pb-24 md:pb-8">
+        <div className="flex items-center justify-center h-64">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+            <p className="text-muted-foreground">Carregando devocionais...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error || !content) {
+    return (
+      <div className="container mx-auto px-4 py-8 md:ml-64 pb-24 md:pb-8">
+        <div className="text-center">
+          <p className="text-muted-foreground mb-4">Erro ao carregar conteúdo</p>
+          <p className="text-sm text-muted-foreground">{error}</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="container mx-auto px-4 py-8 md:ml-64 pb-24 md:pb-8">
       <div className="mb-8">
@@ -12,7 +38,7 @@ const Devocional = () => {
       </div>
 
       <div className="space-y-4">
-        {mockDevocionais.map((devocional) => (
+        {content.devocionais.map((devocional) => (
           <Link key={devocional.id} to={`/devocional/${devocional.id}`}>
             <Card className="group p-6 hover:shadow-medium transition-smooth cursor-pointer border-border hover:border-accent">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -45,6 +71,12 @@ const Devocional = () => {
           </Link>
         ))}
       </div>
+
+      {content.devocionais.length === 0 && (
+        <Card className="p-8 text-center">
+          <p className="text-muted-foreground">Nenhum devocional disponível ainda.</p>
+        </Card>
+      )}
     </div>
   );
 };

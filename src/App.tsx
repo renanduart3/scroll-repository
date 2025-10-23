@@ -10,6 +10,8 @@ import EstudosCategoria from "./pages/EstudosCategoria";
 import EstudoDetalhes from "./pages/EstudoDetalhes";
 import Pregacoes from "./pages/Pregacoes";
 import PregacaoDetalhes from "./pages/PregacaoDetalhes";
+import Atualidades from "./pages/Atualidades";
+import AtualidadeDetalhes from "./pages/AtualidadeDetalhes";
 import Devocional from "./pages/Devocional";
 import DevocionalDetalhes from "./pages/DevocionalDetalhes";
 import Favoritos from "./pages/Favoritos";
@@ -33,6 +35,8 @@ const App = () => {
             <Route path="/estudos/:id" element={<EstudoDetalhes />} />
             <Route path="/pregacoes" element={<Pregacoes />} />
               <Route path="/pregacoes/:id" element={<PregacaoDetalhes />} />
+              <Route path="/atualidades" element={<Atualidades />} />
+              <Route path="/atualidades/:id" element={<AtualidadeDetalhes />} />
               <Route path="/devocional" element={<Devocional />} />
               <Route path="/devocional/:id" element={<DevocionalDetalhes />} />
               <Route path="/favoritos" element={<Favoritos />} />

@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Book, Home, Heart, Settings, BookOpen, Mic2, Calendar } from "lucide-react";
+import { Book, Home, Heart, Settings, BookOpen, Mic2, Calendar, Newspaper } from "lucide-react";
+import Logo from "./Logo";
 import { cn } from "@/lib/utils";
 
 interface LayoutProps {
@@ -14,6 +15,7 @@ const Layout = ({ children }: LayoutProps) => {
     { name: "Início", href: "/", icon: Home },
     { name: "Estudos", href: "/estudos", icon: Book },
     { name: "Pregações", href: "/pregacoes", icon: Mic2 },
+    { name: "Atualidades", href: "/atualidades", icon: Newspaper },
     { name: "Devocional", href: "/devocional", icon: Calendar },
     { name: "Favoritos", href: "/favoritos", icon: Heart },
     { name: "Configurações", href: "/configuracoes", icon: Settings },
@@ -27,11 +29,8 @@ const Layout = ({ children }: LayoutProps) => {
       <header className="sticky top-0 z-50 border-b border-border bg-card shadow-soft">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-2">
-              <BookOpen className="h-6 w-6 text-accent" />
-              <span className="text-xl font-serif font-bold gradient-primary bg-clip-text text-transparent">
-                Palavra Viva
-              </span>
+            <Link to="/" className="hover:opacity-80 transition-opacity">
+              <Logo size="md" />
             </Link>
             <Link 
               to="/configuracoes" 

@@ -1,15 +1,19 @@
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Heart, Share2, ChevronLeft } from "lucide-react";
-import { mockEstudos } from "@/data/mockContent";
+import { useContent } from "@/hooks/useContent";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
 import ReactMarkdown from "react-markdown";
+import { ContentUpdater } from "@/services/ContentUpdater";
 
 const EstudoDetalhes = () => {
   const { id } = useParams();
-  const estudo = mockEstudos.find((e) => e.id === id);
+  const { content, loading, error } = useContent();
   const [isFavorite, setIsFavorite] = useState(false);
+  const [estudoContent, setEstudoContent] = useState<string>("");
+
+  const estudo = content?.estudos.find((e) => e.id === id);
 
   useEffect(() => {
     if (estudo) {
@@ -17,6 +21,70 @@ const EstudoDetalhes = () => {
       setIsFavorite(favorites.some((f: any) => f.id === estudo.id));
     }
   }, [estudo]);
+
+  useEffect(() => {
+    if (estudo) {
+      const loadContent = async () => {
+        // Tentar carregar do cache primeiro (IndexedDB ou localStorage)
+        const updater = new ContentUpdater();
+        const cachedContent = await updater.getMarkdownContent('estudos', estudo.id);
+        
+        if (cachedContent) {
+          setEstudoContent(cachedContent);
+        } else {
+          // Fallback: tentar carregar do GitHub diretamente
+          if (estudo.content_file) {
+            fetch(`https://raw.githubusercontent.com/renanduart3/scroll-repository/master/estudos/${estudo.category}/${estudo.content_file}`)
+              .then(response => {
+                if (!response.ok) {
+                  throw new Error(`Arquivo não encontrado: ${estudo.content_file}`);
+                }
+                return response.text();
+              })
+              .then(content => {
+                // Verificar se é HTML (página de erro)
+                if (content.includes('<!doctype html>')) {
+                  throw new Error('Conteúdo não encontrado');
+                }
+                setEstudoContent(content);
+              })
+              .catch(err => {
+                console.error('Erro ao carregar conteúdo:', err);
+                setEstudoContent('Conteúdo não disponível. Clique em "Atualizar" para baixar o conteúdo mais recente.');
+              });
+          } else {
+            setEstudoContent('Conteúdo não disponível. Clique em "Atualizar" para baixar o conteúdo mais recente.');
+          }
+        }
+      };
+
+      loadContent();
+    }
+  }, [estudo]);
+
+  if (loading) {
+    return (
+      <div className="container mx-auto px-4 py-8 md:ml-64">
+        <div className="flex items-center justify-center h-64">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+            <p className="text-muted-foreground">Carregando estudo...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error || !content) {
+    return (
+      <div className="container mx-auto px-4 py-8 md:ml-64">
+        <div className="text-center">
+          <p className="text-muted-foreground mb-4">Erro ao carregar conteúdo</p>
+          <p className="text-sm text-muted-foreground">{error}</p>
+        </div>
+      </div>
+    );
+  }
 
   if (!estudo) {
     return (
@@ -62,40 +130,48 @@ const EstudoDetalhes = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 md:ml-64 pb-24 md:pb-8">
-      <div className="max-w-4xl mx-auto">
-        {/* Header */}
-        <div className="mb-8">
-          <Link to="/estudos">
-            <Button variant="ghost" size="sm" className="mb-4">
-              <ChevronLeft className="h-4 w-4 mr-2" />
-              Voltar para Estudos
-            </Button>
-          </Link>
+    <div className="container mx-auto px-4 py-8 md:ml-64">
+      <div className="mb-6">
+        <Link to="/estudos">
+          <Button variant="ghost" size="sm" className="mb-4">
+            <ChevronLeft className="h-4 w-4 mr-2" />
+            Voltar para Estudos
+          </Button>
+        </Link>
+      </div>
 
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">
-            {estudo.title}
-          </h1>
+      <div className="max-w-4xl mx-auto">
+        <div className="mb-8">
+          <h1 className="text-4xl font-serif font-bold mb-4">{estudo.title}</h1>
+          <p className="text-xl text-muted-foreground mb-6">{estudo.description}</p>
           
-          <div className="flex flex-wrap items-center gap-4 text-muted-foreground mb-6">
-            <span>{estudo.author}</span>
+          <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-6">
+            <span>Por {estudo.author}</span>
             <span>•</span>
             <span>{new Date(estudo.date).toLocaleDateString('pt-BR')}</span>
             <span>•</span>
-            <span>~15 min de leitura</span>
+            <span>{estudo.reading_time} min de leitura</span>
+            <span>•</span>
+            <span className="capitalize">{estudo.difficulty}</span>
           </div>
 
-          {/* Action Buttons */}
+          <div className="flex flex-wrap gap-2 mb-6">
+            {estudo.tags.map((tag) => (
+              <span key={tag} className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm">
+                {tag}
+              </span>
+            ))}
+          </div>
+
           <div className="flex gap-2">
             <Button
               variant={isFavorite ? "default" : "outline"}
               size="sm"
               onClick={toggleFavorite}
             >
-              <Heart className={`h-4 w-4 mr-2 ${isFavorite ? "fill-current" : ""}`} />
+              <Heart className="h-4 w-4 mr-2" />
               {isFavorite ? "Favoritado" : "Favoritar"}
             </Button>
-            
             <Button variant="outline" size="sm" onClick={handleShare}>
               <Share2 className="h-4 w-4 mr-2" />
               Compartilhar
@@ -103,48 +179,28 @@ const EstudoDetalhes = () => {
           </div>
         </div>
 
-        {/* Content */}
-        <div className="prose prose-lg dark:prose-invert max-w-none">
-          <div className="bg-card rounded-xl p-8 shadow-soft border border-border">
-            <ReactMarkdown
-              components={{
-                h1: ({ children }) => (
-                  <h1 className="text-3xl font-serif font-bold mt-8 mb-4 text-foreground">{children}</h1>
-                ),
-                h2: ({ children }) => (
-                  <h2 className="text-2xl font-serif font-bold mt-6 mb-3 text-foreground">{children}</h2>
-                ),
-                h3: ({ children }) => (
-                  <h3 className="text-xl font-serif font-bold mt-4 mb-2 text-foreground">{children}</h3>
-                ),
-                p: ({ children }) => (
-                  <p className="mb-4 leading-relaxed text-foreground">{children}</p>
-                ),
-                strong: ({ children }) => (
-                  <strong className="font-bold text-accent">{children}</strong>
-                ),
-                em: ({ children }) => (
-                  <em className="italic text-primary">{children}</em>
-                ),
-                ul: ({ children }) => (
-                  <ul className="list-disc list-inside mb-4 space-y-2 text-foreground">{children}</ul>
-                ),
-                ol: ({ children }) => (
-                  <ol className="list-decimal list-inside mb-4 space-y-2 text-foreground">{children}</ol>
-                ),
-                blockquote: ({ children }) => (
-                  <blockquote className="border-l-4 border-accent pl-4 italic my-4 text-muted-foreground">
-                    {children}
-                  </blockquote>
-                ),
-                hr: () => (
-                  <hr className="my-8 border-border" />
-                ),
-              }}
-            >
-              {estudo.content}
-            </ReactMarkdown>
+        {estudo.bible_references && estudo.bible_references.length > 0 && (
+          <div className="mb-8 p-6 bg-muted rounded-lg">
+            <h3 className="text-lg font-semibold mb-3">Referências Bíblicas</h3>
+            <div className="flex flex-wrap gap-2">
+              {estudo.bible_references.map((ref, index) => (
+                <span key={index} className="px-3 py-1 bg-background text-foreground rounded border text-sm">
+                  {ref}
+                </span>
+              ))}
+            </div>
           </div>
+        )}
+
+        <div className="prose prose-lg max-w-none">
+          {estudoContent ? (
+            <ReactMarkdown>{estudoContent}</ReactMarkdown>
+          ) : (
+            <div className="text-center py-8">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+              <p className="text-muted-foreground">Carregando conteúdo...</p>
+            </div>
+          )}
         </div>
       </div>
     </div>

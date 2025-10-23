@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { ChevronRight, Book, AlertTriangle, Users, Sparkles, Heart, UserCircle, Landmark, Eye, BookOpen, Lightbulb } from "lucide-react";
-import { estudosCategorias } from "@/data/mockContent";
+import { useContent } from "@/hooks/useContent";
 
 const iconMap: Record<string, any> = {
   "AlertTriangle": AlertTriangle,
@@ -17,6 +17,32 @@ const iconMap: Record<string, any> = {
 };
 
 const Estudos = () => {
+  const { content, loading, error } = useContent();
+
+  if (loading) {
+    return (
+      <div className="container mx-auto px-4 py-8 md:ml-64 pb-24 md:pb-8">
+        <div className="flex items-center justify-center h-64">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+            <p className="text-muted-foreground">Carregando estudos...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error || !content) {
+    return (
+      <div className="container mx-auto px-4 py-8 md:ml-64 pb-24 md:pb-8">
+        <div className="text-center">
+          <p className="text-muted-foreground mb-4">Erro ao carregar conteúdo</p>
+          <p className="text-sm text-muted-foreground">{error}</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="container mx-auto px-4 py-8 md:ml-64 pb-24 md:pb-8">
       <div className="mb-8">
@@ -25,7 +51,7 @@ const Estudos = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {estudosCategorias.map((categoria) => {
+        {content.categorias.map((categoria) => {
           const Icon = iconMap[categoria.icon] || Book;
           return (
             <Link key={categoria.slug} to={`/estudos/categoria/${categoria.slug}`}>

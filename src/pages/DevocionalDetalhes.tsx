@@ -1,15 +1,19 @@
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Heart, Share2, ChevronLeft } from "lucide-react";
-import { mockDevocionais } from "@/data/mockContent";
+import { useContent } from "@/hooks/useContent";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
 import ReactMarkdown from "react-markdown";
+import { ContentUpdater } from "@/services/ContentUpdater";
 
 const DevocionalDetalhes = () => {
   const { id } = useParams();
-  const devocional = mockDevocionais.find((d) => d.id === id);
+  const { content, loading, error } = useContent();
   const [isFavorite, setIsFavorite] = useState(false);
+  const [devocionalContent, setDevocionalContent] = useState<string>("");
+
+  const devocional = content?.devocionais.find((d) => d.id === id);
 
   useEffect(() => {
     if (devocional) {
@@ -18,6 +22,70 @@ const DevocionalDetalhes = () => {
     }
   }, [devocional]);
 
+  useEffect(() => {
+    if (devocional) {
+      const loadContent = async () => {
+        // Tentar carregar do cache primeiro (IndexedDB ou localStorage)
+        const updater = new ContentUpdater();
+        const cachedContent = await updater.getMarkdownContent('devocionais', devocional.id);
+        
+        if (cachedContent) {
+          setDevocionalContent(cachedContent);
+        } else {
+          // Fallback: tentar carregar do GitHub diretamente
+          if (devocional.content_file) {
+            fetch(`https://raw.githubusercontent.com/renanduart3/scroll-repository/master/devocionais/${devocional.content_file}`)
+              .then(response => {
+                if (!response.ok) {
+                  throw new Error(`Arquivo não encontrado: ${devocional.content_file}`);
+                }
+                return response.text();
+              })
+              .then(content => {
+                // Verificar se é HTML (página de erro)
+                if (content.includes('<!doctype html>')) {
+                  throw new Error('Conteúdo não encontrado');
+                }
+                setDevocionalContent(content);
+              })
+              .catch(err => {
+                console.error('Erro ao carregar conteúdo:', err);
+                setDevocionalContent('Conteúdo não disponível. Clique em "Atualizar" para baixar o conteúdo mais recente.');
+              });
+          } else {
+            setDevocionalContent('Conteúdo não disponível. Clique em "Atualizar" para baixar o conteúdo mais recente.');
+          }
+        }
+      };
+
+      loadContent();
+    }
+  }, [devocional]);
+
+  if (loading) {
+    return (
+      <div className="container mx-auto px-4 py-8 md:ml-64">
+        <div className="flex items-center justify-center h-64">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+            <p className="text-muted-foreground">Carregando devocional...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error || !content) {
+    return (
+      <div className="container mx-auto px-4 py-8 md:ml-64">
+        <div className="text-center">
+          <p className="text-muted-foreground mb-4">Erro ao carregar conteúdo</p>
+          <p className="text-sm text-muted-foreground">{error}</p>
+        </div>
+      </div>
+    );
+  }
+
   if (!devocional) {
     return (
       <div className="container mx-auto px-4 py-8 md:ml-64">
@@ -25,7 +93,7 @@ const DevocionalDetalhes = () => {
         <Link to="/devocional">
           <Button variant="outline" className="mt-4">
             <ChevronLeft className="h-4 w-4 mr-2" />
-            Voltar para Devocional
+            Voltar para Devocionais
           </Button>
         </Link>
       </div>
@@ -68,7 +136,7 @@ const DevocionalDetalhes = () => {
           <Link to="/devocional">
             <Button variant="ghost" size="sm" className="mb-4">
               <ChevronLeft className="h-4 w-4 mr-2" />
-              Voltar para Devocional
+              Voltar para Devocionais
             </Button>
           </Link>
 
@@ -77,14 +145,11 @@ const DevocionalDetalhes = () => {
           </h1>
           
           <div className="flex flex-wrap items-center gap-4 text-muted-foreground mb-6">
-            <span>{new Date(devocional.date).toLocaleDateString('pt-BR', {
-              weekday: 'long',
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric'
-            })}</span>
+            <span>{devocional.author}</span>
             <span>•</span>
-            <span>~10 min de leitura</span>
+            <span>{new Date(devocional.date).toLocaleDateString('pt-BR')}</span>
+            <span>•</span>
+            <span>~{devocional.reading_time} min de leitura</span>
           </div>
 
           <div className="flex gap-2">
@@ -106,44 +171,51 @@ const DevocionalDetalhes = () => {
 
         <div className="prose prose-lg dark:prose-invert max-w-none">
           <div className="bg-card rounded-xl p-8 shadow-soft border border-border">
-            <ReactMarkdown
-              components={{
-                h1: ({ children }) => (
-                  <h1 className="text-3xl font-serif font-bold mt-8 mb-4 text-foreground">{children}</h1>
-                ),
-                h2: ({ children }) => (
-                  <h2 className="text-2xl font-serif font-bold mt-6 mb-3 text-foreground">{children}</h2>
-                ),
-                h3: ({ children }) => (
-                  <h3 className="text-xl font-serif font-bold mt-4 mb-2 text-foreground">{children}</h3>
-                ),
-                p: ({ children }) => (
-                  <p className="mb-4 leading-relaxed text-foreground">{children}</p>
-                ),
-                strong: ({ children }) => (
-                  <strong className="font-bold text-accent">{children}</strong>
-                ),
-                em: ({ children }) => (
-                  <em className="italic text-primary">{children}</em>
-                ),
-                ul: ({ children }) => (
-                  <ul className="list-disc list-inside mb-4 space-y-2 text-foreground">{children}</ul>
-                ),
-                ol: ({ children }) => (
-                  <ol className="list-decimal list-inside mb-4 space-y-2 text-foreground">{children}</ol>
-                ),
-                blockquote: ({ children }) => (
-                  <blockquote className="border-l-4 border-accent pl-4 italic my-4 text-muted-foreground">
-                    {children}
-                  </blockquote>
-                ),
-                hr: () => (
-                  <hr className="my-8 border-border" />
-                ),
-              }}
-            >
-              {devocional.content}
-            </ReactMarkdown>
+            {devocionalContent ? (
+              <ReactMarkdown
+                components={{
+                  h1: ({ children }) => (
+                    <h1 className="text-3xl font-serif font-bold mt-8 mb-4 text-foreground">{children}</h1>
+                  ),
+                  h2: ({ children }) => (
+                    <h2 className="text-2xl font-serif font-bold mt-6 mb-3 text-foreground">{children}</h2>
+                  ),
+                  h3: ({ children }) => (
+                    <h3 className="text-xl font-serif font-bold mt-4 mb-2 text-foreground">{children}</h3>
+                  ),
+                  p: ({ children }) => (
+                    <p className="mb-4 leading-relaxed text-foreground">{children}</p>
+                  ),
+                  strong: ({ children }) => (
+                    <strong className="font-bold text-accent">{children}</strong>
+                  ),
+                  em: ({ children }) => (
+                    <em className="italic text-primary">{children}</em>
+                  ),
+                  ul: ({ children }) => (
+                    <ul className="list-disc list-inside mb-4 space-y-2 text-foreground">{children}</ul>
+                  ),
+                  ol: ({ children }) => (
+                    <ol className="list-decimal list-inside mb-4 space-y-2 text-foreground">{children}</ol>
+                  ),
+                  blockquote: ({ children }) => (
+                    <blockquote className="border-l-4 border-accent pl-4 italic my-4 text-muted-foreground">
+                      {children}
+                    </blockquote>
+                  ),
+                  hr: () => (
+                    <hr className="my-8 border-border" />
+                  ),
+                }}
+              >
+                {devocionalContent}
+              </ReactMarkdown>
+            ) : (
+              <div className="text-center py-8">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+                <p className="text-muted-foreground">Carregando conteúdo...</p>
+              </div>
+            )}
           </div>
         </div>
       </div>

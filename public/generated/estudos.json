@@ -1,0 +1,880 @@
+{
+  "estudos": [
+    {
+      "id": "rituais-pagaos-olhos-cristo",
+      "title": "Rituais Pagãos e o Olhar de Cristo: Discernimento Cristão",
+      "description": "Um estudo aprofundado sobre as práticas pagãs, sua incompatibilidade com a fé cristã e como devemos abordá-las com compaixão e sabedoria à luz do evangelho.",
+      "category": "heresias",
+      "author": "rev-pedro-almeida",
+      "date": "2024-10-22",
+      "tags": [
+        "idolatria",
+        "discernimento",
+        "heresias",
+        "fé",
+        "salvação"
+      ],
+      "progress": 0,
+      "content_file": "rituais-pagaos.md",
+      "featured": true,
+      "reading_time": 35,
+      "difficulty": "intermediario",
+      "bible_references": [
+        "1 Coríntios 10:23-33",
+        "Deuteronômio 18:10-12",
+        "1 João 5:21",
+        "Atos 17:22-31",
+        "Colossenses 2:8",
+        "2 Coríntios 6:14-18",
+        "Levítico 19:26-31"
+      ],
+      "related_studies": [],
+      "version": "1.0.0",
+      "last_updated": "2024-10-22T15:30:00Z",
+      "status": "published",
+      "views": 0,
+      "favorites": 0
+    },
+    {
+      "id": "lideranca-servidora",
+      "title": "Liderança Servidora - O Exemplo de Jesus",
+      "description": "Como liderar segundo o modelo de Cristo",
+      "category": "lideranca",
+      "author": "rev-pedro-almeida",
+      "date": "2024-01-05",
+      "tags": [
+        "liderança",
+        "serviço",
+        "jesus"
+      ],
+      "progress": 50,
+      "content_file": "lideranca-servidora.md",
+      "featured": false,
+      "reading_time": 25,
+      "difficulty": "intermediario",
+      "bible_references": [
+        "João 13:1-17",
+        "Marcos 10:45",
+        "Filipenses 2:3-4"
+      ],
+      "related_studies": [],
+      "version": "1.0.0",
+      "last_updated": "2024-01-05T10:00:00Z",
+      "status": "published",
+      "views": 0,
+      "favorites": 0
+    },
+    {
+      "id": "joao-3-16",
+      "title": "João 3:16 - O Amor de Deus",
+      "description": "Uma análise profunda sobre o versículo mais conhecido da Bíblia",
+      "category": "temas-gerais",
+      "author": "pastor-joao-silva",
+      "date": "2024-01-15",
+      "tags": [
+        "amor",
+        "salvação",
+        "joão"
+      ],
+      "progress": 0,
+      "content_file": "joao-3-16.md",
+      "featured": true,
+      "reading_time": 15,
+      "difficulty": "iniciante",
+      "bible_references": [
+        "João 3:16",
+        "Romanos 5:8",
+        "1 João 4:9-10"
+      ],
+      "related_studies": [
+        "salmo-23"
+      ],
+      "version": "1.0.0",
+      "last_updated": "2024-01-15T10:00:00Z",
+      "status": "published",
+      "views": 0,
+      "favorites": 0
+    },
+    {
+      "id": "salmo-23",
+      "title": "Salmo 23 - O Senhor é Meu Pastor",
+      "description": "Conforto e provisão divina em todas as circunstâncias",
+      "category": "temas-gerais",
+      "author": "dra-maria-santos",
+      "date": "2024-01-10",
+      "tags": [
+        "salmos",
+        "conforto",
+        "provisão"
+      ],
+      "progress": 100,
+      "content_file": "salmo-23.md",
+      "featured": true,
+      "reading_time": 20,
+      "difficulty": "iniciante",
+      "bible_references": [
+        "Salmo 23",
+        "João 10:11",
+        "Hebreus 13:20"
+      ],
+      "related_studies": [
+        "joao-3-16"
+      ],
+      "version": "1.0.0",
+      "last_updated": "2024-01-10T10:00:00Z",
+      "status": "published",
+      "views": 0,
+      "favorites": 0
+    }
+  ],
+  "byCategory": {
+    "heresias": [
+      {
+        "id": "rituais-pagaos-olhos-cristo",
+        "title": "Rituais Pagãos e o Olhar de Cristo: Discernimento Cristão",
+        "description": "Um estudo aprofundado sobre as práticas pagãs, sua incompatibilidade com a fé cristã e como devemos abordá-las com compaixão e sabedoria à luz do evangelho.",
+        "category": "heresias",
+        "author": "rev-pedro-almeida",
+        "date": "2024-10-22",
+        "tags": [
+          "idolatria",
+          "discernimento",
+          "heresias",
+          "fé",
+          "salvação"
+        ],
+        "progress": 0,
+        "content_file": "rituais-pagaos.md",
+        "featured": true,
+        "reading_time": 35,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "1 Coríntios 10:23-33",
+          "Deuteronômio 18:10-12",
+          "1 João 5:21",
+          "Atos 17:22-31",
+          "Colossenses 2:8",
+          "2 Coríntios 6:14-18",
+          "Levítico 19:26-31"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-10-22T15:30:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "lideranca": [
+      {
+        "id": "lideranca-servidora",
+        "title": "Liderança Servidora - O Exemplo de Jesus",
+        "description": "Como liderar segundo o modelo de Cristo",
+        "category": "lideranca",
+        "author": "rev-pedro-almeida",
+        "date": "2024-01-05",
+        "tags": [
+          "liderança",
+          "serviço",
+          "jesus"
+        ],
+        "progress": 50,
+        "content_file": "lideranca-servidora.md",
+        "featured": false,
+        "reading_time": 25,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "João 13:1-17",
+          "Marcos 10:45",
+          "Filipenses 2:3-4"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-01-05T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "temas-gerais": [
+      {
+        "id": "joao-3-16",
+        "title": "João 3:16 - O Amor de Deus",
+        "description": "Uma análise profunda sobre o versículo mais conhecido da Bíblia",
+        "category": "temas-gerais",
+        "author": "pastor-joao-silva",
+        "date": "2024-01-15",
+        "tags": [
+          "amor",
+          "salvação",
+          "joão"
+        ],
+        "progress": 0,
+        "content_file": "joao-3-16.md",
+        "featured": true,
+        "reading_time": 15,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "João 3:16",
+          "Romanos 5:8",
+          "1 João 4:9-10"
+        ],
+        "related_studies": [
+          "salmo-23"
+        ],
+        "version": "1.0.0",
+        "last_updated": "2024-01-15T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      },
+      {
+        "id": "salmo-23",
+        "title": "Salmo 23 - O Senhor é Meu Pastor",
+        "description": "Conforto e provisão divina em todas as circunstâncias",
+        "category": "temas-gerais",
+        "author": "dra-maria-santos",
+        "date": "2024-01-10",
+        "tags": [
+          "salmos",
+          "conforto",
+          "provisão"
+        ],
+        "progress": 100,
+        "content_file": "salmo-23.md",
+        "featured": true,
+        "reading_time": 20,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "Salmo 23",
+          "João 10:11",
+          "Hebreus 13:20"
+        ],
+        "related_studies": [
+          "joao-3-16"
+        ],
+        "version": "1.0.0",
+        "last_updated": "2024-01-10T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ]
+  },
+  "byAuthor": {
+    "rev-pedro-almeida": [
+      {
+        "id": "rituais-pagaos-olhos-cristo",
+        "title": "Rituais Pagãos e o Olhar de Cristo: Discernimento Cristão",
+        "description": "Um estudo aprofundado sobre as práticas pagãs, sua incompatibilidade com a fé cristã e como devemos abordá-las com compaixão e sabedoria à luz do evangelho.",
+        "category": "heresias",
+        "author": "rev-pedro-almeida",
+        "date": "2024-10-22",
+        "tags": [
+          "idolatria",
+          "discernimento",
+          "heresias",
+          "fé",
+          "salvação"
+        ],
+        "progress": 0,
+        "content_file": "rituais-pagaos.md",
+        "featured": true,
+        "reading_time": 35,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "1 Coríntios 10:23-33",
+          "Deuteronômio 18:10-12",
+          "1 João 5:21",
+          "Atos 17:22-31",
+          "Colossenses 2:8",
+          "2 Coríntios 6:14-18",
+          "Levítico 19:26-31"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-10-22T15:30:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      },
+      {
+        "id": "lideranca-servidora",
+        "title": "Liderança Servidora - O Exemplo de Jesus",
+        "description": "Como liderar segundo o modelo de Cristo",
+        "category": "lideranca",
+        "author": "rev-pedro-almeida",
+        "date": "2024-01-05",
+        "tags": [
+          "liderança",
+          "serviço",
+          "jesus"
+        ],
+        "progress": 50,
+        "content_file": "lideranca-servidora.md",
+        "featured": false,
+        "reading_time": 25,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "João 13:1-17",
+          "Marcos 10:45",
+          "Filipenses 2:3-4"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-01-05T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "pastor-joao-silva": [
+      {
+        "id": "joao-3-16",
+        "title": "João 3:16 - O Amor de Deus",
+        "description": "Uma análise profunda sobre o versículo mais conhecido da Bíblia",
+        "category": "temas-gerais",
+        "author": "pastor-joao-silva",
+        "date": "2024-01-15",
+        "tags": [
+          "amor",
+          "salvação",
+          "joão"
+        ],
+        "progress": 0,
+        "content_file": "joao-3-16.md",
+        "featured": true,
+        "reading_time": 15,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "João 3:16",
+          "Romanos 5:8",
+          "1 João 4:9-10"
+        ],
+        "related_studies": [
+          "salmo-23"
+        ],
+        "version": "1.0.0",
+        "last_updated": "2024-01-15T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "dra-maria-santos": [
+      {
+        "id": "salmo-23",
+        "title": "Salmo 23 - O Senhor é Meu Pastor",
+        "description": "Conforto e provisão divina em todas as circunstâncias",
+        "category": "temas-gerais",
+        "author": "dra-maria-santos",
+        "date": "2024-01-10",
+        "tags": [
+          "salmos",
+          "conforto",
+          "provisão"
+        ],
+        "progress": 100,
+        "content_file": "salmo-23.md",
+        "featured": true,
+        "reading_time": 20,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "Salmo 23",
+          "João 10:11",
+          "Hebreus 13:20"
+        ],
+        "related_studies": [
+          "joao-3-16"
+        ],
+        "version": "1.0.0",
+        "last_updated": "2024-01-10T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ]
+  },
+  "byTag": {
+    "idolatria": [
+      {
+        "id": "rituais-pagaos-olhos-cristo",
+        "title": "Rituais Pagãos e o Olhar de Cristo: Discernimento Cristão",
+        "description": "Um estudo aprofundado sobre as práticas pagãs, sua incompatibilidade com a fé cristã e como devemos abordá-las com compaixão e sabedoria à luz do evangelho.",
+        "category": "heresias",
+        "author": "rev-pedro-almeida",
+        "date": "2024-10-22",
+        "tags": [
+          "idolatria",
+          "discernimento",
+          "heresias",
+          "fé",
+          "salvação"
+        ],
+        "progress": 0,
+        "content_file": "rituais-pagaos.md",
+        "featured": true,
+        "reading_time": 35,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "1 Coríntios 10:23-33",
+          "Deuteronômio 18:10-12",
+          "1 João 5:21",
+          "Atos 17:22-31",
+          "Colossenses 2:8",
+          "2 Coríntios 6:14-18",
+          "Levítico 19:26-31"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-10-22T15:30:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "discernimento": [
+      {
+        "id": "rituais-pagaos-olhos-cristo",
+        "title": "Rituais Pagãos e o Olhar de Cristo: Discernimento Cristão",
+        "description": "Um estudo aprofundado sobre as práticas pagãs, sua incompatibilidade com a fé cristã e como devemos abordá-las com compaixão e sabedoria à luz do evangelho.",
+        "category": "heresias",
+        "author": "rev-pedro-almeida",
+        "date": "2024-10-22",
+        "tags": [
+          "idolatria",
+          "discernimento",
+          "heresias",
+          "fé",
+          "salvação"
+        ],
+        "progress": 0,
+        "content_file": "rituais-pagaos.md",
+        "featured": true,
+        "reading_time": 35,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "1 Coríntios 10:23-33",
+          "Deuteronômio 18:10-12",
+          "1 João 5:21",
+          "Atos 17:22-31",
+          "Colossenses 2:8",
+          "2 Coríntios 6:14-18",
+          "Levítico 19:26-31"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-10-22T15:30:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "heresias": [
+      {
+        "id": "rituais-pagaos-olhos-cristo",
+        "title": "Rituais Pagãos e o Olhar de Cristo: Discernimento Cristão",
+        "description": "Um estudo aprofundado sobre as práticas pagãs, sua incompatibilidade com a fé cristã e como devemos abordá-las com compaixão e sabedoria à luz do evangelho.",
+        "category": "heresias",
+        "author": "rev-pedro-almeida",
+        "date": "2024-10-22",
+        "tags": [
+          "idolatria",
+          "discernimento",
+          "heresias",
+          "fé",
+          "salvação"
+        ],
+        "progress": 0,
+        "content_file": "rituais-pagaos.md",
+        "featured": true,
+        "reading_time": 35,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "1 Coríntios 10:23-33",
+          "Deuteronômio 18:10-12",
+          "1 João 5:21",
+          "Atos 17:22-31",
+          "Colossenses 2:8",
+          "2 Coríntios 6:14-18",
+          "Levítico 19:26-31"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-10-22T15:30:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "fé": [
+      {
+        "id": "rituais-pagaos-olhos-cristo",
+        "title": "Rituais Pagãos e o Olhar de Cristo: Discernimento Cristão",
+        "description": "Um estudo aprofundado sobre as práticas pagãs, sua incompatibilidade com a fé cristã e como devemos abordá-las com compaixão e sabedoria à luz do evangelho.",
+        "category": "heresias",
+        "author": "rev-pedro-almeida",
+        "date": "2024-10-22",
+        "tags": [
+          "idolatria",
+          "discernimento",
+          "heresias",
+          "fé",
+          "salvação"
+        ],
+        "progress": 0,
+        "content_file": "rituais-pagaos.md",
+        "featured": true,
+        "reading_time": 35,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "1 Coríntios 10:23-33",
+          "Deuteronômio 18:10-12",
+          "1 João 5:21",
+          "Atos 17:22-31",
+          "Colossenses 2:8",
+          "2 Coríntios 6:14-18",
+          "Levítico 19:26-31"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-10-22T15:30:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "salvação": [
+      {
+        "id": "rituais-pagaos-olhos-cristo",
+        "title": "Rituais Pagãos e o Olhar de Cristo: Discernimento Cristão",
+        "description": "Um estudo aprofundado sobre as práticas pagãs, sua incompatibilidade com a fé cristã e como devemos abordá-las com compaixão e sabedoria à luz do evangelho.",
+        "category": "heresias",
+        "author": "rev-pedro-almeida",
+        "date": "2024-10-22",
+        "tags": [
+          "idolatria",
+          "discernimento",
+          "heresias",
+          "fé",
+          "salvação"
+        ],
+        "progress": 0,
+        "content_file": "rituais-pagaos.md",
+        "featured": true,
+        "reading_time": 35,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "1 Coríntios 10:23-33",
+          "Deuteronômio 18:10-12",
+          "1 João 5:21",
+          "Atos 17:22-31",
+          "Colossenses 2:8",
+          "2 Coríntios 6:14-18",
+          "Levítico 19:26-31"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-10-22T15:30:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      },
+      {
+        "id": "joao-3-16",
+        "title": "João 3:16 - O Amor de Deus",
+        "description": "Uma análise profunda sobre o versículo mais conhecido da Bíblia",
+        "category": "temas-gerais",
+        "author": "pastor-joao-silva",
+        "date": "2024-01-15",
+        "tags": [
+          "amor",
+          "salvação",
+          "joão"
+        ],
+        "progress": 0,
+        "content_file": "joao-3-16.md",
+        "featured": true,
+        "reading_time": 15,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "João 3:16",
+          "Romanos 5:8",
+          "1 João 4:9-10"
+        ],
+        "related_studies": [
+          "salmo-23"
+        ],
+        "version": "1.0.0",
+        "last_updated": "2024-01-15T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "liderança": [
+      {
+        "id": "lideranca-servidora",
+        "title": "Liderança Servidora - O Exemplo de Jesus",
+        "description": "Como liderar segundo o modelo de Cristo",
+        "category": "lideranca",
+        "author": "rev-pedro-almeida",
+        "date": "2024-01-05",
+        "tags": [
+          "liderança",
+          "serviço",
+          "jesus"
+        ],
+        "progress": 50,
+        "content_file": "lideranca-servidora.md",
+        "featured": false,
+        "reading_time": 25,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "João 13:1-17",
+          "Marcos 10:45",
+          "Filipenses 2:3-4"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-01-05T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "serviço": [
+      {
+        "id": "lideranca-servidora",
+        "title": "Liderança Servidora - O Exemplo de Jesus",
+        "description": "Como liderar segundo o modelo de Cristo",
+        "category": "lideranca",
+        "author": "rev-pedro-almeida",
+        "date": "2024-01-05",
+        "tags": [
+          "liderança",
+          "serviço",
+          "jesus"
+        ],
+        "progress": 50,
+        "content_file": "lideranca-servidora.md",
+        "featured": false,
+        "reading_time": 25,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "João 13:1-17",
+          "Marcos 10:45",
+          "Filipenses 2:3-4"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-01-05T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "jesus": [
+      {
+        "id": "lideranca-servidora",
+        "title": "Liderança Servidora - O Exemplo de Jesus",
+        "description": "Como liderar segundo o modelo de Cristo",
+        "category": "lideranca",
+        "author": "rev-pedro-almeida",
+        "date": "2024-01-05",
+        "tags": [
+          "liderança",
+          "serviço",
+          "jesus"
+        ],
+        "progress": 50,
+        "content_file": "lideranca-servidora.md",
+        "featured": false,
+        "reading_time": 25,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "João 13:1-17",
+          "Marcos 10:45",
+          "Filipenses 2:3-4"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-01-05T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "amor": [
+      {
+        "id": "joao-3-16",
+        "title": "João 3:16 - O Amor de Deus",
+        "description": "Uma análise profunda sobre o versículo mais conhecido da Bíblia",
+        "category": "temas-gerais",
+        "author": "pastor-joao-silva",
+        "date": "2024-01-15",
+        "tags": [
+          "amor",
+          "salvação",
+          "joão"
+        ],
+        "progress": 0,
+        "content_file": "joao-3-16.md",
+        "featured": true,
+        "reading_time": 15,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "João 3:16",
+          "Romanos 5:8",
+          "1 João 4:9-10"
+        ],
+        "related_studies": [
+          "salmo-23"
+        ],
+        "version": "1.0.0",
+        "last_updated": "2024-01-15T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "joão": [
+      {
+        "id": "joao-3-16",
+        "title": "João 3:16 - O Amor de Deus",
+        "description": "Uma análise profunda sobre o versículo mais conhecido da Bíblia",
+        "category": "temas-gerais",
+        "author": "pastor-joao-silva",
+        "date": "2024-01-15",
+        "tags": [
+          "amor",
+          "salvação",
+          "joão"
+        ],
+        "progress": 0,
+        "content_file": "joao-3-16.md",
+        "featured": true,
+        "reading_time": 15,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "João 3:16",
+          "Romanos 5:8",
+          "1 João 4:9-10"
+        ],
+        "related_studies": [
+          "salmo-23"
+        ],
+        "version": "1.0.0",
+        "last_updated": "2024-01-15T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "salmos": [
+      {
+        "id": "salmo-23",
+        "title": "Salmo 23 - O Senhor é Meu Pastor",
+        "description": "Conforto e provisão divina em todas as circunstâncias",
+        "category": "temas-gerais",
+        "author": "dra-maria-santos",
+        "date": "2024-01-10",
+        "tags": [
+          "salmos",
+          "conforto",
+          "provisão"
+        ],
+        "progress": 100,
+        "content_file": "salmo-23.md",
+        "featured": true,
+        "reading_time": 20,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "Salmo 23",
+          "João 10:11",
+          "Hebreus 13:20"
+        ],
+        "related_studies": [
+          "joao-3-16"
+        ],
+        "version": "1.0.0",
+        "last_updated": "2024-01-10T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "conforto": [
+      {
+        "id": "salmo-23",
+        "title": "Salmo 23 - O Senhor é Meu Pastor",
+        "description": "Conforto e provisão divina em todas as circunstâncias",
+        "category": "temas-gerais",
+        "author": "dra-maria-santos",
+        "date": "2024-01-10",
+        "tags": [
+          "salmos",
+          "conforto",
+          "provisão"
+        ],
+        "progress": 100,
+        "content_file": "salmo-23.md",
+        "featured": true,
+        "reading_time": 20,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "Salmo 23",
+          "João 10:11",
+          "Hebreus 13:20"
+        ],
+        "related_studies": [
+          "joao-3-16"
+        ],
+        "version": "1.0.0",
+        "last_updated": "2024-01-10T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "provisão": [
+      {
+        "id": "salmo-23",
+        "title": "Salmo 23 - O Senhor é Meu Pastor",
+        "description": "Conforto e provisão divina em todas as circunstâncias",
+        "category": "temas-gerais",
+        "author": "dra-maria-santos",
+        "date": "2024-01-10",
+        "tags": [
+          "salmos",
+          "conforto",
+          "provisão"
+        ],
+        "progress": 100,
+        "content_file": "salmo-23.md",
+        "featured": true,
+        "reading_time": 20,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "Salmo 23",
+          "João 10:11",
+          "Hebreus 13:20"
+        ],
+        "related_studies": [
+          "joao-3-16"
+        ],
+        "version": "1.0.0",
+        "last_updated": "2024-01-10T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ]
+  },
+  "stats": {
+    "total": 4,
+    "byCategory": 3,
+    "byAuthor": 3,
+    "byTag": 13
+  }
+}
