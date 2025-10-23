@@ -65,6 +65,43 @@
       "favorites": 0
     },
     {
+      "id": "melquisedeque-rei-de-justicia",
+      "title": "Melquisedeque: O Rei de Justiça e Seu Mistério Eterno",
+      "description": "Um estudo profundo sobre a figura enigmática de Melquisedeque, seu significado simbólico, identidade histórica e seu papel como tipo de Cristo na história da redenção.",
+      "category": "pessoas-da-biblia",
+      "author": "rev-pedro-almeida",
+      "date": "2025-01-22",
+      "tags": [
+        "melquisedeque",
+        "cristo",
+        "sacerdócio",
+        "sacrifício",
+        "justiça",
+        "mistério",
+        "tipo-de-cristo"
+      ],
+      "progress": 0,
+      "content_file": "melquisedeque_json.md",
+      "featured": true,
+      "reading_time": 35,
+      "difficulty": "avancado",
+      "bible_references": [
+        "Gênesis 14:18-20",
+        "Salmos 110:4",
+        "Hebreus 5:6",
+        "Hebreus 6:20",
+        "Hebreus 7:1-28",
+        "Romanos 12:1",
+        "1 Coríntios 9:24-27"
+      ],
+      "related_studies": [],
+      "version": "1.0.0",
+      "last_updated": "2025-01-22T10:00:00Z",
+      "status": "published",
+      "views": 0,
+      "favorites": 0
+    },
+    {
       "id": "joao-3-16",
       "title": "João 3:16 - O Amor de Deus",
       "description": "Uma análise profunda sobre o versículo mais conhecido da Bíblia",
@@ -191,6 +228,45 @@
         "related_studies": [],
         "version": "1.0.0",
         "last_updated": "2024-01-05T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "pessoas-da-biblia": [
+      {
+        "id": "melquisedeque-rei-de-justicia",
+        "title": "Melquisedeque: O Rei de Justiça e Seu Mistério Eterno",
+        "description": "Um estudo profundo sobre a figura enigmática de Melquisedeque, seu significado simbólico, identidade histórica e seu papel como tipo de Cristo na história da redenção.",
+        "category": "pessoas-da-biblia",
+        "author": "rev-pedro-almeida",
+        "date": "2025-01-22",
+        "tags": [
+          "melquisedeque",
+          "cristo",
+          "sacerdócio",
+          "sacrifício",
+          "justiça",
+          "mistério",
+          "tipo-de-cristo"
+        ],
+        "progress": 0,
+        "content_file": "melquisedeque_json.md",
+        "featured": true,
+        "reading_time": 35,
+        "difficulty": "avancado",
+        "bible_references": [
+          "Gênesis 14:18-20",
+          "Salmos 110:4",
+          "Hebreus 5:6",
+          "Hebreus 6:20",
+          "Hebreus 7:1-28",
+          "Romanos 12:1",
+          "1 Coríntios 9:24-27"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-01-22T10:00:00Z",
         "status": "published",
         "views": 0,
         "favorites": 0
@@ -323,6 +399,43 @@
         "related_studies": [],
         "version": "1.0.0",
         "last_updated": "2024-01-05T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      },
+      {
+        "id": "melquisedeque-rei-de-justicia",
+        "title": "Melquisedeque: O Rei de Justiça e Seu Mistério Eterno",
+        "description": "Um estudo profundo sobre a figura enigmática de Melquisedeque, seu significado simbólico, identidade histórica e seu papel como tipo de Cristo na história da redenção.",
+        "category": "pessoas-da-biblia",
+        "author": "rev-pedro-almeida",
+        "date": "2025-01-22",
+        "tags": [
+          "melquisedeque",
+          "cristo",
+          "sacerdócio",
+          "sacrifício",
+          "justiça",
+          "mistério",
+          "tipo-de-cristo"
+        ],
+        "progress": 0,
+        "content_file": "melquisedeque_json.md",
+        "featured": true,
+        "reading_time": 35,
+        "difficulty": "avancado",
+        "bible_references": [
+          "Gênesis 14:18-20",
+          "Salmos 110:4",
+          "Hebreus 5:6",
+          "Hebreus 6:20",
+          "Hebreus 7:1-28",
+          "Romanos 12:1",
+          "1 Coríntios 9:24-27"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-01-22T10:00:00Z",
         "status": "published",
         "views": 0,
         "favorites": 0
@@ -705,6 +818,279 @@
         "favorites": 0
       }
     ],
+    "melquisedeque": [
+      {
+        "id": "melquisedeque-rei-de-justicia",
+        "title": "Melquisedeque: O Rei de Justiça e Seu Mistério Eterno",
+        "description": "Um estudo profundo sobre a figura enigmática de Melquisedeque, seu significado simbólico, identidade histórica e seu papel como tipo de Cristo na história da redenção.",
+        "category": "pessoas-da-biblia",
+        "author": "rev-pedro-almeida",
+        "date": "2025-01-22",
+        "tags": [
+          "melquisedeque",
+          "cristo",
+          "sacerdócio",
+          "sacrifício",
+          "justiça",
+          "mistério",
+          "tipo-de-cristo"
+        ],
+        "progress": 0,
+        "content_file": "melquisedeque_json.md",
+        "featured": true,
+        "reading_time": 35,
+        "difficulty": "avancado",
+        "bible_references": [
+          "Gênesis 14:18-20",
+          "Salmos 110:4",
+          "Hebreus 5:6",
+          "Hebreus 6:20",
+          "Hebreus 7:1-28",
+          "Romanos 12:1",
+          "1 Coríntios 9:24-27"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-01-22T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "cristo": [
+      {
+        "id": "melquisedeque-rei-de-justicia",
+        "title": "Melquisedeque: O Rei de Justiça e Seu Mistério Eterno",
+        "description": "Um estudo profundo sobre a figura enigmática de Melquisedeque, seu significado simbólico, identidade histórica e seu papel como tipo de Cristo na história da redenção.",
+        "category": "pessoas-da-biblia",
+        "author": "rev-pedro-almeida",
+        "date": "2025-01-22",
+        "tags": [
+          "melquisedeque",
+          "cristo",
+          "sacerdócio",
+          "sacrifício",
+          "justiça",
+          "mistério",
+          "tipo-de-cristo"
+        ],
+        "progress": 0,
+        "content_file": "melquisedeque_json.md",
+        "featured": true,
+        "reading_time": 35,
+        "difficulty": "avancado",
+        "bible_references": [
+          "Gênesis 14:18-20",
+          "Salmos 110:4",
+          "Hebreus 5:6",
+          "Hebreus 6:20",
+          "Hebreus 7:1-28",
+          "Romanos 12:1",
+          "1 Coríntios 9:24-27"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-01-22T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "sacerdócio": [
+      {
+        "id": "melquisedeque-rei-de-justicia",
+        "title": "Melquisedeque: O Rei de Justiça e Seu Mistério Eterno",
+        "description": "Um estudo profundo sobre a figura enigmática de Melquisedeque, seu significado simbólico, identidade histórica e seu papel como tipo de Cristo na história da redenção.",
+        "category": "pessoas-da-biblia",
+        "author": "rev-pedro-almeida",
+        "date": "2025-01-22",
+        "tags": [
+          "melquisedeque",
+          "cristo",
+          "sacerdócio",
+          "sacrifício",
+          "justiça",
+          "mistério",
+          "tipo-de-cristo"
+        ],
+        "progress": 0,
+        "content_file": "melquisedeque_json.md",
+        "featured": true,
+        "reading_time": 35,
+        "difficulty": "avancado",
+        "bible_references": [
+          "Gênesis 14:18-20",
+          "Salmos 110:4",
+          "Hebreus 5:6",
+          "Hebreus 6:20",
+          "Hebreus 7:1-28",
+          "Romanos 12:1",
+          "1 Coríntios 9:24-27"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-01-22T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "sacrifício": [
+      {
+        "id": "melquisedeque-rei-de-justicia",
+        "title": "Melquisedeque: O Rei de Justiça e Seu Mistério Eterno",
+        "description": "Um estudo profundo sobre a figura enigmática de Melquisedeque, seu significado simbólico, identidade histórica e seu papel como tipo de Cristo na história da redenção.",
+        "category": "pessoas-da-biblia",
+        "author": "rev-pedro-almeida",
+        "date": "2025-01-22",
+        "tags": [
+          "melquisedeque",
+          "cristo",
+          "sacerdócio",
+          "sacrifício",
+          "justiça",
+          "mistério",
+          "tipo-de-cristo"
+        ],
+        "progress": 0,
+        "content_file": "melquisedeque_json.md",
+        "featured": true,
+        "reading_time": 35,
+        "difficulty": "avancado",
+        "bible_references": [
+          "Gênesis 14:18-20",
+          "Salmos 110:4",
+          "Hebreus 5:6",
+          "Hebreus 6:20",
+          "Hebreus 7:1-28",
+          "Romanos 12:1",
+          "1 Coríntios 9:24-27"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-01-22T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "justiça": [
+      {
+        "id": "melquisedeque-rei-de-justicia",
+        "title": "Melquisedeque: O Rei de Justiça e Seu Mistério Eterno",
+        "description": "Um estudo profundo sobre a figura enigmática de Melquisedeque, seu significado simbólico, identidade histórica e seu papel como tipo de Cristo na história da redenção.",
+        "category": "pessoas-da-biblia",
+        "author": "rev-pedro-almeida",
+        "date": "2025-01-22",
+        "tags": [
+          "melquisedeque",
+          "cristo",
+          "sacerdócio",
+          "sacrifício",
+          "justiça",
+          "mistério",
+          "tipo-de-cristo"
+        ],
+        "progress": 0,
+        "content_file": "melquisedeque_json.md",
+        "featured": true,
+        "reading_time": 35,
+        "difficulty": "avancado",
+        "bible_references": [
+          "Gênesis 14:18-20",
+          "Salmos 110:4",
+          "Hebreus 5:6",
+          "Hebreus 6:20",
+          "Hebreus 7:1-28",
+          "Romanos 12:1",
+          "1 Coríntios 9:24-27"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-01-22T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "mistério": [
+      {
+        "id": "melquisedeque-rei-de-justicia",
+        "title": "Melquisedeque: O Rei de Justiça e Seu Mistério Eterno",
+        "description": "Um estudo profundo sobre a figura enigmática de Melquisedeque, seu significado simbólico, identidade histórica e seu papel como tipo de Cristo na história da redenção.",
+        "category": "pessoas-da-biblia",
+        "author": "rev-pedro-almeida",
+        "date": "2025-01-22",
+        "tags": [
+          "melquisedeque",
+          "cristo",
+          "sacerdócio",
+          "sacrifício",
+          "justiça",
+          "mistério",
+          "tipo-de-cristo"
+        ],
+        "progress": 0,
+        "content_file": "melquisedeque_json.md",
+        "featured": true,
+        "reading_time": 35,
+        "difficulty": "avancado",
+        "bible_references": [
+          "Gênesis 14:18-20",
+          "Salmos 110:4",
+          "Hebreus 5:6",
+          "Hebreus 6:20",
+          "Hebreus 7:1-28",
+          "Romanos 12:1",
+          "1 Coríntios 9:24-27"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-01-22T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "tipo-de-cristo": [
+      {
+        "id": "melquisedeque-rei-de-justicia",
+        "title": "Melquisedeque: O Rei de Justiça e Seu Mistério Eterno",
+        "description": "Um estudo profundo sobre a figura enigmática de Melquisedeque, seu significado simbólico, identidade histórica e seu papel como tipo de Cristo na história da redenção.",
+        "category": "pessoas-da-biblia",
+        "author": "rev-pedro-almeida",
+        "date": "2025-01-22",
+        "tags": [
+          "melquisedeque",
+          "cristo",
+          "sacerdócio",
+          "sacrifício",
+          "justiça",
+          "mistério",
+          "tipo-de-cristo"
+        ],
+        "progress": 0,
+        "content_file": "melquisedeque_json.md",
+        "featured": true,
+        "reading_time": 35,
+        "difficulty": "avancado",
+        "bible_references": [
+          "Gênesis 14:18-20",
+          "Salmos 110:4",
+          "Hebreus 5:6",
+          "Hebreus 6:20",
+          "Hebreus 7:1-28",
+          "Romanos 12:1",
+          "1 Coríntios 9:24-27"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-01-22T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
     "amor": [
       {
         "id": "joao-3-16",
@@ -872,9 +1258,9 @@
     ]
   },
   "stats": {
-    "total": 4,
-    "byCategory": 3,
+    "total": 5,
+    "byCategory": 4,
     "byAuthor": 3,
-    "byTag": 13
+    "byTag": 20
   }
 }
