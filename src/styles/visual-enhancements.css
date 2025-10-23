@@ -1,0 +1,233 @@
+/* Elementos visuais criativos e melhorias de estilo */
+
+/* Gradientes sutis para backgrounds */
+.gradient-hero {
+  background: linear-gradient(135deg, 
+    hsl(var(--primary) / 0.1) 0%, 
+    hsl(var(--accent) / 0.05) 50%, 
+    hsl(var(--primary) / 0.1) 100%);
+}
+
+.gradient-card {
+  background: linear-gradient(135deg, 
+    hsl(var(--card)) 0%, 
+    hsl(var(--card) / 0.8) 100%);
+}
+
+/* Skeleton loading para modo escuro */
+@keyframes skeleton-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, 
+    hsl(var(--muted)) 25%, 
+    hsl(var(--muted) / 0.5) 50%, 
+    hsl(var(--muted)) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Elementos de background decorativos */
+.decorative-pattern {
+  position: relative;
+  overflow: hidden;
+}
+
+.decorative-pattern::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at 30% 20%, 
+    hsl(var(--primary) / 0.03) 0%, 
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+.decorative-pattern::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at 70% 80%, 
+    hsl(var(--accent) / 0.02) 0%, 
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+/* Cards com efeitos sutis */
+.card-enhanced {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.card-enhanced::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    hsl(var(--primary) / 0.02) 0%, 
+    transparent 50%, 
+    hsl(var(--accent) / 0.02) 100%);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.card-enhanced:hover::before {
+  opacity: 1;
+}
+
+/* Melhorias para modo escuro */
+.dark .decorative-pattern::before {
+  background: radial-gradient(
+    circle at 30% 20%, 
+    hsl(var(--primary) / 0.05) 0%, 
+    transparent 50%
+  );
+}
+
+.dark .decorative-pattern::after {
+  background: radial-gradient(
+    circle at 70% 80%, 
+    hsl(var(--accent) / 0.03) 0%, 
+    transparent 50%
+  );
+}
+
+/* Skeleton específico para cards */
+.skeleton-card {
+  background: hsl(var(--muted) / 0.3);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.skeleton-line {
+  height: 1rem;
+  background: hsl(var(--muted) / 0.4);
+  border-radius: 0.25rem;
+  margin-bottom: 0.75rem;
+  animation: skeleton-pulse 2s ease-in-out infinite;
+}
+
+.skeleton-line.short {
+  width: 60%;
+}
+
+.skeleton-line.medium {
+  width: 80%;
+}
+
+.skeleton-line.long {
+  width: 100%;
+}
+
+/* Efeitos de hover melhorados */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px hsl(var(--foreground) / 0.1);
+}
+
+/* Bordas sutis com gradiente */
+.border-gradient {
+  border: 1px solid;
+  border-image: linear-gradient(135deg, 
+    hsl(var(--primary) / 0.2), 
+    hsl(var(--accent) / 0.2), 
+    hsl(var(--primary) / 0.2)) 1;
+}
+
+/* Texto com gradiente sutil */
+.text-gradient {
+  background: linear-gradient(135deg, 
+    hsl(var(--foreground)), 
+    hsl(var(--muted-foreground)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Melhorias para estatísticas */
+.stat-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    hsl(var(--primary)), 
+    hsl(var(--accent)), 
+    hsl(var(--primary)));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.stat-card:hover::before {
+  opacity: 1;
+}
+
+/* Animações sutis */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fade-in-up 0.6s ease-out;
+}
+
+/* Responsividade melhorada */
+@media (max-width: 768px) {
+  .decorative-pattern::before,
+  .decorative-pattern::after {
+    display: none;
+  }
+  
+  .card-enhanced:hover::before {
+    opacity: 0;
+  }
+}
