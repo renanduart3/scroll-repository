@@ -1,0 +1,21 @@
+{
+  "id": "moises-o-libertador",
+  "title": "Moisés: O Libertador Chamado por Deus",
+  "description": "Um estudo aprofundado sobre a vida, o significado do nome, o papel e o legado de Moisés, o grande líder de Israel.",
+  "category": "pessoas-da-biblia",
+  "author": "pastor-joao-silva",
+  "date": "2024-05-15",
+  "tags": ["moisés", "liderança", "libertação", "fé", "antigo-testamento"],
+  "progress": 0,
+  "content_file": "moises-o-libertador.md",
+  "featured": true,
+  "reading_time": 20,
+  "difficulty": "intermediario",
+  "bible_references": ["Êxodo 2:10", "Êxodo 3:1-10", "Deuteronômio 34:10-12", "Hebreus 11:23-29", "Números 12:3"],
+  "related_studies": [],
+  "version": "1.0.0",
+  "last_updated": "2024-05-15T10:00:00Z",
+  "status": "published",
+  "views": 0,
+  "favorites": 0
+}
