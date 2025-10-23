@@ -1,13 +1,14 @@
 {
-  "version": "1.0.4",
-  "buildDate": "2025-10-22T23:17:08.911Z",
+  "version": "1.0.18",
+  "buildDate": "2025-10-23T13:09:00.085Z",
   "content": {
     "categories": 11,
-    "estudos": 4,
-    "pregacoes": 1,
+    "estudos": 5,
+    "pregacoes": 2,
+    "atualidades": 1,
     "devocionais": 1,
     "authors": 5,
     "tags": 14
   },
-  "lastUpdated": "2025-10-22T23:17:08.912Z"
+  "lastUpdated": "2025-10-23T13:09:09.085Z"
 }

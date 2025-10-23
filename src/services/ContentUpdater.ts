@@ -52,12 +52,27 @@ export class ContentUpdater {
       const latestVersion = await this.getRemoteVersion();
       console.log(`📋 Versão remota encontrada: ${latestVersion}`);
       
-      const hasUpdate = latestVersion !== currentVersion;
-      console.log(`🔄 Há atualização? ${hasUpdate} (remota: ${latestVersion} vs cache: ${currentVersion})`);
+      // Verificar se a versão local está desatualizada comparando com o cache
+      const cachedContent = this.getCachedContent();
+      let actualLocalVersion = currentVersion;
+      
+      if (cachedContent && cachedContent.index && cachedContent.index.version) {
+        actualLocalVersion = cachedContent.index.version;
+        console.log(`📋 Versão real no cache: ${actualLocalVersion}`);
+        
+        // Se a versão no cache for diferente da versão salva, atualizar
+        if (actualLocalVersion !== currentVersion) {
+          console.log(`🔄 Atualizando versão salva: ${currentVersion} → ${actualLocalVersion}`);
+          this.setLocalVersion(actualLocalVersion);
+        }
+      }
+      
+      const hasUpdate = latestVersion !== actualLocalVersion;
+      console.log(`🔄 Há atualização? ${hasUpdate} (remota: ${latestVersion} vs local: ${actualLocalVersion})`);
       
       return {
         hasUpdate,
-        currentVersion,
+        currentVersion: actualLocalVersion,
         latestVersion
       };
     } catch (error) {
@@ -506,6 +521,46 @@ export class ContentUpdater {
     console.log('📋 Versão depois:', localStorage.getItem(this.VERSION_KEY));
     console.log('📋 Chaves restantes:', Object.keys(localStorage));
     console.log('✅ Cache completamente limpo');
+  }
+
+  /**
+   * Força a atualização completa do conteúdo
+   */
+  async forceUpdate(): Promise<UpdateResult> {
+    console.log('🔄 FORÇANDO ATUALIZAÇÃO COMPLETA...');
+    
+    try {
+      // Limpar cache primeiro
+      await this.clearCache();
+      
+      // Baixar conteúdo mais recente
+      console.log('📥 Baixando conteúdo mais recente...');
+      const content = await this.downloadContent();
+      
+      // Salvar novo conteúdo
+      await this.saveContent(content);
+      
+      // Extrair e salvar nova versão
+      const newVersion = await this.getVersionFromContent(content);
+      this.setLocalVersion(newVersion);
+      
+      console.log(`✅ Atualização forçada concluída! Nova versão: ${newVersion}`);
+      
+      return {
+        success: true,
+        message: `Conteúdo atualizado com sucesso! Versão ${newVersion}`,
+        newVersion,
+        oldVersion: '0.0.0'
+      };
+    } catch (error) {
+      console.error('❌ Erro na atualização forçada:', error);
+      return {
+        success: false,
+        message: `Erro na atualização: ${error instanceof Error ? error.message : 'Erro desconhecido'}`,
+        newVersion: this.getLocalVersion(),
+        oldVersion: this.getLocalVersion()
+      };
+    }
   }
 
   /**

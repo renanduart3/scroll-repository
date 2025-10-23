@@ -122,6 +122,48 @@ export function ContentUpdateButton() {
     }
   };
 
+  const handleForceUpdate = async () => {
+    console.log('🔄 INICIANDO ATUALIZAÇÃO FORÇADA...');
+    setStatus(prev => ({ ...prev, isUpdating: true }));
+    
+    try {
+      console.log('🔄 Chamando updater.forceUpdate()...');
+      const result = await updater.forceUpdate();
+      console.log('📋 Resultado da atualização forçada:', result);
+      
+      setStatus(prev => ({
+        ...prev,
+        isUpdating: false,
+        hasUpdate: false,
+        currentVersion: result.newVersion || prev.currentVersion,
+        lastResult: result
+      }));
+      
+      // Recarregar informações do cache
+      loadCacheInfo();
+      
+      console.log('✅ Atualização forçada concluída!');
+      
+      // Se a atualização foi bem-sucedida, recarregar a página
+      if (result.success) {
+        console.log('🔄 Recarregando página em 2 segundos...');
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
+      }
+    } catch (error) {
+      console.error('❌ Erro na atualização forçada:', error);
+      setStatus(prev => ({ 
+        ...prev, 
+        isUpdating: false,
+        lastResult: {
+          success: false,
+          message: `Erro: ${error instanceof Error ? error.message : 'Erro desconhecido'}`
+        }
+      }));
+    }
+  };
+
   const getStatusIcon = () => {
     if (status.isChecking || status.isUpdating) {
       return <RefreshCw className="h-4 w-4 animate-spin" />;
@@ -243,8 +285,8 @@ export function ContentUpdateButton() {
           </Button>
         </div>
 
-        {/* Botão para Limpar Cache */}
-        <div className="flex justify-center">
+        {/* Botões de Cache */}
+        <div className="flex gap-2 justify-center">
           <Button
             onClick={clearCache}
             variant="outline"
@@ -252,6 +294,24 @@ export function ContentUpdateButton() {
             className="text-xs"
           >
             🗑️ Limpar Cache
+          </Button>
+          <Button
+            onClick={handleForceUpdate}
+            disabled={status.isUpdating || status.isChecking}
+            variant="outline"
+            size="sm"
+            className="text-xs"
+          >
+            {status.isUpdating ? (
+              <>
+                <RefreshCw className="h-3 w-3 mr-1 animate-spin" />
+                Forçando...
+              </>
+            ) : (
+              <>
+                🔄 Forçar Atualização
+              </>
+            )}
           </Button>
         </div>
 

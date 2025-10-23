@@ -37,7 +37,7 @@ const Devocional = () => {
         <p className="text-muted-foreground">Reflexões diárias para sua jornada espiritual</p>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-6">
         {content.devocionais.map((devocional) => (
           <Link key={devocional.id} to={`/devocional/${devocional.id}`}>
             <Card className="group p-6 hover:shadow-medium transition-smooth cursor-pointer border-border hover:border-accent">

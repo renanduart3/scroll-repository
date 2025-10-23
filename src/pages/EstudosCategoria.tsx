@@ -58,7 +58,7 @@ const EstudosCategoria = () => {
         <p className="text-muted-foreground">{categoriaInfo.descricao}</p>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-6">
         {estudosCategoria.map((estudo) => (
           <Link key={estudo.id} to={`/estudos/${estudo.id}`}>
             <Card className="group p-6 hover:shadow-medium transition-smooth cursor-pointer border-border hover:border-accent">

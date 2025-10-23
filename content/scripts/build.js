@@ -79,6 +79,69 @@ function getAllFiles(dir, extension) {
   return files;
 }
 
+/**
+ * Renomeia arquivos baseado no content_file definido no JSON
+ */
+function renameFilesBasedOnContentFile(contentDir, type) {
+  log(`🔄 Renomeando arquivos para ${type}...`, 'blue');
+  
+  const typeDir = path.join(contentDir, type);
+  if (!fs.existsSync(typeDir)) {
+    log(`⚠️ Diretório ${type} não encontrado`, 'yellow');
+    return;
+  }
+  
+  const jsonFiles = getAllFiles(typeDir, '.json');
+  let renamedCount = 0;
+  
+  for (const jsonFile of jsonFiles) {
+    const jsonData = readJsonFile(jsonFile);
+    if (!jsonData || !jsonData.content_file) continue;
+    
+    const expectedMdFile = jsonData.content_file;
+    const expectedJsonFile = expectedMdFile.replace('.md', '.json');
+    
+    const currentDir = path.dirname(jsonFile);
+    const currentJsonName = path.basename(jsonFile);
+    const currentMdName = currentJsonName.replace('.json', '.md');
+    
+    // Verificar se precisa renomear
+    const needsRename = currentJsonName !== expectedJsonFile;
+    
+    if (needsRename) {
+      const currentMdFile = path.join(currentDir, currentMdName);
+      const newJsonFile = path.join(currentDir, expectedJsonFile);
+      const newMdFile = path.join(currentDir, expectedMdFile);
+      
+      try {
+        // Renomear arquivo JSON
+        if (fs.existsSync(jsonFile)) {
+          fs.renameSync(jsonFile, newJsonFile);
+          log(`  📝 Renomeado: ${currentJsonName} → ${expectedJsonFile}`, 'green');
+        }
+        
+        // Renomear arquivo MD correspondente
+        if (fs.existsSync(currentMdFile)) {
+          fs.renameSync(currentMdFile, newMdFile);
+          log(`  📄 Renomeado: ${currentMdName} → ${expectedMdFile}`, 'green');
+        }
+        
+        renamedCount++;
+      } catch (error) {
+        log(`  ❌ Erro ao renomear ${currentJsonName}: ${error.message}`, 'red');
+      }
+    }
+  }
+  
+  if (renamedCount > 0) {
+    log(`✅ ${renamedCount} arquivos renomeados para ${type}`, 'green');
+  } else {
+    log(`✅ Nenhum arquivo precisou ser renomeado para ${type}`, 'cyan');
+  }
+  
+  return renamedCount;
+}
+
 function buildCategories() {
   log('📁 Processando categorias...', 'blue');
   
@@ -110,6 +173,9 @@ function buildCategories() {
 
 function buildEstudos() {
   log('📚 Processando estudos...', 'blue');
+  
+  // Primeiro, renomear arquivos baseado no content_file
+  renameFilesBasedOnContentFile(CONTENT_DIR, 'estudos');
   
   const estudosDir = path.join(CONTENT_DIR, 'estudos');
   const estudoFiles = getAllFiles(estudosDir, '.json');
@@ -168,6 +234,9 @@ function buildEstudos() {
 function buildPregacoes() {
   log('📢 Processando pregações...', 'blue');
   
+  // Primeiro, renomear arquivos baseado no content_file
+  renameFilesBasedOnContentFile(CONTENT_DIR, 'pregacoes');
+  
   const pregacoesDir = path.join(CONTENT_DIR, 'pregacoes');
   const pregaçãoFiles = getAllFiles(pregacoesDir, '.json');
   
@@ -215,6 +284,9 @@ function buildPregacoes() {
 
 function buildDevocionais() {
   log('📅 Processando devocionais...', 'blue');
+  
+  // Primeiro, renomear arquivos baseado no content_file
+  renameFilesBasedOnContentFile(CONTENT_DIR, 'devocionais');
   
   const devocionaisDir = path.join(CONTENT_DIR, 'devocionais');
   const devocionalFiles = getAllFiles(devocionaisDir, '.json');
@@ -271,6 +343,62 @@ function buildDevocionais() {
   return result;
 }
 
+function buildAtualidades() {
+  log('📰 Processando atualidades...', 'blue');
+  
+  // Primeiro, renomear arquivos baseado no content_file
+  renameFilesBasedOnContentFile(CONTENT_DIR, 'atualidades');
+  
+  const atualidadesDir = path.join(CONTENT_DIR, 'atualidades');
+  if (!fs.existsSync(atualidadesDir)) {
+    log(`⚠️ Diretório atualidades não encontrado`, 'yellow');
+    return { atualidades: [], byAuthor: {}, byTag: {}, stats: { total: 0, byAuthor: 0, byTag: 0 } };
+  }
+  
+  const atualidadeFiles = getAllFiles(atualidadesDir, '.json');
+  
+  const atualidades = [];
+  const byAuthor = {};
+  const byTag = {};
+  
+  for (const file of atualidadeFiles) {
+    const atualidade = readJsonFile(file);
+    if (!atualidade) continue;
+    
+    atualidades.push(atualidade);
+    
+    // Agrupar por autor
+    if (!byAuthor[atualidade.author]) {
+      byAuthor[atualidade.author] = [];
+    }
+    byAuthor[atualidade.author].push(atualidade);
+    
+    // Agrupar por tag
+    atualidade.tags.forEach(tag => {
+      if (!byTag[tag]) {
+        byTag[tag] = [];
+      }
+      byTag[tag].push(atualidade);
+    });
+  }
+  
+  const result = {
+    atualidades,
+    byAuthor,
+    byTag,
+    stats: {
+      total: atualidades.length,
+      byAuthor: Object.keys(byAuthor).length,
+      byTag: Object.keys(byTag).length
+    }
+  };
+  
+  writeJsonFile(path.join(OUTPUT_DIR, 'atualidades.json'), result);
+  log(`✅ Atualidades processadas: ${atualidades.length} total`, 'green');
+  
+  return result;
+}
+
 function buildMetadata() {
   log('📊 Processando metadados...', 'blue');
   
@@ -303,6 +431,7 @@ function buildIndex() {
       categories: 0,
       estudos: 0,
       pregacoes: 0,
+      atualidades: 0,
       devocionais: 0,
       authors: 0,
       tags: 0
@@ -325,6 +454,11 @@ function buildIndex() {
     const pregacoes = readJsonFile(path.join(OUTPUT_DIR, 'pregacoes.json'));
     if (pregacoes) {
       index.content.pregacoes = pregacoes.stats.total;
+    }
+    
+    const atualidades = readJsonFile(path.join(OUTPUT_DIR, 'atualidades.json'));
+    if (atualidades) {
+      index.content.atualidades = atualidades.stats.total;
     }
     
     const devocionais = readJsonFile(path.join(OUTPUT_DIR, 'devocionais.json'));
@@ -358,6 +492,7 @@ function main() {
   const categories = buildCategories();
   const estudos = buildEstudos();
   const pregacoes = buildPregacoes();
+  const atualidades = buildAtualidades();
   const devocionais = buildDevocionais();
   const metadata = buildMetadata();
   
@@ -371,6 +506,7 @@ function main() {
   log(`   📁 Categorias: ${index.content.categories}`, 'cyan');
   log(`   📚 Estudos: ${index.content.estudos}`, 'cyan');
   log(`   📢 Pregações: ${index.content.pregacoes}`, 'cyan');
+  log(`   📰 Atualidades: ${index.content.atualidades}`, 'cyan');
   log(`   📅 Devocionais: ${index.content.devocionais}`, 'cyan');
   log(`   👥 Autores: ${index.content.authors}`, 'cyan');
   log(`   🏷️  Tags: ${index.content.tags}`, 'cyan');
@@ -387,8 +523,10 @@ module.exports = {
   buildCategories,
   buildEstudos,
   buildPregacoes,
+  buildAtualidades,
   buildDevocionais,
   buildMetadata,
   buildIndex,
+  renameFilesBasedOnContentFile,
   main
 };
