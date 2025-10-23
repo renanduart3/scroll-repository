@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Clock, User, Calendar, ChevronRight, Newspaper } from "lucide-react";
+import { Clock, User, Calendar, ChevronRight } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { useContent } from "@/hooks/useContent";
 
@@ -11,15 +11,23 @@ const Atualidades = () => {
   if (loading) {
     return (
       <div className="container mx-auto px-4 py-8 md:ml-64 pb-24 md:pb-8">
-        <p>Carregando atualidades...</p>
+        <div className="flex items-center justify-center h-64">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+            <p className="text-muted-foreground">Carregando atualidades...</p>
+          </div>
+        </div>
       </div>
     );
   }
 
-  if (error) {
+  if (error || !content) {
     return (
       <div className="container mx-auto px-4 py-8 md:ml-64 pb-24 md:pb-8">
-        <p className="text-red-500">Erro ao carregar atualidades: {error}</p>
+        <div className="text-center">
+          <p className="text-muted-foreground mb-4">Erro ao carregar conteúdo</p>
+          <p className="text-sm text-muted-foreground">{error}</p>
+        </div>
       </div>
     );
   }
@@ -34,7 +42,7 @@ const Atualidades = () => {
       <div className="space-y-6">
         {content.atualidades.map((atualidade) => (
           <Link key={atualidade.id} to={`/atualidades/${atualidade.id}`}>
-            <Card className="group p-6 hover:shadow-medium transition-smooth cursor-pointer border-border hover:border-accent mb-6">
+            <Card className="group p-6 hover:shadow-medium transition-smooth cursor-pointer border-border hover:border-accent mb-6 card-enhanced hover-lift fade-in-up">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div className="flex-1">
                   <h3 className="text-xl font-serif font-bold mb-2 group-hover:text-accent transition-smooth">
@@ -89,7 +97,6 @@ const Atualidades = () => {
 
       {content.atualidades.length === 0 && (
         <Card className="p-8 text-center">
-          <Newspaper className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
           <p className="text-muted-foreground">Nenhuma atualidade disponível ainda.</p>
         </Card>
       )}

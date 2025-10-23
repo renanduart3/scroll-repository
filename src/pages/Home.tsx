@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { Book, Mic2, Calendar, Heart, TrendingUp } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { useContent } from "@/hooks/useContent";
 
 const Home = () => {
+  const { content, metadata } = useContent();
+  
   const modules = [
     {
       title: "Estudos Bíblicos",
@@ -44,7 +47,7 @@ const Home = () => {
   return (
     <div className="container mx-auto px-4 py-8 md:ml-64">
       {/* Hero Section */}
-      <div className="mb-12 gradient-hero rounded-2xl p-8 md:p-12 shadow-medium">
+      <div className="mb-12 gradient-hero rounded-2xl p-8 md:p-12 shadow-medium decorative-pattern">
         <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">
           Bem-vindo à Palavra Viva
         </h1>
@@ -59,7 +62,7 @@ const Home = () => {
           const Icon = module.icon;
           return (
             <Link key={module.title} to={module.href}>
-              <Card className="group h-full p-6 hover:shadow-medium transition-smooth cursor-pointer border-border hover:border-accent">
+              <Card className="group h-full p-6 hover:shadow-medium transition-smooth cursor-pointer border-border hover:border-accent card-enhanced hover-lift">
                 <div className="flex flex-col items-start gap-4">
                   <div className={`${module.gradient} p-3 rounded-xl shadow-soft group-hover:shadow-glow transition-smooth`}>
                     <Icon className="h-6 w-6 text-white" />
@@ -81,23 +84,35 @@ const Home = () => {
 
       {/* Quick Stats */}
       <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
-        <Card className="p-6 text-center shadow-soft">
-          <div className="text-3xl font-bold text-primary mb-1">50+</div>
+        <Card className="p-6 text-center shadow-soft stat-card hover-lift">
+          <div className="text-3xl font-bold text-primary mb-1">{content?.estudos?.length || 0}</div>
           <div className="text-sm text-muted-foreground">Estudos Bíblicos</div>
         </Card>
-        <Card className="p-6 text-center shadow-soft">
-          <div className="text-3xl font-bold text-primary mb-1">30+</div>
+        <Card className="p-6 text-center shadow-soft stat-card hover-lift">
+          <div className="text-3xl font-bold text-primary mb-1">{content?.pregacoes?.length || 0}</div>
           <div className="text-sm text-muted-foreground">Pregações</div>
         </Card>
-        <Card className="p-6 text-center shadow-soft">
-          <div className="text-3xl font-bold text-accent mb-1">365</div>
+        <Card className="p-6 text-center shadow-soft stat-card hover-lift">
+          <div className="text-3xl font-bold text-accent mb-1">{content?.devocionais?.length || 0}</div>
           <div className="text-sm text-muted-foreground">Devocionais</div>
         </Card>
-        <Card className="p-6 text-center shadow-soft">
-          <div className="text-3xl font-bold text-accent mb-1">100+</div>
-          <div className="text-sm text-muted-foreground">Vídeos</div>
+        <Card className="p-6 text-center shadow-soft stat-card hover-lift">
+          <div className="text-3xl font-bold text-accent mb-1">{content?.atualidades?.length || 0}</div>
+          <div className="text-sm text-muted-foreground">Atualidades</div>
         </Card>
       </div>
+
+      {/* Last Update Info */}
+      {metadata && (
+        <div className="mt-8 text-center">
+          <p className="text-sm text-muted-foreground">
+            Última atualização: {new Date(metadata.lastUpdated).toLocaleDateString('pt-BR', { 
+              month: '2-digit', 
+              year: 'numeric' 
+            })}
+          </p>
+        </div>
+      )}
     </div>
   );
 };

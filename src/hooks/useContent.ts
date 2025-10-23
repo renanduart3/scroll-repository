@@ -43,6 +43,12 @@ export interface ContentData {
   devocionais: Content[];
 }
 
+export interface ContentMetadata {
+  version: string;
+  buildDate: string;
+  lastUpdated: string;
+}
+
 export const useContent = () => {
   const [content, setContent] = useState<ContentData>({
     estudos: [],
@@ -51,6 +57,7 @@ export const useContent = () => {
     atualidades: [],
     devocionais: []
   });
+  const [metadata, setMetadata] = useState<ContentMetadata | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -76,6 +83,15 @@ export const useContent = () => {
             devocionais: contentData.devocionais?.devocionais || []
           };
           setContent(transformedData);
+          
+          // Extrair metadados se disponíveis
+          if (contentData.index) {
+            setMetadata({
+              version: contentData.index.version || '1.0.0',
+              buildDate: contentData.index.buildDate || new Date().toISOString(),
+              lastUpdated: contentData.index.lastUpdated || new Date().toISOString()
+            });
+          }
         } else {
           // Fallback para dados mock se não conseguir carregar
           console.warn('⚠️ Não foi possível carregar conteúdo real, usando dados mock');
@@ -92,5 +108,5 @@ export const useContent = () => {
     loadContent();
   }, []);
 
-  return { content, loading, error };
+  return { content, metadata, loading, error };
 };

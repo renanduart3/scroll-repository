@@ -169,7 +169,7 @@ const DevocionalDetalhes = () => {
           </div>
         </div>
 
-        <div className="prose prose-lg dark:prose-invert max-w-none">
+        <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-serif prose-headings:text-foreground prose-p:text-foreground prose-strong:text-foreground prose-em:text-foreground prose-code:text-foreground prose-pre:bg-muted prose-blockquote:border-l-primary prose-blockquote:bg-muted/50 prose-blockquote:pl-4 prose-blockquote:py-2 prose-ul:text-foreground prose-ol:text-foreground prose-li:text-foreground prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
           <div className="bg-card rounded-xl p-8 shadow-soft border border-border">
             {devocionalContent ? (
               <ReactMarkdown

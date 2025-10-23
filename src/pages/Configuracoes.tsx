@@ -49,7 +49,7 @@ const Configuracoes = () => {
   };
 
   const handleCopyPix = () => {
-    const pixKey = "suporte@palavraviva.com.br";
+    const pixKey = "renan110306@gmail.com";
     navigator.clipboard.writeText(pixKey);
     toast.success("Chave PIX copiada! 🙏", {
       description: "Obrigado pelo seu apoio ao ministério!"
@@ -159,8 +159,14 @@ const Configuracoes = () => {
                   Ajude-nos a continuar compartilhando a Palavra de Deus gratuitamente.
                   Sua contribuição faz diferença!
                 </p>
+                
+                <div className="mb-4 p-3 bg-muted rounded-lg border">
+                  <p className="text-sm text-muted-foreground mb-1">Chave PIX (Email):</p>
+                  <p className="font-mono text-foreground font-medium">renan110306@gmail.com</p>
+                </div>
+                
                 <Button onClick={handleCopyPix} className="w-full sm:w-auto">
-                  Copiar Chave PIX
+                  Copiar Chave PIX - Email
                 </Button>
               </div>
             </div>

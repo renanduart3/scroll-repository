@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Heart, Share2, ChevronLeft, User, Calendar, Clock } from "lucide-react";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
@@ -195,8 +196,17 @@ const AtualidadeDetalhes = () => {
         </div>
 
         {/* Content */}
-        <div className="prose prose-lg max-w-none">
-          <ReactMarkdown>{atualidadeContent}</ReactMarkdown>
+        <div className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-foreground prose-p:text-foreground prose-strong:text-foreground prose-em:text-foreground prose-code:text-foreground prose-pre:bg-muted prose-blockquote:border-l-primary prose-blockquote:bg-muted/50 prose-blockquote:pl-4 prose-blockquote:py-2 prose-ul:text-foreground prose-ol:text-foreground prose-li:text-foreground prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
+          <div className="bg-card rounded-xl p-8 shadow-soft border border-border">
+            {atualidadeContent ? (
+              <ReactMarkdown>{atualidadeContent}</ReactMarkdown>
+            ) : (
+              <div className="text-center py-8">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+                <p className="text-muted-foreground">Carregando conteúdo...</p>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
