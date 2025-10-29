@@ -41,8 +41,9 @@ const Pregacoes = () => {
 
       <div className="space-y-6">
         {content.pregacoes.map((pregacao) => (
-          <Link key={pregacao.id} to={`/pregacoes/${pregacao.id}`}>
-            <Card className="group p-6 hover:shadow-medium transition-smooth cursor-pointer border-border hover:border-accent card-enhanced hover-lift fade-in-up">
+          <div key={pregacao.id} className="block">
+            <Link to={`/pregacoes/${pregacao.id}`} className="block">
+              <Card className="group p-6 hover:shadow-medium transition-smooth cursor-pointer border-border hover:border-accent card-enhanced hover-lift fade-in-up">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div className="flex-1">
                   <h3 className="text-xl font-serif font-bold mb-2 group-hover:text-accent transition-smooth">
@@ -90,8 +91,9 @@ const Pregacoes = () => {
                   <ChevronRight className="h-6 w-6 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-smooth" />
                 </div>
               </div>
-            </Card>
-          </Link>
+              </Card>
+            </Link>
+          </div>
         ))}
       </div>
 

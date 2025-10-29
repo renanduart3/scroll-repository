@@ -41,8 +41,9 @@ const Atualidades = () => {
 
       <div className="space-y-6">
         {content.atualidades.map((atualidade) => (
-          <Link key={atualidade.id} to={`/atualidades/${atualidade.id}`}>
-            <Card className="group p-6 hover:shadow-medium transition-smooth cursor-pointer border-border hover:border-accent card-enhanced hover-lift fade-in-up">
+          <div key={atualidade.id} className="block">
+            <Link to={`/atualidades/${atualidade.id}`} className="block">
+              <Card className="group p-6 hover:shadow-medium transition-smooth cursor-pointer border-border hover:border-accent card-enhanced hover-lift fade-in-up">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div className="flex-1">
                   <h3 className="text-xl font-serif font-bold mb-2 group-hover:text-accent transition-smooth">
@@ -90,8 +91,9 @@ const Atualidades = () => {
                   <ChevronRight className="h-6 w-6 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-smooth" />
                 </div>
               </div>
-            </Card>
-          </Link>
+              </Card>
+            </Link>
+          </div>
         ))}
       </div>
 

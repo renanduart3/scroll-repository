@@ -570,12 +570,6 @@ export class ContentUpdater {
     return await this.loadLocalContent();
   }
 
-  /**
-   * Carrega conteúdo para uso em hooks
-   */
-  async loadContent(): Promise<any> {
-    return await this.loadLocalContent();
-  }
 
   /**
    * Obtém informações do cache

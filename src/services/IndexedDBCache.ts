@@ -68,7 +68,7 @@ export class IndexedDBCache {
    * Salva um arquivo no cache
    */
   async saveFile(
-    type: 'pregacoes' | 'estudos' | 'devocionais',
+    type: 'pregacoes' | 'estudos' | 'atualidades' | 'devocionais',
     id: string,
     filename: string,
     content: string
@@ -106,7 +106,7 @@ export class IndexedDBCache {
    * Recupera um arquivo do cache
    */
   async getFile(
-    type: 'pregacoes' | 'estudos' | 'devocionais',
+    type: 'pregacoes' | 'estudos' | 'atualidades' | 'devocionais',
     id: string
   ): Promise<string | null> {
     if (!this.db) await this.init();

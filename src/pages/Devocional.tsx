@@ -39,8 +39,9 @@ const Devocional = () => {
 
       <div className="space-y-6">
         {content.devocionais.map((devocional) => (
-          <Link key={devocional.id} to={`/devocional/${devocional.id}`}>
-            <Card className="group p-6 hover:shadow-medium transition-smooth cursor-pointer border-border hover:border-accent">
+          <div key={devocional.id} className="block">
+            <Link to={`/devocional/${devocional.id}`} className="block">
+              <Card className="group p-6 hover:shadow-medium transition-smooth cursor-pointer border-border hover:border-accent">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-3">
@@ -67,8 +68,9 @@ const Devocional = () => {
                   <ChevronRight className="h-6 w-6 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-smooth" />
                 </div>
               </div>
-            </Card>
-          </Link>
+              </Card>
+            </Link>
+          </div>
         ))}
       </div>
 
