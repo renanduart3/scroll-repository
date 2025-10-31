@@ -1,0 +1,21 @@
+{
+  "id": "classicos-cristaos-de-dominio-publico",
+  "title": "Clássicos Cristãos de Domínio Público",
+  "description": "Uma coletânea dos maiores clássicos da fé cristã, todos em domínio público e disponíveis para leitura gratuita. Obras que moldaram séculos de devoção, teologia e discipulado.",
+  "category": "livros-ebooks",
+  "author": "equipe-palavra-viva",
+  "date": "2025-10-31",
+  "tags": ["livros", "classicos", "estudo"],
+  "progress": 0,
+  "content_file": "classicos-cristaos-de-dominio-publico.md",
+  "featured": true,
+  "reading_time": 15,
+  "difficulty": "iniciante",
+  "bible_references": ["2 Timóteo 2:15", "Provérbios 4:7", "Salmo 119:105"],
+  "related_studies": [],
+  "version": "1.0.0",
+  "last_updated": "2025-10-31T18:50:00Z",
+  "status": "published",
+  "views": 0,
+  "favorites": 0
+}

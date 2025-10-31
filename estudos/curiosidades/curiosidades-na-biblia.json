@@ -1,0 +1,21 @@
+{
+  "id": "curiosidades-na-biblia",
+  "title": "Curiosidades na Bíblia: Mistérios e Maravilhas das Escrituras",
+  "description": "Descubra fatos surpreendentes e pouco conhecidos das Escrituras, revelando como cada detalhe da Palavra de Deus carrega significado e propósito.",
+  "category": "curiosidades",
+  "author": "equipe-palavra-viva",
+  "date": "2025-10-31",
+  "tags": ["curiosidades", "biblia", "sabedoria"],
+  "progress": 0,
+  "content_file": "curiosidades-na-biblia.md",
+  "featured": false,
+  "reading_time": 12,
+  "difficulty": "iniciante",
+  "bible_references": ["Salmo 119:89", "2 Timóteo 3:16", "Mateus 24:35", "Isaías 40:8"],
+  "related_studies": [],
+  "version": "1.0.0",
+  "last_updated": "2025-10-31T18:00:00Z",
+  "status": "published",
+  "views": 0,
+  "favorites": 0
+}

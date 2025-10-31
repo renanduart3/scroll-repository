@@ -1,6 +1,111 @@
 {
   "estudos": [
     {
+      "id": "curiosidades-na-biblia",
+      "title": "Curiosidades na Bíblia: Mistérios e Maravilhas das Escrituras",
+      "description": "Descubra fatos surpreendentes e pouco conhecidos das Escrituras, revelando como cada detalhe da Palavra de Deus carrega significado e propósito.",
+      "category": "curiosidades",
+      "author": "equipe-palavra-viva",
+      "date": "2025-10-31",
+      "tags": [
+        "curiosidades",
+        "biblia",
+        "sabedoria"
+      ],
+      "progress": 0,
+      "content_file": "curiosidades-na-biblia.md",
+      "featured": false,
+      "reading_time": 12,
+      "difficulty": "iniciante",
+      "bible_references": [
+        "Salmo 119:89",
+        "2 Timóteo 3:16",
+        "Mateus 24:35",
+        "Isaías 40:8"
+      ],
+      "related_studies": [],
+      "version": "1.0.0",
+      "last_updated": "2025-10-31T18:00:00Z",
+      "status": "published",
+      "views": 0,
+      "favorites": 0
+    },
+    {
+      "id": "encontros-divinos-teofanias-misticismo-biblico",
+      "title": "Encontros Divinos: Um Estudo sobre Teofanias e o Misticismo Bíblico",
+      "description": "Uma análise bíblica das aparições de Deus (teofanias) e elementos místicos, como visões e encontros sobrenaturais.",
+      "category": "espiritualidade",
+      "author": "rev-pedro-almeida",
+      "date": "2025-10-31",
+      "tags": [
+        "fe",
+        "milagres",
+        "jesus"
+      ],
+      "progress": 0,
+      "content_file": "encontros-divinos-teofanias-misticismo-biblico.md",
+      "featured": false,
+      "reading_time": 15,
+      "difficulty": "intermediario",
+      "bible_references": [
+        "Êxodo 3:2-6",
+        "Gênesis 18:1-10",
+        "Isaías 6:1-8",
+        "Ezequiel 1:26-28",
+        "João 1:14",
+        "2 Coríntios 12:2-4",
+        "Apocalipse 1:9-18"
+      ],
+      "related_studies": [],
+      "version": "1.0.0",
+      "last_updated": "2025-10-31T21:25:20Z",
+      "status": "published",
+      "views": 0,
+      "favorites": 0
+    },
+    {
+      "id": "familia-proposito-de-deus",
+      "title": "A Família Segundo o Propósito de Deus: Estrutura, Importância e Desafios Modernos",
+      "description": "Estudo bíblico abrangente sobre a estrutura da família conforme o plano de Deus, sua importância fundamental e os desafios contemporâneos que enfrentamos",
+      "category": "familia",
+      "author": "pastor-joao-silva",
+      "date": "2024-10-31",
+      "tags": [
+        "família",
+        "casamento",
+        "filhos",
+        "propósito",
+        "sociedade"
+      ],
+      "progress": 0,
+      "content_file": "familia-proposito-de-deus.md",
+      "featured": true,
+      "reading_time": 40,
+      "difficulty": "intermediario",
+      "bible_references": [
+        "Gênesis 1:27-28",
+        "Gênesis 2:18-25",
+        "Efésios 5:22-33",
+        "Colossenses 3:18-21",
+        "1 Pedro 3:1-7",
+        "Provérbios 22:6",
+        "Deuteronômio 6:4-9",
+        "Salmo 127:1-5",
+        "Salmo 128:1-6",
+        "Malaquias 2:15-16",
+        "Mateus 19:4-6",
+        "1 Coríntios 7:1-16",
+        "Hebreus 13:4",
+        "Provérbios 31:10-31"
+      ],
+      "related_studies": [],
+      "version": "1.0.0",
+      "last_updated": "2024-10-31T10:00:00Z",
+      "status": "published",
+      "views": 0,
+      "favorites": 0
+    },
+    {
       "id": "rituais-pagaos-olhos-cristo",
       "title": "Rituais Pagãos e o Olhar de Cristo: Discernimento Cristão",
       "description": "Um estudo aprofundado sobre as práticas pagãs, sua incompatibilidade com a fé cristã e como devemos abordá-las com compaixão e sabedoria à luz do evangelho.",
@@ -65,6 +170,35 @@
       "favorites": 0
     },
     {
+      "id": "classicos-cristaos-de-dominio-publico",
+      "title": "Clássicos Cristãos de Domínio Público",
+      "description": "Uma coletânea dos maiores clássicos da fé cristã, todos em domínio público e disponíveis para leitura gratuita. Obras que moldaram séculos de devoção, teologia e discipulado.",
+      "category": "livros-ebooks",
+      "author": "equipe-palavra-viva",
+      "date": "2025-10-31",
+      "tags": [
+        "livros",
+        "classicos",
+        "estudo"
+      ],
+      "progress": 0,
+      "content_file": "classicos-cristaos-de-dominio-publico.md",
+      "featured": true,
+      "reading_time": 15,
+      "difficulty": "iniciante",
+      "bible_references": [
+        "2 Timóteo 2:15",
+        "Provérbios 4:7",
+        "Salmo 119:105"
+      ],
+      "related_studies": [],
+      "version": "1.0.0",
+      "last_updated": "2025-10-31T18:50:00Z",
+      "status": "published",
+      "views": 0,
+      "favorites": 0
+    },
+    {
       "id": "ocultismo-visao-biblica",
       "title": "Ocultismo: A Visão Bíblica sobre Práticas Ocultas",
       "description": "Estudo bíblico abrangente sobre o ocultismo, seus tipos, perigos espirituais e as instruções de Deus para Seu povo se manter livre dessas práticas",
@@ -100,6 +234,37 @@
       "related_studies": [],
       "version": "1.0.0",
       "last_updated": "2024-10-31T10:00:00Z",
+      "status": "published",
+      "views": 0,
+      "favorites": 0
+    },
+    {
+      "id": "oracoes-da-biblia",
+      "title": "Orações da Bíblia: Vozes que Tocaram o Coração de Deus",
+      "description": "Um estudo sobre as orações mais marcantes das Escrituras e o que podemos aprender com os homens e mulheres que falaram com Deus com fé e sinceridade.",
+      "category": "oracoes",
+      "author": "equipe-palavra-viva",
+      "date": "2025-10-31",
+      "tags": [
+        "oração",
+        "fé",
+        "intimidade"
+      ],
+      "progress": 0,
+      "content_file": "oracoes-da-biblia.md",
+      "featured": false,
+      "reading_time": 14,
+      "difficulty": "iniciante",
+      "bible_references": [
+        "1 Samuel 1:10-20",
+        "Salmo 51:1-12",
+        "Daniel 9:3-19",
+        "Mateus 6:9-13",
+        "Lucas 22:41-44"
+      ],
+      "related_studies": [],
+      "version": "1.0.0",
+      "last_updated": "2025-10-31T18:10:00Z",
       "status": "published",
       "views": 0,
       "favorites": 0
@@ -204,6 +369,37 @@
       "favorites": 0
     },
     {
+      "id": "testemunhas-de-jeova",
+      "title": "A Seita das Testemunhas de Jeová à Luz da Bíblia",
+      "description": "Um estudo bíblico que examina as doutrinas das Testemunhas de Jeová e revela, pela Palavra de Deus, onde se afastam da verdade revelada nas Escrituras.",
+      "category": "seitas",
+      "author": "equipe-palavra-viva",
+      "date": "2025-10-31",
+      "tags": [
+        "heresias",
+        "engano",
+        "doutrina"
+      ],
+      "progress": 0,
+      "content_file": "testemunhas-de-jeova.md",
+      "featured": false,
+      "reading_time": 18,
+      "difficulty": "intermediario",
+      "bible_references": [
+        "João 1:1-14",
+        "Colossenses 1:15-17",
+        "João 10:30",
+        "Efésios 2:8-9",
+        "Apocalipse 1:8"
+      ],
+      "related_studies": [],
+      "version": "1.0.0",
+      "last_updated": "2025-10-31T18:30:00Z",
+      "status": "published",
+      "views": 0,
+      "favorites": 0
+    },
+    {
       "id": "joao-3-16",
       "title": "João 3:16 - O Amor de Deus",
       "description": "Uma análise profunda sobre o versículo mais conhecido da Bíblia",
@@ -267,6 +463,117 @@
     }
   ],
   "byCategory": {
+    "curiosidades": [
+      {
+        "id": "curiosidades-na-biblia",
+        "title": "Curiosidades na Bíblia: Mistérios e Maravilhas das Escrituras",
+        "description": "Descubra fatos surpreendentes e pouco conhecidos das Escrituras, revelando como cada detalhe da Palavra de Deus carrega significado e propósito.",
+        "category": "curiosidades",
+        "author": "equipe-palavra-viva",
+        "date": "2025-10-31",
+        "tags": [
+          "curiosidades",
+          "biblia",
+          "sabedoria"
+        ],
+        "progress": 0,
+        "content_file": "curiosidades-na-biblia.md",
+        "featured": false,
+        "reading_time": 12,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "Salmo 119:89",
+          "2 Timóteo 3:16",
+          "Mateus 24:35",
+          "Isaías 40:8"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T18:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "espiritualidade": [
+      {
+        "id": "encontros-divinos-teofanias-misticismo-biblico",
+        "title": "Encontros Divinos: Um Estudo sobre Teofanias e o Misticismo Bíblico",
+        "description": "Uma análise bíblica das aparições de Deus (teofanias) e elementos místicos, como visões e encontros sobrenaturais.",
+        "category": "espiritualidade",
+        "author": "rev-pedro-almeida",
+        "date": "2025-10-31",
+        "tags": [
+          "fe",
+          "milagres",
+          "jesus"
+        ],
+        "progress": 0,
+        "content_file": "encontros-divinos-teofanias-misticismo-biblico.md",
+        "featured": false,
+        "reading_time": 15,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "Êxodo 3:2-6",
+          "Gênesis 18:1-10",
+          "Isaías 6:1-8",
+          "Ezequiel 1:26-28",
+          "João 1:14",
+          "2 Coríntios 12:2-4",
+          "Apocalipse 1:9-18"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T21:25:20Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "familia": [
+      {
+        "id": "familia-proposito-de-deus",
+        "title": "A Família Segundo o Propósito de Deus: Estrutura, Importância e Desafios Modernos",
+        "description": "Estudo bíblico abrangente sobre a estrutura da família conforme o plano de Deus, sua importância fundamental e os desafios contemporâneos que enfrentamos",
+        "category": "familia",
+        "author": "pastor-joao-silva",
+        "date": "2024-10-31",
+        "tags": [
+          "família",
+          "casamento",
+          "filhos",
+          "propósito",
+          "sociedade"
+        ],
+        "progress": 0,
+        "content_file": "familia-proposito-de-deus.md",
+        "featured": true,
+        "reading_time": 40,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "Gênesis 1:27-28",
+          "Gênesis 2:18-25",
+          "Efésios 5:22-33",
+          "Colossenses 3:18-21",
+          "1 Pedro 3:1-7",
+          "Provérbios 22:6",
+          "Deuteronômio 6:4-9",
+          "Salmo 127:1-5",
+          "Salmo 128:1-6",
+          "Malaquias 2:15-16",
+          "Mateus 19:4-6",
+          "1 Coríntios 7:1-16",
+          "Hebreus 13:4",
+          "Provérbios 31:10-31"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-10-31T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
     "heresias": [
       {
         "id": "rituais-pagaos-olhos-cristo",
@@ -335,6 +642,37 @@
         "favorites": 0
       }
     ],
+    "livros-ebooks": [
+      {
+        "id": "classicos-cristaos-de-dominio-publico",
+        "title": "Clássicos Cristãos de Domínio Público",
+        "description": "Uma coletânea dos maiores clássicos da fé cristã, todos em domínio público e disponíveis para leitura gratuita. Obras que moldaram séculos de devoção, teologia e discipulado.",
+        "category": "livros-ebooks",
+        "author": "equipe-palavra-viva",
+        "date": "2025-10-31",
+        "tags": [
+          "livros",
+          "classicos",
+          "estudo"
+        ],
+        "progress": 0,
+        "content_file": "classicos-cristaos-de-dominio-publico.md",
+        "featured": true,
+        "reading_time": 15,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "2 Timóteo 2:15",
+          "Provérbios 4:7",
+          "Salmo 119:105"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T18:50:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
     "ocultismo": [
       {
         "id": "ocultismo-visao-biblica",
@@ -372,6 +710,39 @@
         "related_studies": [],
         "version": "1.0.0",
         "last_updated": "2024-10-31T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "oracoes": [
+      {
+        "id": "oracoes-da-biblia",
+        "title": "Orações da Bíblia: Vozes que Tocaram o Coração de Deus",
+        "description": "Um estudo sobre as orações mais marcantes das Escrituras e o que podemos aprender com os homens e mulheres que falaram com Deus com fé e sinceridade.",
+        "category": "oracoes",
+        "author": "equipe-palavra-viva",
+        "date": "2025-10-31",
+        "tags": [
+          "oração",
+          "fé",
+          "intimidade"
+        ],
+        "progress": 0,
+        "content_file": "oracoes-da-biblia.md",
+        "featured": false,
+        "reading_time": 14,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "1 Samuel 1:10-20",
+          "Salmo 51:1-12",
+          "Daniel 9:3-19",
+          "Mateus 6:9-13",
+          "Lucas 22:41-44"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T18:10:00Z",
         "status": "published",
         "views": 0,
         "favorites": 0
@@ -478,6 +849,39 @@
         "favorites": 0
       }
     ],
+    "seitas": [
+      {
+        "id": "testemunhas-de-jeova",
+        "title": "A Seita das Testemunhas de Jeová à Luz da Bíblia",
+        "description": "Um estudo bíblico que examina as doutrinas das Testemunhas de Jeová e revela, pela Palavra de Deus, onde se afastam da verdade revelada nas Escrituras.",
+        "category": "seitas",
+        "author": "equipe-palavra-viva",
+        "date": "2025-10-31",
+        "tags": [
+          "heresias",
+          "engano",
+          "doutrina"
+        ],
+        "progress": 0,
+        "content_file": "testemunhas-de-jeova.md",
+        "featured": false,
+        "reading_time": 18,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "João 1:1-14",
+          "Colossenses 1:15-17",
+          "João 10:30",
+          "Efésios 2:8-9",
+          "Apocalipse 1:8"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T18:30:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
     "temas-gerais": [
       {
         "id": "joao-3-16",
@@ -544,7 +948,163 @@
     ]
   },
   "byAuthor": {
+    "equipe-palavra-viva": [
+      {
+        "id": "curiosidades-na-biblia",
+        "title": "Curiosidades na Bíblia: Mistérios e Maravilhas das Escrituras",
+        "description": "Descubra fatos surpreendentes e pouco conhecidos das Escrituras, revelando como cada detalhe da Palavra de Deus carrega significado e propósito.",
+        "category": "curiosidades",
+        "author": "equipe-palavra-viva",
+        "date": "2025-10-31",
+        "tags": [
+          "curiosidades",
+          "biblia",
+          "sabedoria"
+        ],
+        "progress": 0,
+        "content_file": "curiosidades-na-biblia.md",
+        "featured": false,
+        "reading_time": 12,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "Salmo 119:89",
+          "2 Timóteo 3:16",
+          "Mateus 24:35",
+          "Isaías 40:8"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T18:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      },
+      {
+        "id": "classicos-cristaos-de-dominio-publico",
+        "title": "Clássicos Cristãos de Domínio Público",
+        "description": "Uma coletânea dos maiores clássicos da fé cristã, todos em domínio público e disponíveis para leitura gratuita. Obras que moldaram séculos de devoção, teologia e discipulado.",
+        "category": "livros-ebooks",
+        "author": "equipe-palavra-viva",
+        "date": "2025-10-31",
+        "tags": [
+          "livros",
+          "classicos",
+          "estudo"
+        ],
+        "progress": 0,
+        "content_file": "classicos-cristaos-de-dominio-publico.md",
+        "featured": true,
+        "reading_time": 15,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "2 Timóteo 2:15",
+          "Provérbios 4:7",
+          "Salmo 119:105"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T18:50:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      },
+      {
+        "id": "oracoes-da-biblia",
+        "title": "Orações da Bíblia: Vozes que Tocaram o Coração de Deus",
+        "description": "Um estudo sobre as orações mais marcantes das Escrituras e o que podemos aprender com os homens e mulheres que falaram com Deus com fé e sinceridade.",
+        "category": "oracoes",
+        "author": "equipe-palavra-viva",
+        "date": "2025-10-31",
+        "tags": [
+          "oração",
+          "fé",
+          "intimidade"
+        ],
+        "progress": 0,
+        "content_file": "oracoes-da-biblia.md",
+        "featured": false,
+        "reading_time": 14,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "1 Samuel 1:10-20",
+          "Salmo 51:1-12",
+          "Daniel 9:3-19",
+          "Mateus 6:9-13",
+          "Lucas 22:41-44"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T18:10:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      },
+      {
+        "id": "testemunhas-de-jeova",
+        "title": "A Seita das Testemunhas de Jeová à Luz da Bíblia",
+        "description": "Um estudo bíblico que examina as doutrinas das Testemunhas de Jeová e revela, pela Palavra de Deus, onde se afastam da verdade revelada nas Escrituras.",
+        "category": "seitas",
+        "author": "equipe-palavra-viva",
+        "date": "2025-10-31",
+        "tags": [
+          "heresias",
+          "engano",
+          "doutrina"
+        ],
+        "progress": 0,
+        "content_file": "testemunhas-de-jeova.md",
+        "featured": false,
+        "reading_time": 18,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "João 1:1-14",
+          "Colossenses 1:15-17",
+          "João 10:30",
+          "Efésios 2:8-9",
+          "Apocalipse 1:8"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T18:30:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
     "rev-pedro-almeida": [
+      {
+        "id": "encontros-divinos-teofanias-misticismo-biblico",
+        "title": "Encontros Divinos: Um Estudo sobre Teofanias e o Misticismo Bíblico",
+        "description": "Uma análise bíblica das aparições de Deus (teofanias) e elementos místicos, como visões e encontros sobrenaturais.",
+        "category": "espiritualidade",
+        "author": "rev-pedro-almeida",
+        "date": "2025-10-31",
+        "tags": [
+          "fe",
+          "milagres",
+          "jesus"
+        ],
+        "progress": 0,
+        "content_file": "encontros-divinos-teofanias-misticismo-biblico.md",
+        "featured": false,
+        "reading_time": 15,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "Êxodo 3:2-6",
+          "Gênesis 18:1-10",
+          "Isaías 6:1-8",
+          "Ezequiel 1:26-28",
+          "João 1:14",
+          "2 Coríntios 12:2-4",
+          "Apocalipse 1:9-18"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T21:25:20Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      },
       {
         "id": "rituais-pagaos-olhos-cristo",
         "title": "Rituais Pagãos e o Olhar de Cristo: Discernimento Cristão",
@@ -677,6 +1237,48 @@
       }
     ],
     "pastor-joao-silva": [
+      {
+        "id": "familia-proposito-de-deus",
+        "title": "A Família Segundo o Propósito de Deus: Estrutura, Importância e Desafios Modernos",
+        "description": "Estudo bíblico abrangente sobre a estrutura da família conforme o plano de Deus, sua importância fundamental e os desafios contemporâneos que enfrentamos",
+        "category": "familia",
+        "author": "pastor-joao-silva",
+        "date": "2024-10-31",
+        "tags": [
+          "família",
+          "casamento",
+          "filhos",
+          "propósito",
+          "sociedade"
+        ],
+        "progress": 0,
+        "content_file": "familia-proposito-de-deus.md",
+        "featured": true,
+        "reading_time": 40,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "Gênesis 1:27-28",
+          "Gênesis 2:18-25",
+          "Efésios 5:22-33",
+          "Colossenses 3:18-21",
+          "1 Pedro 3:1-7",
+          "Provérbios 22:6",
+          "Deuteronômio 6:4-9",
+          "Salmo 127:1-5",
+          "Salmo 128:1-6",
+          "Malaquias 2:15-16",
+          "Mateus 19:4-6",
+          "1 Coríntios 7:1-16",
+          "Hebreus 13:4",
+          "Provérbios 31:10-31"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-10-31T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      },
       {
         "id": "ocultismo-visao-biblica",
         "title": "Ocultismo: A Visão Bíblica sobre Práticas Ocultas",
@@ -817,6 +1419,456 @@
     ]
   },
   "byTag": {
+    "curiosidades": [
+      {
+        "id": "curiosidades-na-biblia",
+        "title": "Curiosidades na Bíblia: Mistérios e Maravilhas das Escrituras",
+        "description": "Descubra fatos surpreendentes e pouco conhecidos das Escrituras, revelando como cada detalhe da Palavra de Deus carrega significado e propósito.",
+        "category": "curiosidades",
+        "author": "equipe-palavra-viva",
+        "date": "2025-10-31",
+        "tags": [
+          "curiosidades",
+          "biblia",
+          "sabedoria"
+        ],
+        "progress": 0,
+        "content_file": "curiosidades-na-biblia.md",
+        "featured": false,
+        "reading_time": 12,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "Salmo 119:89",
+          "2 Timóteo 3:16",
+          "Mateus 24:35",
+          "Isaías 40:8"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T18:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "biblia": [
+      {
+        "id": "curiosidades-na-biblia",
+        "title": "Curiosidades na Bíblia: Mistérios e Maravilhas das Escrituras",
+        "description": "Descubra fatos surpreendentes e pouco conhecidos das Escrituras, revelando como cada detalhe da Palavra de Deus carrega significado e propósito.",
+        "category": "curiosidades",
+        "author": "equipe-palavra-viva",
+        "date": "2025-10-31",
+        "tags": [
+          "curiosidades",
+          "biblia",
+          "sabedoria"
+        ],
+        "progress": 0,
+        "content_file": "curiosidades-na-biblia.md",
+        "featured": false,
+        "reading_time": 12,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "Salmo 119:89",
+          "2 Timóteo 3:16",
+          "Mateus 24:35",
+          "Isaías 40:8"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T18:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "sabedoria": [
+      {
+        "id": "curiosidades-na-biblia",
+        "title": "Curiosidades na Bíblia: Mistérios e Maravilhas das Escrituras",
+        "description": "Descubra fatos surpreendentes e pouco conhecidos das Escrituras, revelando como cada detalhe da Palavra de Deus carrega significado e propósito.",
+        "category": "curiosidades",
+        "author": "equipe-palavra-viva",
+        "date": "2025-10-31",
+        "tags": [
+          "curiosidades",
+          "biblia",
+          "sabedoria"
+        ],
+        "progress": 0,
+        "content_file": "curiosidades-na-biblia.md",
+        "featured": false,
+        "reading_time": 12,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "Salmo 119:89",
+          "2 Timóteo 3:16",
+          "Mateus 24:35",
+          "Isaías 40:8"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T18:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "fe": [
+      {
+        "id": "encontros-divinos-teofanias-misticismo-biblico",
+        "title": "Encontros Divinos: Um Estudo sobre Teofanias e o Misticismo Bíblico",
+        "description": "Uma análise bíblica das aparições de Deus (teofanias) e elementos místicos, como visões e encontros sobrenaturais.",
+        "category": "espiritualidade",
+        "author": "rev-pedro-almeida",
+        "date": "2025-10-31",
+        "tags": [
+          "fe",
+          "milagres",
+          "jesus"
+        ],
+        "progress": 0,
+        "content_file": "encontros-divinos-teofanias-misticismo-biblico.md",
+        "featured": false,
+        "reading_time": 15,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "Êxodo 3:2-6",
+          "Gênesis 18:1-10",
+          "Isaías 6:1-8",
+          "Ezequiel 1:26-28",
+          "João 1:14",
+          "2 Coríntios 12:2-4",
+          "Apocalipse 1:9-18"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T21:25:20Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "milagres": [
+      {
+        "id": "encontros-divinos-teofanias-misticismo-biblico",
+        "title": "Encontros Divinos: Um Estudo sobre Teofanias e o Misticismo Bíblico",
+        "description": "Uma análise bíblica das aparições de Deus (teofanias) e elementos místicos, como visões e encontros sobrenaturais.",
+        "category": "espiritualidade",
+        "author": "rev-pedro-almeida",
+        "date": "2025-10-31",
+        "tags": [
+          "fe",
+          "milagres",
+          "jesus"
+        ],
+        "progress": 0,
+        "content_file": "encontros-divinos-teofanias-misticismo-biblico.md",
+        "featured": false,
+        "reading_time": 15,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "Êxodo 3:2-6",
+          "Gênesis 18:1-10",
+          "Isaías 6:1-8",
+          "Ezequiel 1:26-28",
+          "João 1:14",
+          "2 Coríntios 12:2-4",
+          "Apocalipse 1:9-18"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T21:25:20Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "jesus": [
+      {
+        "id": "encontros-divinos-teofanias-misticismo-biblico",
+        "title": "Encontros Divinos: Um Estudo sobre Teofanias e o Misticismo Bíblico",
+        "description": "Uma análise bíblica das aparições de Deus (teofanias) e elementos místicos, como visões e encontros sobrenaturais.",
+        "category": "espiritualidade",
+        "author": "rev-pedro-almeida",
+        "date": "2025-10-31",
+        "tags": [
+          "fe",
+          "milagres",
+          "jesus"
+        ],
+        "progress": 0,
+        "content_file": "encontros-divinos-teofanias-misticismo-biblico.md",
+        "featured": false,
+        "reading_time": 15,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "Êxodo 3:2-6",
+          "Gênesis 18:1-10",
+          "Isaías 6:1-8",
+          "Ezequiel 1:26-28",
+          "João 1:14",
+          "2 Coríntios 12:2-4",
+          "Apocalipse 1:9-18"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T21:25:20Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      },
+      {
+        "id": "lideranca-servidora",
+        "title": "Liderança Servidora - O Exemplo de Jesus",
+        "description": "Como liderar segundo o modelo de Cristo",
+        "category": "lideranca",
+        "author": "rev-pedro-almeida",
+        "date": "2024-01-05",
+        "tags": [
+          "liderança",
+          "serviço",
+          "jesus"
+        ],
+        "progress": 50,
+        "content_file": "lideranca-servidora.md",
+        "featured": false,
+        "reading_time": 25,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "João 13:1-17",
+          "Marcos 10:45",
+          "Filipenses 2:3-4"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-01-05T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "família": [
+      {
+        "id": "familia-proposito-de-deus",
+        "title": "A Família Segundo o Propósito de Deus: Estrutura, Importância e Desafios Modernos",
+        "description": "Estudo bíblico abrangente sobre a estrutura da família conforme o plano de Deus, sua importância fundamental e os desafios contemporâneos que enfrentamos",
+        "category": "familia",
+        "author": "pastor-joao-silva",
+        "date": "2024-10-31",
+        "tags": [
+          "família",
+          "casamento",
+          "filhos",
+          "propósito",
+          "sociedade"
+        ],
+        "progress": 0,
+        "content_file": "familia-proposito-de-deus.md",
+        "featured": true,
+        "reading_time": 40,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "Gênesis 1:27-28",
+          "Gênesis 2:18-25",
+          "Efésios 5:22-33",
+          "Colossenses 3:18-21",
+          "1 Pedro 3:1-7",
+          "Provérbios 22:6",
+          "Deuteronômio 6:4-9",
+          "Salmo 127:1-5",
+          "Salmo 128:1-6",
+          "Malaquias 2:15-16",
+          "Mateus 19:4-6",
+          "1 Coríntios 7:1-16",
+          "Hebreus 13:4",
+          "Provérbios 31:10-31"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-10-31T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "casamento": [
+      {
+        "id": "familia-proposito-de-deus",
+        "title": "A Família Segundo o Propósito de Deus: Estrutura, Importância e Desafios Modernos",
+        "description": "Estudo bíblico abrangente sobre a estrutura da família conforme o plano de Deus, sua importância fundamental e os desafios contemporâneos que enfrentamos",
+        "category": "familia",
+        "author": "pastor-joao-silva",
+        "date": "2024-10-31",
+        "tags": [
+          "família",
+          "casamento",
+          "filhos",
+          "propósito",
+          "sociedade"
+        ],
+        "progress": 0,
+        "content_file": "familia-proposito-de-deus.md",
+        "featured": true,
+        "reading_time": 40,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "Gênesis 1:27-28",
+          "Gênesis 2:18-25",
+          "Efésios 5:22-33",
+          "Colossenses 3:18-21",
+          "1 Pedro 3:1-7",
+          "Provérbios 22:6",
+          "Deuteronômio 6:4-9",
+          "Salmo 127:1-5",
+          "Salmo 128:1-6",
+          "Malaquias 2:15-16",
+          "Mateus 19:4-6",
+          "1 Coríntios 7:1-16",
+          "Hebreus 13:4",
+          "Provérbios 31:10-31"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-10-31T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "filhos": [
+      {
+        "id": "familia-proposito-de-deus",
+        "title": "A Família Segundo o Propósito de Deus: Estrutura, Importância e Desafios Modernos",
+        "description": "Estudo bíblico abrangente sobre a estrutura da família conforme o plano de Deus, sua importância fundamental e os desafios contemporâneos que enfrentamos",
+        "category": "familia",
+        "author": "pastor-joao-silva",
+        "date": "2024-10-31",
+        "tags": [
+          "família",
+          "casamento",
+          "filhos",
+          "propósito",
+          "sociedade"
+        ],
+        "progress": 0,
+        "content_file": "familia-proposito-de-deus.md",
+        "featured": true,
+        "reading_time": 40,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "Gênesis 1:27-28",
+          "Gênesis 2:18-25",
+          "Efésios 5:22-33",
+          "Colossenses 3:18-21",
+          "1 Pedro 3:1-7",
+          "Provérbios 22:6",
+          "Deuteronômio 6:4-9",
+          "Salmo 127:1-5",
+          "Salmo 128:1-6",
+          "Malaquias 2:15-16",
+          "Mateus 19:4-6",
+          "1 Coríntios 7:1-16",
+          "Hebreus 13:4",
+          "Provérbios 31:10-31"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-10-31T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "propósito": [
+      {
+        "id": "familia-proposito-de-deus",
+        "title": "A Família Segundo o Propósito de Deus: Estrutura, Importância e Desafios Modernos",
+        "description": "Estudo bíblico abrangente sobre a estrutura da família conforme o plano de Deus, sua importância fundamental e os desafios contemporâneos que enfrentamos",
+        "category": "familia",
+        "author": "pastor-joao-silva",
+        "date": "2024-10-31",
+        "tags": [
+          "família",
+          "casamento",
+          "filhos",
+          "propósito",
+          "sociedade"
+        ],
+        "progress": 0,
+        "content_file": "familia-proposito-de-deus.md",
+        "featured": true,
+        "reading_time": 40,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "Gênesis 1:27-28",
+          "Gênesis 2:18-25",
+          "Efésios 5:22-33",
+          "Colossenses 3:18-21",
+          "1 Pedro 3:1-7",
+          "Provérbios 22:6",
+          "Deuteronômio 6:4-9",
+          "Salmo 127:1-5",
+          "Salmo 128:1-6",
+          "Malaquias 2:15-16",
+          "Mateus 19:4-6",
+          "1 Coríntios 7:1-16",
+          "Hebreus 13:4",
+          "Provérbios 31:10-31"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-10-31T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "sociedade": [
+      {
+        "id": "familia-proposito-de-deus",
+        "title": "A Família Segundo o Propósito de Deus: Estrutura, Importância e Desafios Modernos",
+        "description": "Estudo bíblico abrangente sobre a estrutura da família conforme o plano de Deus, sua importância fundamental e os desafios contemporâneos que enfrentamos",
+        "category": "familia",
+        "author": "pastor-joao-silva",
+        "date": "2024-10-31",
+        "tags": [
+          "família",
+          "casamento",
+          "filhos",
+          "propósito",
+          "sociedade"
+        ],
+        "progress": 0,
+        "content_file": "familia-proposito-de-deus.md",
+        "featured": true,
+        "reading_time": 40,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "Gênesis 1:27-28",
+          "Gênesis 2:18-25",
+          "Efésios 5:22-33",
+          "Colossenses 3:18-21",
+          "1 Pedro 3:1-7",
+          "Provérbios 22:6",
+          "Deuteronômio 6:4-9",
+          "Salmo 127:1-5",
+          "Salmo 128:1-6",
+          "Malaquias 2:15-16",
+          "Mateus 19:4-6",
+          "1 Coríntios 7:1-16",
+          "Hebreus 13:4",
+          "Provérbios 31:10-31"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2024-10-31T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
     "idolatria": [
       {
         "id": "rituais-pagaos-olhos-cristo",
@@ -966,6 +2018,37 @@
         "status": "published",
         "views": 0,
         "favorites": 0
+      },
+      {
+        "id": "testemunhas-de-jeova",
+        "title": "A Seita das Testemunhas de Jeová à Luz da Bíblia",
+        "description": "Um estudo bíblico que examina as doutrinas das Testemunhas de Jeová e revela, pela Palavra de Deus, onde se afastam da verdade revelada nas Escrituras.",
+        "category": "seitas",
+        "author": "equipe-palavra-viva",
+        "date": "2025-10-31",
+        "tags": [
+          "heresias",
+          "engano",
+          "doutrina"
+        ],
+        "progress": 0,
+        "content_file": "testemunhas-de-jeova.md",
+        "featured": false,
+        "reading_time": 18,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "João 1:1-14",
+          "Colossenses 1:15-17",
+          "João 10:30",
+          "Efésios 2:8-9",
+          "Apocalipse 1:8"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T18:30:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
       }
     ],
     "fé": [
@@ -1000,6 +2083,37 @@
         "related_studies": [],
         "version": "1.0.0",
         "last_updated": "2024-10-22T15:30:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      },
+      {
+        "id": "oracoes-da-biblia",
+        "title": "Orações da Bíblia: Vozes que Tocaram o Coração de Deus",
+        "description": "Um estudo sobre as orações mais marcantes das Escrituras e o que podemos aprender com os homens e mulheres que falaram com Deus com fé e sinceridade.",
+        "category": "oracoes",
+        "author": "equipe-palavra-viva",
+        "date": "2025-10-31",
+        "tags": [
+          "oração",
+          "fé",
+          "intimidade"
+        ],
+        "progress": 0,
+        "content_file": "oracoes-da-biblia.md",
+        "featured": false,
+        "reading_time": 14,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "1 Samuel 1:10-20",
+          "Salmo 51:1-12",
+          "Daniel 9:3-19",
+          "Mateus 6:9-13",
+          "Lucas 22:41-44"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T18:10:00Z",
         "status": "published",
         "views": 0,
         "favorites": 0
@@ -1259,32 +2373,94 @@
         "favorites": 0
       }
     ],
-    "jesus": [
+    "livros": [
       {
-        "id": "lideranca-servidora",
-        "title": "Liderança Servidora - O Exemplo de Jesus",
-        "description": "Como liderar segundo o modelo de Cristo",
-        "category": "lideranca",
-        "author": "rev-pedro-almeida",
-        "date": "2024-01-05",
+        "id": "classicos-cristaos-de-dominio-publico",
+        "title": "Clássicos Cristãos de Domínio Público",
+        "description": "Uma coletânea dos maiores clássicos da fé cristã, todos em domínio público e disponíveis para leitura gratuita. Obras que moldaram séculos de devoção, teologia e discipulado.",
+        "category": "livros-ebooks",
+        "author": "equipe-palavra-viva",
+        "date": "2025-10-31",
         "tags": [
-          "liderança",
-          "serviço",
-          "jesus"
+          "livros",
+          "classicos",
+          "estudo"
         ],
-        "progress": 50,
-        "content_file": "lideranca-servidora.md",
-        "featured": false,
-        "reading_time": 25,
-        "difficulty": "intermediario",
+        "progress": 0,
+        "content_file": "classicos-cristaos-de-dominio-publico.md",
+        "featured": true,
+        "reading_time": 15,
+        "difficulty": "iniciante",
         "bible_references": [
-          "João 13:1-17",
-          "Marcos 10:45",
-          "Filipenses 2:3-4"
+          "2 Timóteo 2:15",
+          "Provérbios 4:7",
+          "Salmo 119:105"
         ],
         "related_studies": [],
         "version": "1.0.0",
-        "last_updated": "2024-01-05T10:00:00Z",
+        "last_updated": "2025-10-31T18:50:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "classicos": [
+      {
+        "id": "classicos-cristaos-de-dominio-publico",
+        "title": "Clássicos Cristãos de Domínio Público",
+        "description": "Uma coletânea dos maiores clássicos da fé cristã, todos em domínio público e disponíveis para leitura gratuita. Obras que moldaram séculos de devoção, teologia e discipulado.",
+        "category": "livros-ebooks",
+        "author": "equipe-palavra-viva",
+        "date": "2025-10-31",
+        "tags": [
+          "livros",
+          "classicos",
+          "estudo"
+        ],
+        "progress": 0,
+        "content_file": "classicos-cristaos-de-dominio-publico.md",
+        "featured": true,
+        "reading_time": 15,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "2 Timóteo 2:15",
+          "Provérbios 4:7",
+          "Salmo 119:105"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T18:50:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "estudo": [
+      {
+        "id": "classicos-cristaos-de-dominio-publico",
+        "title": "Clássicos Cristãos de Domínio Público",
+        "description": "Uma coletânea dos maiores clássicos da fé cristã, todos em domínio público e disponíveis para leitura gratuita. Obras que moldaram séculos de devoção, teologia e discipulado.",
+        "category": "livros-ebooks",
+        "author": "equipe-palavra-viva",
+        "date": "2025-10-31",
+        "tags": [
+          "livros",
+          "classicos",
+          "estudo"
+        ],
+        "progress": 0,
+        "content_file": "classicos-cristaos-de-dominio-publico.md",
+        "featured": true,
+        "reading_time": 15,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "2 Timóteo 2:15",
+          "Provérbios 4:7",
+          "Salmo 119:105"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T18:50:00Z",
         "status": "published",
         "views": 0,
         "favorites": 0
@@ -1486,6 +2662,72 @@
         "related_studies": [],
         "version": "1.0.0",
         "last_updated": "2024-05-15T10:00:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "oração": [
+      {
+        "id": "oracoes-da-biblia",
+        "title": "Orações da Bíblia: Vozes que Tocaram o Coração de Deus",
+        "description": "Um estudo sobre as orações mais marcantes das Escrituras e o que podemos aprender com os homens e mulheres que falaram com Deus com fé e sinceridade.",
+        "category": "oracoes",
+        "author": "equipe-palavra-viva",
+        "date": "2025-10-31",
+        "tags": [
+          "oração",
+          "fé",
+          "intimidade"
+        ],
+        "progress": 0,
+        "content_file": "oracoes-da-biblia.md",
+        "featured": false,
+        "reading_time": 14,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "1 Samuel 1:10-20",
+          "Salmo 51:1-12",
+          "Daniel 9:3-19",
+          "Mateus 6:9-13",
+          "Lucas 22:41-44"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T18:10:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "intimidade": [
+      {
+        "id": "oracoes-da-biblia",
+        "title": "Orações da Bíblia: Vozes que Tocaram o Coração de Deus",
+        "description": "Um estudo sobre as orações mais marcantes das Escrituras e o que podemos aprender com os homens e mulheres que falaram com Deus com fé e sinceridade.",
+        "category": "oracoes",
+        "author": "equipe-palavra-viva",
+        "date": "2025-10-31",
+        "tags": [
+          "oração",
+          "fé",
+          "intimidade"
+        ],
+        "progress": 0,
+        "content_file": "oracoes-da-biblia.md",
+        "featured": false,
+        "reading_time": 14,
+        "difficulty": "iniciante",
+        "bible_references": [
+          "1 Samuel 1:10-20",
+          "Salmo 51:1-12",
+          "Daniel 9:3-19",
+          "Mateus 6:9-13",
+          "Lucas 22:41-44"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T18:10:00Z",
         "status": "published",
         "views": 0,
         "favorites": 0
@@ -1865,6 +3107,72 @@
         "favorites": 0
       }
     ],
+    "engano": [
+      {
+        "id": "testemunhas-de-jeova",
+        "title": "A Seita das Testemunhas de Jeová à Luz da Bíblia",
+        "description": "Um estudo bíblico que examina as doutrinas das Testemunhas de Jeová e revela, pela Palavra de Deus, onde se afastam da verdade revelada nas Escrituras.",
+        "category": "seitas",
+        "author": "equipe-palavra-viva",
+        "date": "2025-10-31",
+        "tags": [
+          "heresias",
+          "engano",
+          "doutrina"
+        ],
+        "progress": 0,
+        "content_file": "testemunhas-de-jeova.md",
+        "featured": false,
+        "reading_time": 18,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "João 1:1-14",
+          "Colossenses 1:15-17",
+          "João 10:30",
+          "Efésios 2:8-9",
+          "Apocalipse 1:8"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T18:30:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
+    "doutrina": [
+      {
+        "id": "testemunhas-de-jeova",
+        "title": "A Seita das Testemunhas de Jeová à Luz da Bíblia",
+        "description": "Um estudo bíblico que examina as doutrinas das Testemunhas de Jeová e revela, pela Palavra de Deus, onde se afastam da verdade revelada nas Escrituras.",
+        "category": "seitas",
+        "author": "equipe-palavra-viva",
+        "date": "2025-10-31",
+        "tags": [
+          "heresias",
+          "engano",
+          "doutrina"
+        ],
+        "progress": 0,
+        "content_file": "testemunhas-de-jeova.md",
+        "featured": false,
+        "reading_time": 18,
+        "difficulty": "intermediario",
+        "bible_references": [
+          "João 1:1-14",
+          "Colossenses 1:15-17",
+          "João 10:30",
+          "Efésios 2:8-9",
+          "Apocalipse 1:8"
+        ],
+        "related_studies": [],
+        "version": "1.0.0",
+        "last_updated": "2025-10-31T18:30:00Z",
+        "status": "published",
+        "views": 0,
+        "favorites": 0
+      }
+    ],
     "amor": [
       {
         "id": "joao-3-16",
@@ -2032,9 +3340,9 @@
     ]
   },
   "stats": {
-    "total": 8,
-    "byCategory": 5,
-    "byAuthor": 3,
-    "byTag": 27
+    "total": 14,
+    "byCategory": 11,
+    "byAuthor": 4,
+    "byTag": 44
   }
 }

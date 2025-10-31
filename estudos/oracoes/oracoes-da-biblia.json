@@ -1,0 +1,21 @@
+{
+  "id": "oracoes-da-biblia",
+  "title": "Orações da Bíblia: Vozes que Tocaram o Coração de Deus",
+  "description": "Um estudo sobre as orações mais marcantes das Escrituras e o que podemos aprender com os homens e mulheres que falaram com Deus com fé e sinceridade.",
+  "category": "oracoes",
+  "author": "equipe-palavra-viva",
+  "date": "2025-10-31",
+  "tags": ["oração", "fé", "intimidade"],
+  "progress": 0,
+  "content_file": "oracoes-da-biblia.md",
+  "featured": false,
+  "reading_time": 14,
+  "difficulty": "iniciante",
+  "bible_references": ["1 Samuel 1:10-20", "Salmo 51:1-12", "Daniel 9:3-19", "Mateus 6:9-13", "Lucas 22:41-44"],
+  "related_studies": [],
+  "version": "1.0.0",
+  "last_updated": "2025-10-31T18:10:00Z",
+  "status": "published",
+  "views": 0,
+  "favorites": 0
+}

@@ -1,0 +1,27 @@
+{
+  "id": "testemunhas-de-jeova",
+  "title": "A Seita das Testemunhas de Jeová à Luz da Bíblia",
+  "description": "Um estudo bíblico que examina as doutrinas das Testemunhas de Jeová e revela, pela Palavra de Deus, onde se afastam da verdade revelada nas Escrituras.",
+  "category": "seitas",
+  "author": "equipe-palavra-viva",
+  "date": "2025-10-31",
+  "tags": ["heresias", "engano", "doutrina"],
+  "progress": 0,
+  "content_file": "testemunhas-de-jeova.md",
+  "featured": false,
+  "reading_time": 18,
+  "difficulty": "intermediario",
+  "bible_references": [
+    "João 1:1-14",
+    "Colossenses 1:15-17",
+    "João 10:30",
+    "Efésios 2:8-9",
+    "Apocalipse 1:8"
+  ],
+  "related_studies": [],
+  "version": "1.0.0",
+  "last_updated": "2025-10-31T18:30:00Z",
+  "status": "published",
+  "views": 0,
+  "favorites": 0
+}
