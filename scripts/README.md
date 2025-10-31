@@ -13,6 +13,8 @@ Uso (no repositório de conteúdo):
 
 Observação:
 - Se a pasta `content/` não existir, o script usa a raiz do repositório como base (ex.: `estudos/`, `pregacoes/`, etc.).
+- Versionamento: por padrão, a cada build bem-sucedido o script incrementa o PATCH (ex.: 1.0.19 → 1.0.20) com base na versão anterior em `generated/index.json` (ou em `metadata/versions.json` se for o primeiro build). Para fixar uma versão específica, use a env `SCROLL_VERSION`:
+- `SCROLL_VERSION=1.0.19 node scripts/build.js`
 
 Estrutura esperada do repo de conteúdo:
 - `content/estudos/*.json|.md` (plano; `category` define a categoria)

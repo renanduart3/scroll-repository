@@ -368,8 +368,44 @@ function buildMetadata() {
 function buildIndex() {
   log('📋 Gerando índice principal...', 'blue');
 
+  // Helpers para versionamento
+  const bumpPatch = (v) => {
+    const m = String(v).trim().match(/^(\d+)\.(\d+)\.(\d+)$/);
+    if (!m) return v;
+    const [major, minor, patch] = [Number(m[1]), Number(m[2]), Number(m[3])];
+    return `${major}.${minor}.${patch + 1}`;
+  };
+
+  // Ordem de resolução da versão:
+  // 1) SCROLL_VERSION (usa como está)
+  // 2) Se não houver SCROLL_VERSION: base = versão existente em generated/index.json
+  // 3) Senão: base = metadata/versions.json.current_version
+  // 4) Senão: base = '1.0.0'
+  // Quando não houver SCROLL_VERSION, faz bump de patch na base
+  let resolvedVersion = process.env.SCROLL_VERSION || '1.0.0';
+  try {
+    if (!process.env.SCROLL_VERSION) {
+      let baseVersion = '1.0.0';
+      const existingIndex = readJsonFile(path.join(OUTPUT_DIR, 'index.json'));
+      if (existingIndex?.version) {
+        baseVersion = existingIndex.version;
+      } else {
+        const versionsMeta = readJsonFile(path.join(CONTENT_DIR, 'metadata', 'versions.json'));
+        if (versionsMeta?.current_version) {
+          baseVersion = versionsMeta.current_version;
+        }
+      }
+      resolvedVersion = bumpPatch(baseVersion);
+    } else {
+      // SCROLL_VERSION definido: usa-o e não altera
+      readJsonFile(path.join(CONTENT_DIR, 'metadata', 'versions.json')); // leitura opcional
+    }
+  } catch (_) {
+    // ignora e mantém valor calculado
+  }
+
   const index = {
-    version: '1.0.0',
+    version: resolvedVersion,
     buildDate: new Date().toISOString(),
     content: {
       // Sem categories aqui — categorias são derivadas no app
