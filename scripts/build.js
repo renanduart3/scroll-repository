@@ -1,20 +1,25 @@
 #!/usr/bin/env node
 
 /**
- * Script de Build para Faith Scroll Content
- * 
- * Este script processa todo o conteúdo e gera índices otimizados
- * para uso no aplicativo Faith Scroll.
+ * Script de Build para o repositório de conteúdo (scroll-repository)
+ *
+ * Gera a pasta `generated/` na raiz do repositório com índices otimizados.
+ * Categorias de estudos são derivadas automaticamente pelo app a partir do
+ * campo `category` dos estudos. Portanto, não geramos `categories.json` aqui.
  */
 
 const fs = require('fs');
 const path = require('path');
 
-// Configurações
-const CONTENT_DIR = path.join(__dirname, '..');
-const OUTPUT_DIR = path.join(__dirname, '..', 'generated');
+// Diretórios base
+const REPO_ROOT = path.join(__dirname, '..');
+// Se a pasta `content/` não existir, use a raiz do repositório como base
+const CONTENT_DIR = fs.existsSync(path.join(REPO_ROOT, 'content'))
+  ? path.join(REPO_ROOT, 'content')
+  : REPO_ROOT;
+const OUTPUT_DIR = path.join(REPO_ROOT, 'generated');
 
-// Cores para output
+// Cores para logs
 const colors = {
   reset: '\x1b[0m',
   bright: '\x1b[1m',
@@ -59,134 +64,114 @@ function writeJsonFile(filePath, data) {
 
 function getAllFiles(dir, extension) {
   const files = [];
-  
   function traverse(currentDir) {
+    if (!fs.existsSync(currentDir)) return;
     const items = fs.readdirSync(currentDir);
-    
     for (const item of items) {
       const fullPath = path.join(currentDir, item);
       const stat = fs.statSync(fullPath);
-      
       if (stat.isDirectory()) {
         traverse(fullPath);
-      } else if (item.endsWith(extension)) {
+      } else if (!extension || item.endsWith(extension)) {
         files.push(fullPath);
       }
     }
   }
-  
   traverse(dir);
   return files;
 }
 
-function buildCategories(estudosData = null) {
-  log('📁 Processando categorias...', 'blue');
-  
-  const categoriesFile = path.join(CONTENT_DIR, 'categories', 'index.json');
-  const categories = readJsonFile(categoriesFile);
-  
-  if (!categories) {
-    log('❌ Erro ao processar categorias', 'red');
-    return null;
+/**
+ * Renomeia arquivos baseado no content_file definido no JSON
+ * Mantém correspondência JSON <-> MD com o mesmo slug
+ */
+function renameFilesBasedOnContentFile(contentDir, type) {
+  log(`🔄 Renomeando arquivos para ${type}...`, 'blue');
+
+  const typeDir = path.join(contentDir, type);
+  if (!fs.existsSync(typeDir)) {
+    log(`⚠️ Diretório ${type} não encontrado`, 'yellow');
+    return 0;
   }
-  
-  // Atualizar quantidades se dados de estudos foram fornecidos
-  if (estudosData && estudosData.byCategory) {
-    log('📊 Atualizando quantidades das categorias...', 'yellow');
-    categories.categories.forEach(category => {
-      const quantidade = estudosData.byCategory[category.id] ? estudosData.byCategory[category.id].length : 0;
-      category.quantidade = quantidade;
-      log(`  📈 ${category.nome}: ${quantidade} estudos`, 'cyan');
-    });
+
+  const jsonFiles = getAllFiles(typeDir, '.json');
+  let renamedCount = 0;
+
+  for (const jsonFile of jsonFiles) {
+    const jsonData = readJsonFile(jsonFile);
+    if (!jsonData || !jsonData.content_file) continue;
+
+    const expectedMdFile = jsonData.content_file;
+    const expectedJsonFile = expectedMdFile.replace('.md', '.json');
+
+    const currentDir = path.dirname(jsonFile);
+    const currentJsonName = path.basename(jsonFile);
+    const currentMdName = currentJsonName.replace('.json', '.md');
+
+    const needsRename = currentJsonName !== expectedJsonFile;
+    if (!needsRename) continue;
+
+    const currentMdFile = path.join(currentDir, currentMdName);
+    const newJsonFile = path.join(currentDir, expectedJsonFile);
+    const newMdFile = path.join(currentDir, expectedMdFile);
+
+    try {
+      if (fs.existsSync(jsonFile)) {
+        fs.renameSync(jsonFile, newJsonFile);
+        log(`  📝 Renomeado: ${currentJsonName} → ${expectedJsonFile}`, 'green');
+      }
+      if (fs.existsSync(currentMdFile)) {
+        fs.renameSync(currentMdFile, newMdFile);
+        log(`  📄 Renomeado: ${currentMdName} → ${expectedMdFile}`, 'green');
+      }
+      renamedCount++;
+    } catch (error) {
+      log(`  ❌ Erro ao renomear ${currentJsonName}: ${error.message}`, 'red');
+    }
   }
-  
-  // Adicionar estatísticas
-  const stats = {
-    total: categories.categories.length,
-    active: categories.categories.filter(c => c.ativo).length,
-    inactive: categories.categories.filter(c => !c.ativo).length
-  };
-  
-  const result = {
-    ...categories,
-    stats
-  };
-  
-  writeJsonFile(path.join(OUTPUT_DIR, 'categories.json'), result);
-  log(`✅ Categorias processadas: ${stats.total} total, ${stats.active} ativas`, 'green');
-  
-  return result;
+
+  if (renamedCount > 0) {
+    log(`✅ ${renamedCount} arquivos renomeados para ${type}`, 'green');
+  } else {
+    log(`✅ Nenhum arquivo precisou ser renomeado para ${type}`, 'cyan');
+  }
+  return renamedCount;
 }
 
 function buildEstudos() {
   log('📚 Processando estudos...', 'blue');
-  
+
+  renameFilesBasedOnContentFile(CONTENT_DIR, 'estudos');
+
   const estudosDir = path.join(CONTENT_DIR, 'estudos');
   const estudoFiles = getAllFiles(estudosDir, '.json');
-  
-  log(`🔍 Arquivos encontrados: ${estudoFiles.length}`, 'yellow');
-  estudoFiles.forEach(file => log(`  📄 ${file}`, 'cyan'));
-  
+
   const estudos = [];
   const byCategory = {};
   const byAuthor = {};
   const byTag = {};
-  
+
   for (const file of estudoFiles) {
-    log(`📖 Processando: ${file}`, 'cyan');
     const estudo = readJsonFile(file);
-    if (!estudo) {
-      log(`❌ Erro ao ler: ${file}`, 'red');
-      continue;
-    }
-    
-    // Corrigir content_file baseado no arquivo real
-    const fileName = path.basename(file, '.json');
-    let markdownFile;
-    
-    if (fileName.startsWith('json_')) {
-      // Se começa com json_, substitui por md_
-      markdownFile = fileName.replace('json_', 'md_') + '.md';
-    } else {
-      // Se não, usa o nome original
-      markdownFile = fileName + '.md';
-    }
-    
-    estudo.content_file = markdownFile;
-    
-    // Verificar se o arquivo Markdown existe
-    const markdownPath = path.join(path.dirname(file), markdownFile);
-    if (!fs.existsSync(markdownPath)) {
-      log(`⚠️ Arquivo Markdown não encontrado: ${markdownFile}`, 'yellow');
-    } else {
-      log(`✅ Arquivo Markdown encontrado: ${markdownFile}`, 'green');
-    }
-    
-    log(`✅ Estudo carregado: ${estudo.title} (categoria: ${estudo.category})`, 'green');
-    
+    if (!estudo) continue;
     estudos.push(estudo);
-    
-    // Agrupar por categoria
-    if (!byCategory[estudo.category]) {
-      byCategory[estudo.category] = [];
+
+    if (estudo.category) {
+      if (!byCategory[estudo.category]) byCategory[estudo.category] = [];
+      byCategory[estudo.category].push(estudo);
     }
-    byCategory[estudo.category].push(estudo);
-    
-    // Agrupar por autor
-    if (!byAuthor[estudo.author]) {
-      byAuthor[estudo.author] = [];
+
+    if (estudo.author) {
+      if (!byAuthor[estudo.author]) byAuthor[estudo.author] = [];
+      byAuthor[estudo.author].push(estudo);
     }
-    byAuthor[estudo.author].push(estudo);
-    
-    // Agrupar por tag
-    estudo.tags.forEach(tag => {
-      if (!byTag[tag]) {
-        byTag[tag] = [];
-      }
+
+    (estudo.tags || []).forEach(tag => {
+      if (!byTag[tag]) byTag[tag] = [];
       byTag[tag].push(estudo);
     });
   }
-  
+
   const result = {
     estudos,
     byCategory,
@@ -199,77 +184,39 @@ function buildEstudos() {
       byTag: Object.keys(byTag).length
     }
   };
-  
+
   writeJsonFile(path.join(OUTPUT_DIR, 'estudos.json'), result);
   log(`✅ Estudos processados: ${estudos.length} total`, 'green');
-  
   return result;
 }
 
 function buildPregacoes() {
   log('📢 Processando pregações...', 'blue');
-  
-  const pregacoesDir = path.join(CONTENT_DIR, 'pregacoes');
-  const pregaçãoFiles = getAllFiles(pregacoesDir, '.json');
-  
+
+  renameFilesBasedOnContentFile(CONTENT_DIR, 'pregacoes');
+
+  const dir = path.join(CONTENT_DIR, 'pregacoes');
+  const files = getAllFiles(dir, '.json');
+
   const pregacoes = [];
   const byAuthor = {};
   const byTag = {};
-  
-  // Primeiro, escanear todos os arquivos Markdown disponíveis
-  const markdownFiles = getAllFiles(pregacoesDir, '.md');
-  const availableMarkdowns = markdownFiles.map(f => path.basename(f));
-  log(`📄 Arquivos Markdown disponíveis: ${availableMarkdowns.join(', ')}`, 'cyan');
-  
-  for (const file of pregaçãoFiles) {
-    const pregação = readJsonFile(file);
-    if (!pregação) continue;
-    
-    // Tentar encontrar o arquivo Markdown correspondente
-    let markdownFile = null;
-    
-    // Primeiro, tentar pelo ID
-    const possibleMatches = availableMarkdowns.filter(md => 
-      md.includes(pregação.id) || 
-      pregação.id.includes(md.replace('.md', '')) ||
-      md.replace('.md', '') === pregação.id ||
-      md.replace('.md', '').replace(/_/g, '-') === pregação.id.replace(/_/g, '-')
-    );
-    
-    if (possibleMatches.length > 0) {
-      markdownFile = possibleMatches[0];
-    } else {
-      // Se não encontrar pelo ID, usar o primeiro arquivo disponível
-      if (availableMarkdowns.length > 0) {
-        markdownFile = availableMarkdowns[0];
-        log(`⚠️ Usando primeiro arquivo disponível para ${pregação.id}: ${markdownFile}`, 'yellow');
-      }
+
+  for (const file of files) {
+    const item = readJsonFile(file);
+    if (!item) continue;
+    pregacoes.push(item);
+
+    if (item.author) {
+      if (!byAuthor[item.author]) byAuthor[item.author] = [];
+      byAuthor[item.author].push(item);
     }
-    
-    if (markdownFile) {
-      pregação.content_file = markdownFile;
-      log(`✅ Arquivo Markdown encontrado: ${markdownFile}`, 'green');
-    } else {
-      log(`⚠️ Nenhum arquivo Markdown disponível para ${pregação.id}`, 'yellow');
-    }
-    
-    pregacoes.push(pregação);
-    
-    // Agrupar por autor
-    if (!byAuthor[pregação.author]) {
-      byAuthor[pregação.author] = [];
-    }
-    byAuthor[pregação.author].push(pregação);
-    
-    // Agrupar por tag
-    pregação.tags.forEach(tag => {
-      if (!byTag[tag]) {
-        byTag[tag] = [];
-      }
-      byTag[tag].push(pregação);
+    (item.tags || []).forEach(tag => {
+      if (!byTag[tag]) byTag[tag] = [];
+      byTag[tag].push(item);
     });
   }
-  
+
   const result = {
     pregacoes,
     byAuthor,
@@ -280,166 +227,47 @@ function buildPregacoes() {
       byTag: Object.keys(byTag).length
     }
   };
-  
+
   writeJsonFile(path.join(OUTPUT_DIR, 'pregacoes.json'), result);
   log(`✅ Pregações processadas: ${pregacoes.length} total`, 'green');
-  
-  return result;
-}
-
-function buildAtualidades() {
-  log('📰 Processando atualidades...', 'blue');
-  
-  const atualidadesDir = path.join(CONTENT_DIR, 'atualidades');
-  const atualidadeFiles = getAllFiles(atualidadesDir, '.json');
-  
-  const atualidades = [];
-  const byAuthor = {};
-  const byTag = {};
-  
-  // Primeiro, escanear todos os arquivos Markdown disponíveis
-  const markdownFiles = getAllFiles(atualidadesDir, '.md');
-  const availableMarkdowns = markdownFiles.map(f => path.basename(f));
-  log(`📄 Arquivos Markdown disponíveis: ${availableMarkdowns.join(', ')}`, 'cyan');
-  
-  for (const file of atualidadeFiles) {
-    const atualidade = readJsonFile(file);
-    if (!atualidade) continue;
-    
-    // Tentar encontrar o arquivo Markdown correspondente
-    let markdownFile = null;
-    
-    // Primeiro, tentar pelo ID
-    const possibleMatches = availableMarkdowns.filter(md => 
-      md.includes(atualidade.id) || 
-      atualidade.id.includes(md.replace('.md', '')) ||
-      md.replace('.md', '') === atualidade.id ||
-      md.replace('.md', '').replace(/_/g, '-') === atualidade.id.replace(/_/g, '-')
-    );
-    
-    if (possibleMatches.length > 0) {
-      markdownFile = possibleMatches[0];
-    } else {
-      // Se não encontrar pelo ID, usar o primeiro arquivo disponível
-      if (availableMarkdowns.length > 0) {
-        markdownFile = availableMarkdowns[0];
-        log(`⚠️ Usando primeiro arquivo disponível para ${atualidade.id}: ${markdownFile}`, 'yellow');
-      }
-    }
-    
-    if (markdownFile) {
-      atualidade.content_file = markdownFile;
-      log(`✅ Arquivo Markdown encontrado: ${markdownFile}`, 'green');
-    } else {
-      log(`⚠️ Nenhum arquivo Markdown disponível para ${atualidade.id}`, 'yellow');
-    }
-    
-    atualidades.push(atualidade);
-    
-    // Agrupar por autor
-    if (!byAuthor[atualidade.author]) {
-      byAuthor[atualidade.author] = [];
-    }
-    byAuthor[atualidade.author].push(atualidade);
-    
-    // Agrupar por tag
-    atualidade.tags.forEach(tag => {
-      if (!byTag[tag]) {
-        byTag[tag] = [];
-      }
-      byTag[tag].push(atualidade);
-    });
-  }
-  
-  const result = {
-    atualidades,
-    byAuthor,
-    byTag,
-    stats: {
-      total: atualidades.length,
-      byAuthor: Object.keys(byAuthor).length,
-      byTag: Object.keys(byTag).length,
-    },
-  };
-  
-  writeJsonFile(path.join(OUTPUT_DIR, 'atualidades.json'), result);
-  log(`✅ Atualidades processadas: ${atualidades.length} total`, 'green');
-  
   return result;
 }
 
 function buildDevocionais() {
   log('📅 Processando devocionais...', 'blue');
-  
-  const devocionaisDir = path.join(CONTENT_DIR, 'devocionais');
-  const devocionalFiles = getAllFiles(devocionaisDir, '.json');
-  
+
+  renameFilesBasedOnContentFile(CONTENT_DIR, 'devocionais');
+
+  const dir = path.join(CONTENT_DIR, 'devocionais');
+  const files = getAllFiles(dir, '.json');
+
   const devocionais = [];
   const byDate = {};
   const byAuthor = {};
   const byTag = {};
-  
-  // Primeiro, escanear todos os arquivos Markdown disponíveis
-  const markdownFiles = getAllFiles(devocionaisDir, '.md');
-  const availableMarkdowns = markdownFiles.map(f => path.basename(f));
-  log(`📄 Arquivos Markdown disponíveis: ${availableMarkdowns.join(', ')}`, 'cyan');
-  
-  for (const file of devocionalFiles) {
-    const devocional = readJsonFile(file);
-    if (!devocional) continue;
-    
-    // Tentar encontrar o arquivo Markdown correspondente
-    let markdownFile = null;
-    
-    // Primeiro, tentar pelo ID
-    const possibleMatches = availableMarkdowns.filter(md => 
-      md.includes(devocional.id) || 
-      devocional.id.includes(md.replace('.md', '')) ||
-      md.replace('.md', '') === devocional.id ||
-      md.replace('.md', '').replace(/_/g, '-') === devocional.id.replace(/_/g, '-')
-    );
-    
-    if (possibleMatches.length > 0) {
-      markdownFile = possibleMatches[0];
-    } else {
-      // Se não encontrar pelo ID, usar o primeiro arquivo disponível
-      if (availableMarkdowns.length > 0) {
-        markdownFile = availableMarkdowns[0];
-        log(`⚠️ Usando primeiro arquivo disponível para ${devocional.id}: ${markdownFile}`, 'yellow');
-      }
+
+  for (const file of files) {
+    const item = readJsonFile(file);
+    if (!item) continue;
+    devocionais.push(item);
+
+    if (item.date) {
+      const date = item.date.split('T')[0];
+      if (!byDate[date]) byDate[date] = [];
+      byDate[date].push(item);
     }
-    
-    if (markdownFile) {
-      devocional.content_file = markdownFile;
-      log(`✅ Arquivo Markdown encontrado: ${markdownFile}`, 'green');
-    } else {
-      log(`⚠️ Nenhum arquivo Markdown disponível para ${devocional.id}`, 'yellow');
+
+    if (item.author) {
+      if (!byAuthor[item.author]) byAuthor[item.author] = [];
+      byAuthor[item.author].push(item);
     }
-    
-    devocionais.push(devocional);
-    
-    // Agrupar por data
-    const date = devocional.date.split('T')[0];
-    if (!byDate[date]) {
-      byDate[date] = [];
-    }
-    byDate[date].push(devocional);
-    
-    // Agrupar por autor
-    if (!byAuthor[devocional.author]) {
-      byAuthor[devocional.author] = [];
-    }
-    byAuthor[devocional.author].push(devocional);
-    
-    // Agrupar por tag
-    devocional.tags.forEach(tag => {
-      if (!byTag[tag]) {
-        byTag[tag] = [];
-      }
-      byTag[tag].push(devocional);
+
+    (item.tags || []).forEach(tag => {
+      if (!byTag[tag]) byTag[tag] = [];
+      byTag[tag].push(item);
     });
   }
-  
+
   const result = {
     devocionais,
     byDate,
@@ -452,56 +280,82 @@ function buildDevocionais() {
       byTag: Object.keys(byTag).length
     }
   };
-  
+
   writeJsonFile(path.join(OUTPUT_DIR, 'devocionais.json'), result);
   log(`✅ Devocionais processados: ${devocionais.length} total`, 'green');
-  
+  return result;
+}
+
+function buildAtualidades() {
+  log('📰 Processando atualidades...', 'blue');
+
+  renameFilesBasedOnContentFile(CONTENT_DIR, 'atualidades');
+
+  const dir = path.join(CONTENT_DIR, 'atualidades');
+  const files = getAllFiles(dir, '.json');
+
+  const atualidades = [];
+  const byAuthor = {};
+  const byTag = {};
+
+  for (const file of files) {
+    const item = readJsonFile(file);
+    if (!item) continue;
+    atualidades.push(item);
+
+    if (item.author) {
+      if (!byAuthor[item.author]) byAuthor[item.author] = [];
+      byAuthor[item.author].push(item);
+    }
+    (item.tags || []).forEach(tag => {
+      if (!byTag[tag]) byTag[tag] = [];
+      byTag[tag].push(item);
+    });
+  }
+
+  const result = {
+    atualidades,
+    byAuthor,
+    byTag,
+    stats: {
+      total: atualidades.length,
+      byAuthor: Object.keys(byAuthor).length,
+      byTag: Object.keys(byTag).length
+    }
+  };
+
+  writeJsonFile(path.join(OUTPUT_DIR, 'atualidades.json'), result);
+  log(`✅ Atualidades processadas: ${atualidades.length} total`, 'green');
   return result;
 }
 
 function buildMetadata() {
   log('📊 Processando metadados...', 'blue');
-  
+
   const metadataDir = path.join(CONTENT_DIR, 'metadata');
   const metadataFiles = getAllFiles(metadataDir, '.json');
-  
   const metadata = {};
-  
+
   for (const file of metadataFiles) {
     const data = readJsonFile(file);
     if (!data) continue;
-    
     const filename = path.basename(file, '.json');
     metadata[filename] = data;
   }
-  
+
   writeJsonFile(path.join(OUTPUT_DIR, 'metadata.json'), metadata);
   log(`✅ Metadados processados: ${Object.keys(metadata).length} arquivos`, 'green');
-  
   return metadata;
 }
 
 function buildIndex() {
   log('📋 Gerando índice principal...', 'blue');
-  
-  // Tentar ler versão anterior para incrementar
-  let version = '1.0.0';
-  try {
-    const existingIndex = readJsonFile(path.join(OUTPUT_DIR, 'index.json'));
-    if (existingIndex && existingIndex.version) {
-      const [major, minor, patch] = existingIndex.version.split('.').map(Number);
-      version = `${major}.${minor}.${patch + 1}`;
-      log(`📈 Incrementando versão: ${existingIndex.version} → ${version}`, 'yellow');
-    }
-  } catch (error) {
-    log('📋 Primeira build, usando versão inicial 1.0.0', 'blue');
-  }
-  
+
   const index = {
-    version: version,
+    version: '1.0.0',
     buildDate: new Date().toISOString(),
     content: {
-      categories: 0,
+      // Sem categories aqui — categorias são derivadas no app
       estudos: 0,
       pregacoes: 0,
       atualidades: 0,
@@ -511,93 +365,57 @@ function buildIndex() {
     },
     lastUpdated: new Date().toISOString()
   };
-  
-  // Ler estatísticas dos arquivos gerados
+
   try {
-    const categories = readJsonFile(path.join(OUTPUT_DIR, 'categories.json'));
-    if (categories) {
-      index.content.categories = categories.stats.total;
-    }
-    
     const estudos = readJsonFile(path.join(OUTPUT_DIR, 'estudos.json'));
-    if (estudos) {
-      index.content.estudos = estudos.stats.total;
-    }
-    
+    if (estudos) index.content.estudos = estudos.stats.total;
+
     const pregacoes = readJsonFile(path.join(OUTPUT_DIR, 'pregacoes.json'));
-    if (pregacoes) {
-      index.content.pregacoes = pregacoes.stats.total;
-    }
-    
+    if (pregacoes) index.content.pregacoes = pregacoes.stats.total;
+
     const atualidades = readJsonFile(path.join(OUTPUT_DIR, 'atualidades.json'));
-    if (atualidades) {
-      index.content.atualidades = atualidades.stats.total;
-    }
-    
+    if (atualidades) index.content.atualidades = atualidades.stats.total;
+
     const devocionais = readJsonFile(path.join(OUTPUT_DIR, 'devocionais.json'));
-    if (devocionais) {
-      index.content.devocionais = devocionais.stats.total;
-    }
-    
+    if (devocionais) index.content.devocionais = devocionais.stats.total;
+
     const metadata = readJsonFile(path.join(OUTPUT_DIR, 'metadata.json'));
     if (metadata) {
       index.content.authors = metadata.authors?.authors?.length || 0;
       index.content.tags = metadata.tags?.tags?.length || 0;
     }
   } catch (error) {
-    log(`⚠️  Aviso: Erro ao ler estatísticas: ${error.message}`, 'yellow');
+    log(`⚠️ Aviso: Erro ao ler estatísticas: ${error.message}`, 'yellow');
   }
-  
+
   writeJsonFile(path.join(OUTPUT_DIR, 'index.json'), index);
-  log(`✅ Índice principal gerado`, 'green');
-  
+  log('✅ Índice principal gerado', 'green');
   return index;
 }
 
 function main() {
-  log('🚀 Iniciando build do conteúdo Faith Scroll...', 'bright');
-  log('', 'reset');
-  
-  // Criar diretório de output
+  log('🚀 Iniciando build do conteúdo (scroll-repository)...', 'bright');
   ensureDir(OUTPUT_DIR);
-  
-  // Processar cada tipo de conteúdo
+
   const estudos = buildEstudos();
-  const categories = buildCategories(estudos);
   const pregacoes = buildPregacoes();
   const atualidades = buildAtualidades();
   const devocionais = buildDevocionais();
   const metadata = buildMetadata();
-  
-  // Gerar índice principal
   const index = buildIndex();
-  
+
   log('', 'reset');
   log('🎉 Build concluído com sucesso!', 'green');
-  log('', 'reset');
   log('📊 Resumo:', 'bright');
-  log(`   📁 Categorias: ${index.content.categories}`, 'cyan');
   log(`   📚 Estudos: ${index.content.estudos}`, 'cyan');
   log(`   📢 Pregações: ${index.content.pregacoes}`, 'cyan');
   log(`   📰 Atualidades: ${index.content.atualidades}`, 'cyan');
   log(`   📅 Devocionais: ${index.content.devocionais}`, 'cyan');
   log(`   👥 Autores: ${index.content.authors}`, 'cyan');
-  log(`   🏷️  Tags: ${index.content.tags}`, 'cyan');
-  log('', 'reset');
+  log(`   🏷️ Tags: ${index.content.tags}`, 'cyan');
   log(`📁 Arquivos gerados em: ${OUTPUT_DIR}`, 'blue');
 }
 
-// Executar se chamado diretamente
 if (require.main === module) {
   main();
 }
-
-module.exports = {
-  buildCategories,
-  buildEstudos,
-  buildPregacoes,
-  buildDevocionais,
-  buildMetadata,
-  buildIndex,
-  main
-};
