@@ -108,25 +108,42 @@ function renameFilesBasedOnContentFile(contentDir, type) {
     const currentJsonName = path.basename(jsonFile);
     const currentMdName = currentJsonName.replace('.json', '.md');
 
-    const needsRename = currentJsonName !== expectedJsonFile;
-    if (!needsRename) continue;
-
-    const currentMdFile = path.join(currentDir, currentMdName);
     const newJsonFile = path.join(currentDir, expectedJsonFile);
     const newMdFile = path.join(currentDir, expectedMdFile);
 
+    let changed = false;
+
     try {
-      if (fs.existsSync(jsonFile)) {
+      // Renomear JSON se necessário
+      if (currentJsonName !== expectedJsonFile && fs.existsSync(jsonFile)) {
         fs.renameSync(jsonFile, newJsonFile);
         log(`  📝 Renomeado: ${currentJsonName} → ${expectedJsonFile}`, 'green');
+        changed = true;
       }
-      if (fs.existsSync(currentMdFile)) {
-        fs.renameSync(currentMdFile, newMdFile);
-        log(`  📄 Renomeado: ${currentMdName} → ${expectedMdFile}`, 'green');
+
+      // Garantir que o MD tenha o nome esperado
+      if (!fs.existsSync(newMdFile)) {
+        const candidates = [
+          path.join(currentDir, currentMdName),
+          path.join(currentDir, currentJsonName.replace('json_', 'md_').replace('.json', '.md')),
+          path.join(currentDir, currentJsonName.replace('_json', '_md').replace('.json', '.md'))
+        ];
+
+        const sourceMd = candidates.find(p => fs.existsSync(p));
+
+        if (sourceMd) {
+          fs.renameSync(sourceMd, newMdFile);
+          log(`  📄 Renomeado: ${path.basename(sourceMd)} → ${expectedMdFile}`, 'green');
+          changed = true;
+        } else {
+          // Se não encontrou candidato mas o arquivo esperado não existe, avisa
+          log(`  ⚠️ MD esperado não encontrado: ${expectedMdFile} (dir: ${currentDir})`, 'yellow');
+        }
       }
-      renamedCount++;
+
+      if (changed) renamedCount++;
     } catch (error) {
-      log(`  ❌ Erro ao renomear ${currentJsonName}: ${error.message}`, 'red');
+      log(`  ❌ Erro ao renomear par JSON/MD (${currentJsonName}): ${error.message}`, 'red');
     }
   }
 
