@@ -1,1 +1,281 @@
-{}
+{
+  "authors": {
+    "authors": [
+      {
+        "id": "pastor-joao-silva",
+        "name": "Pastor João Silva",
+        "title": "Pastor",
+        "bio": "Pastor com mais de 20 anos de ministério, especialista em estudos bíblicos",
+        "email": "joao.silva@faithscroll.com",
+        "social": {
+          "twitter": "@pastorjoao",
+          "instagram": "@pastorjoao"
+        },
+        "specialties": [
+          "estudos bíblicos",
+          "teologia sistemática"
+        ],
+        "active": true
+      },
+      {
+        "id": "dra-maria-santos",
+        "name": "Dra. Maria Santos",
+        "title": "Doutora em Teologia",
+        "bio": "Teóloga e escritora cristã, autora de vários livros sobre espiritualidade",
+        "email": "maria.santos@faithscroll.com",
+        "social": {
+          "twitter": "@dramaria",
+          "instagram": "@dramaria"
+        },
+        "specialties": [
+          "espiritualidade",
+          "salmos",
+          "oração"
+        ],
+        "active": true
+      },
+      {
+        "id": "rev-pedro-almeida",
+        "name": "Rev. Pedro Almeida",
+        "title": "Reverendo",
+        "bio": "Líder cristão e mentor, especialista em desenvolvimento de liderança",
+        "email": "pedro.almeida@faithscroll.com",
+        "social": {
+          "twitter": "@revpedro",
+          "instagram": "@revpedro"
+        },
+        "specialties": [
+          "liderança",
+          "discipulado",
+          "mentoria"
+        ],
+        "active": true
+      },
+      {
+        "id": "pastor-carlos-mendes",
+        "name": "Pastor Carlos Mendes",
+        "title": "Pastor",
+        "bio": "Pastor e conferencista, conhecido por suas pregações sobre fé e milagres",
+        "email": "carlos.mendes@faithscroll.com",
+        "social": {
+          "twitter": "@pastorcarlos",
+          "instagram": "@pastorcarlos"
+        },
+        "specialties": [
+          "pregação",
+          "fé",
+          "milagres"
+        ],
+        "active": true
+      },
+      {
+        "id": "equipe-palavra-viva",
+        "name": "Equipe Palavra Viva",
+        "title": "Equipe Editorial",
+        "bio": "Equipe responsável pelos devocionais diários e conteúdo editorial",
+        "email": "editorial@faithscroll.com",
+        "social": {},
+        "specialties": [
+          "devocionais",
+          "conteúdo editorial"
+        ],
+        "active": true
+      }
+    ],
+    "metadata": {
+      "version": "1.0.0",
+      "last_updated": "2024-01-22T15:00:00Z",
+      "total_authors": 5
+    }
+  },
+  "tags": {
+    "tags": [
+      {
+        "id": "amor",
+        "name": "Amor",
+        "description": "Estudos sobre o amor de Deus e relacionamentos",
+        "color": "#ef4444",
+        "category": "relacionamentos"
+      },
+      {
+        "id": "salvação",
+        "name": "Salvação",
+        "description": "Temas relacionados à salvação e vida eterna",
+        "color": "#3b82f6",
+        "category": "doutrina"
+      },
+      {
+        "id": "joão",
+        "name": "João",
+        "description": "Estudos baseados no evangelho de João",
+        "color": "#10b981",
+        "category": "evangelhos"
+      },
+      {
+        "id": "salmos",
+        "name": "Salmos",
+        "description": "Estudos sobre os salmos e adoração",
+        "color": "#f59e0b",
+        "category": "poesia"
+      },
+      {
+        "id": "conforto",
+        "name": "Conforto",
+        "description": "Mensagens de consolo e encorajamento",
+        "color": "#8b5cf6",
+        "category": "encorajamento"
+      },
+      {
+        "id": "provisão",
+        "name": "Provisão",
+        "description": "Estudos sobre a provisão e cuidado de Deus",
+        "color": "#06b6d4",
+        "category": "cuidado"
+      },
+      {
+        "id": "liderança",
+        "name": "Liderança",
+        "description": "Princípios de liderança cristã",
+        "color": "#ec4899",
+        "category": "ministério"
+      },
+      {
+        "id": "serviço",
+        "name": "Serviço",
+        "description": "Estudos sobre servir a Deus e ao próximo",
+        "color": "#84cc16",
+        "category": "ministério"
+      },
+      {
+        "id": "jesus",
+        "name": "Jesus",
+        "description": "Estudos focados na pessoa de Jesus Cristo",
+        "color": "#f97316",
+        "category": "cristologia"
+      },
+      {
+        "id": "fé",
+        "name": "Fé",
+        "description": "Estudos sobre fé e confiança em Deus",
+        "color": "#eab308",
+        "category": "doutrina"
+      },
+      {
+        "id": "milagres",
+        "name": "Milagres",
+        "description": "Estudos sobre milagres e intervenção divina",
+        "color": "#06b6d4",
+        "category": "sobrenatural"
+      },
+      {
+        "id": "confiança",
+        "name": "Confiança",
+        "description": "Estudos sobre confiar em Deus",
+        "color": "#10b981",
+        "category": "relacionamentos"
+      },
+      {
+        "id": "paz",
+        "name": "Paz",
+        "description": "Estudos sobre paz e tranquilidade",
+        "color": "#8b5cf6",
+        "category": "espiritualidade"
+      },
+      {
+        "id": "tempestade",
+        "name": "Tempestade",
+        "description": "Estudos sobre enfrentar dificuldades",
+        "color": "#6b7280",
+        "category": "encorajamento"
+      }
+    ],
+    "categories": [
+      {
+        "id": "relacionamentos",
+        "name": "Relacionamentos",
+        "description": "Tags relacionadas a relacionamentos e amor"
+      },
+      {
+        "id": "doutrina",
+        "name": "Doutrina",
+        "description": "Tags relacionadas a doutrinas fundamentais"
+      },
+      {
+        "id": "evangelhos",
+        "name": "Evangelhos",
+        "description": "Tags relacionadas aos evangelhos"
+      },
+      {
+        "id": "poesia",
+        "name": "Poesia",
+        "description": "Tags relacionadas à poesia bíblica"
+      },
+      {
+        "id": "encorajamento",
+        "name": "Encorajamento",
+        "description": "Tags relacionadas a encorajamento"
+      },
+      {
+        "id": "cuidado",
+        "name": "Cuidado",
+        "description": "Tags relacionadas ao cuidado de Deus"
+      },
+      {
+        "id": "ministério",
+        "name": "Ministério",
+        "description": "Tags relacionadas ao ministério"
+      },
+      {
+        "id": "cristologia",
+        "name": "Cristologia",
+        "description": "Tags relacionadas a Jesus Cristo"
+      },
+      {
+        "id": "sobrenatural",
+        "name": "Sobrenatural",
+        "description": "Tags relacionadas ao sobrenatural"
+      },
+      {
+        "id": "espiritualidade",
+        "name": "Espiritualidade",
+        "description": "Tags relacionadas à vida espiritual"
+      }
+    ],
+    "metadata": {
+      "version": "1.0.0",
+      "last_updated": "2024-01-22T15:00:00Z",
+      "total_tags": 14,
+      "total_categories": 10
+    }
+  },
+  "versions": {
+    "versions": [
+      {
+        "version": "1.0.0",
+        "release_date": "2024-01-22T15:00:00Z",
+        "description": "Versão inicial do sistema de conteúdo",
+        "changes": [
+          "Estrutura inicial de categorias",
+          "Migração de estudos existentes",
+          "Sistema de pregações",
+          "Devocionais diários",
+          "Metadados de autores e tags"
+        ],
+        "content_count": {
+          "estudos": 3,
+          "pregacoes": 1,
+          "devocionais": 1,
+          "categorias": 11,
+          "authors": 5,
+          "tags": 14
+        },
+        "status": "stable"
+      }
+    ],
+    "current_version": "1.0.0",
+    "metadata": {
+      "last_updated": "2024-01-22T15:00:00Z",
+      "schema_version": "1.0.0"
+    }
+  }
+}
