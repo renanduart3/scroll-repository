@@ -144,35 +144,15 @@ function renameFilesBasedOnContentFile(contentDir, type, opts = {}) {
 
     // Alvos esperados
     const newJsonFile = path.join(currentDir, expectedJsonFile);
-    // Para Markdown, preferimos a árvore pública usada pelo CDN: <repo>/[type]/<category>/<expectedMdFile>
-    const mdCdnDir = path.join(CDN_BASE, type, jsonData.category || '');
-    ensureDir(mdCdnDir);
-    const newMdCdnFile = path.join(mdCdnDir, expectedMdFile);
+    // Para Markdown, padronize sempre ao lado do JSON (mesma pasta)
+    const newMdFile = path.join(currentDir, expectedMdFile);
 
-    // Candidatos onde o MD pode estar hoje
+    // Candidatos onde o MD pode estar hoje (mesmo diretório do JSON)
     const mdCandidates = [
       path.join(currentDir, currentMdName),
-      path.join(currentDir, expectedMdFile),
-      path.join(CDN_BASE, type, jsonData.category || '', currentMdName),
-      path.join(CDN_BASE, type, jsonData.category || '', expectedMdFile),
-    ].filter(Boolean);
-
-    // Se nenhum candidato existir, tentar heurística: pegar único .md do diretório CDN da categoria
-    const mdCdnFiles = fs.existsSync(mdCdnDir) ? fs.readdirSync(mdCdnDir).filter(f => f.endsWith('.md')) : [];
+      path.join(currentDir, expectedMdFile)
+    ];
     let foundMd = mdCandidates.find(f => fs.existsSync(f));
-    if (!foundMd) {
-      // Tentar por id
-      if (jsonData.id) {
-        const byId = mdCdnFiles.find(f => f.includes(jsonData.id));
-        if (byId) foundMd = path.join(mdCdnDir, byId);
-      }
-    }
-    if (!foundMd) {
-      // Se houver apenas um .md no diretório CDN dessa categoria, assumir que é ele
-      if (mdCdnFiles.length === 1) {
-        foundMd = path.join(mdCdnDir, mdCdnFiles[0]);
-      }
-    }
 
     try {
       // Renomear JSON se necessário
@@ -185,19 +165,17 @@ function renameFilesBasedOnContentFile(contentDir, type, opts = {}) {
           renamedCount++;
         }
       }
-      // Renomear/copiar MD para o local CDN esperado, se encontrado e diferente do alvo
-      if (foundMd && path.normalize(foundMd) !== path.normalize(newMdCdnFile)) {
-        // Garantir diretório de destino
-        ensureDir(path.dirname(newMdCdnFile));
-        if (fs.existsSync(newMdCdnFile) && path.resolve(newMdCdnFile) !== path.resolve(foundMd)) {
+      // Renomear MD no próprio diretório, se necessário
+      if (foundMd && path.normalize(foundMd) !== path.normalize(newMdFile)) {
+        if (fs.existsSync(newMdFile) && path.resolve(newMdFile) !== path.resolve(foundMd)) {
           log(`  ⚠️ MD de destino já existe, pulando: ${expectedMdFile}`, 'yellow');
         } else {
-          fs.renameSync(foundMd, newMdCdnFile);
-          log(`  📄 MD alinhado: ${path.basename(foundMd)} → ${expectedMdFile} (em ${type}/${jsonData.category || ''})`, 'green');
+          fs.renameSync(foundMd, newMdFile);
+          log(`  📄 MD alinhado: ${path.basename(foundMd)} → ${expectedMdFile}`, 'green');
           renamedCount++;
         }
       } else if (!foundMd) {
-        log(`  ⚠️ MD não localizado para ${jsonData.id || currentJsonName}. Esperado: ${newMdCdnFile}`, 'yellow');
+        log(`  ⚠️ MD não localizado para ${jsonData.id || currentJsonName}. Esperado: ${newMdFile}`, 'yellow');
       }
     } catch (error) {
       log(`  ❌ Erro ao alinhar arquivos de ${currentJsonName}: ${error.message}`, 'red');

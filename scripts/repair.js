@@ -42,15 +42,18 @@ function repairType(type){
 
     const dir = path.dirname(jf);
     const currentJson = path.basename(jf);
-    const mdDir = path.join(CDN_BASE, type, data.category || '');
-    ensureDir(mdDir);
-    const mdTarget = path.join(mdDir, expectedMd);
+    // MD deve ficar ao lado do JSON (mesma pasta)
+    const mdTarget = path.join(dir, expectedMd);
 
     // localizar MD
     const mdCandidates = [
       path.join(dir, expectedMd),
       path.join(dir, currentJson.replace('.json','.md')),
-      path.join(mdDir, expectedMd)
+      // possíveis locais errôneos (subpasta igual ao tipo ou à categoria)
+      path.join(dir, type, expectedMd),
+      path.join(dir, type, currentJson.replace('.json','.md')),
+      path.join(dir, (data.category||''), expectedMd),
+      path.join(dir, (data.category||''), currentJson.replace('.json','.md'))
     ];
     let mdSource = mdCandidates.find(p => fs.existsSync(p));
     if(!mdSource){
@@ -76,7 +79,7 @@ function repairType(type){
         ensureDir(path.dirname(mdTarget));
         if(!fs.existsSync(mdTarget) || path.resolve(mdTarget)===path.resolve(mdSource)){
           fs.renameSync(mdSource, mdTarget);
-          log(`  📄 MD: ${path.basename(mdSource)} → ${expectedMd} (em ${type}/${data.category||''})`, 'green');
+          log(`  📄 MD: ${path.basename(mdSource)} → ${expectedMd}`, 'green');
           changed++;
         }else{
           log(`  ⚠️ MD alvo existe, pulando: ${expectedMd}`, 'yellow');
@@ -119,4 +122,3 @@ if(require.main===module){
 }
 
 module.exports = { main };
-
